@@ -1,4 +1,6 @@
 import "./App.css";
+import { Route, Routes } from 'react-router-dom';
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
@@ -6,6 +8,9 @@ function App() {
       <h1>this is jabed 😊</h1>
 
       <h1>Welcome to EasySchedule</h1>
+      <Routes>
+        <Route path="/" element={<Home></Home>}></Route>
+      </Routes>
     </div>
   );
 }
