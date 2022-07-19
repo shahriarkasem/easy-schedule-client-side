@@ -4,10 +4,7 @@ import Home from "./pages/Home/Home";
 
 function App() {
   return (
-    <div className="App">
-      <h1>this is Rakib 😊</h1>
-
-      <h1>Welcome to EasySchedule</h1>
+    <div>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
       </Routes>
