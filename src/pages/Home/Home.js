@@ -1,7 +1,7 @@
 import React from "react";
+import Review from "./components/Review/Review";
 import Booking from "./components/Booking/Booking";
 import Integration from "./components/integration/Integration";
-import Review from "./components/Review/Review";
 import Support from "./components/support/Support";
 
 const Home = () => {
@@ -16,5 +16,4 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;
