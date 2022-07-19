@@ -11,7 +11,7 @@ const Review = () => {
     <div className="my-10">
       <div className="md:mx-20 lg:mx-36">
         <h2 className='font-semibold md:text-2xl'>Appointment scheduling software trusted worldwide</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col items-center mt-6 md:mt-6">
             <img className='w-40 lg:w-48' src={capterra} alt=""></img>
             <img className="w-36 lg:w-40 mt-2" src={fourHalfStars} alt=""></img>
