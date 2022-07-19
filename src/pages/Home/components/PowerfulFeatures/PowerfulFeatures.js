@@ -10,7 +10,7 @@ const PowerfulFeatures = () => {
         },
         {
             "icon": "https://i.ibb.co/9wvtnkF/reminder.png",
-            "name": "Reduce no shows with reminders",
+            "name": "Scheduling for the whole team",
             "description": "Automatic reminders and notifications significantly reduce no show and admin works",
         },
         {
