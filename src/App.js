@@ -1,18 +1,18 @@
 import "./App.css";
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
+
 import Home from "./pages/Home/Home";
 
 function App() {
   return (
-    <div className="App">
-      <h1>this is jabed 😊</h1>
 
-      <h1>Welcome to EasySchedule</h1>
+
+    <div className="App">
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
       </Routes>
     </div>
-  );
+  )
 }
 
 export default App;
