@@ -7,6 +7,7 @@ import Aboutus from "./pages/Home/components/Aboutus/Aboutus";
 function App() {
   return (
     <div className="App">
+   
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
