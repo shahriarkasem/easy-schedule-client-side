@@ -1,0 +1,34 @@
+.button-orange {
+    box-shadow: none !Important;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(225deg, #FF9900 18.28%, #FF5722 79.22%);
+    z-index: 10;
+    border: none;
+    color: white;
+}
+
+.button-orange::before {
+    content: "";
+    background: #3E4066;
+    position: absolute;
+    width: 130%;
+    height: 200%;
+    z-index: -1;
+    left: -15%;
+    border-radius: 100%;
+    transition: 0.2s;
+    bottom: -200%;
+}
+
+.button-orange:hover::before {
+    bottom: -50%;
+}
+
+.banner-flex1 {
+    flex-grow: 2;
+}
+
+.banner-flex1 {
+    flex-grow: 2;
+}

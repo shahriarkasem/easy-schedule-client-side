@@ -1,5 +1,4 @@
 import React from "react";
-
 import Booking from "./components/Booking/Booking";
 import Carousel from "./components/Carousel/Carousel";
 import Review from "./components/Review/Review";
@@ -9,12 +8,14 @@ import ReadySignup from './components/ReadySignup/ReadySignup';
 import Support from "./components/support/Support";
 import Schedule from "./components/Schedule/Schedule";
 import Meeting from "./components/Meeting/Meeting";
+import Banner from './components/Banner/Banner';
+import Navbar from './components/Navbar/Navbar';
 
 const Home = () => {
   return (
     <div>
-      <h6>Hello from home.</h6>
-      <h5>Checking github conflict</h5>
+      <Navbar></Navbar>
+      <Banner></Banner>
       <Carousel />
       <Integration />
       <Support />
