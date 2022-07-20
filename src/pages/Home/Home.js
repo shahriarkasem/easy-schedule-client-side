@@ -4,6 +4,8 @@ import Booking from "./components/Booking/Booking";
 import Carousel from "./components/Carousel/Carousel";
 import Review from "./components/Review/Review";
 import Integration from "./components/integration/Integration";
+import PowerfulFeatures from './components/PowerfulFeatures/PowerfulFeatures';
+import ReadySignup from './components/ReadySignup/ReadySignup';
 import Support from "./components/support/Support";
 import Schedule from "./components/Schedule/Schedule";
 import Meeting from "./components/Meeting/Meeting";
@@ -20,6 +22,8 @@ const Home = () => {
       <Meeting></Meeting>
       <Review></Review>
       <Booking></Booking>
+      <PowerfulFeatures></PowerfulFeatures>
+      <ReadySignup></ReadySignup>
     </div>
   );
 };
