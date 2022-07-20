@@ -1,22 +1,30 @@
-import React from 'react';
-import Review from './components/Review/Review';
+import React from "react";
+
 import Booking from "./components/Booking/Booking";
+import Carousel from "./components/Carousel/Carousel";
+import Review from "./components/Review/Review";
 import Integration from "./components/integration/Integration";
 import PowerfulFeatures from './components/PowerfulFeatures/PowerfulFeatures';
 import ReadySignup from './components/ReadySignup/ReadySignup';
+import Support from "./components/support/Support";
+import Schedule from "./components/Schedule/Schedule";
+import Meeting from "./components/Meeting/Meeting";
 
 const Home = () => {
-    return (
-        <div>
-            <h6>Hello from home.</h6>
-            <h5>Testing merge</h5>
-            <Integration />
-            <Review></Review>
-            <Booking></Booking>
-            <PowerfulFeatures></PowerfulFeatures>
-            <ReadySignup></ReadySignup>
-        </div>
-    );
+  return (
+    <div>
+      <h6>Hello from home.</h6>
+      <h5>Checking github conflict</h5>
+      <Carousel />
+      <Integration />
+      <Support />
+      <Schedule></Schedule>
+      <Meeting></Meeting>
+      <Review></Review>
+      <Booking></Booking>
+      <PowerfulFeatures></PowerfulFeatures>
+      <ReadySignup></ReadySignup>
+    </div>
+  );
 };
-
 export default Home;
