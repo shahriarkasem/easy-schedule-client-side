@@ -3,6 +3,7 @@ import Review from './components/Review/Review';
 import Booking from "./components/Booking/Booking";
 import Integration from "./components/integration/Integration";
 import PowerfulFeatures from './components/PowerfulFeatures/PowerfulFeatures';
+import ReadySignup from './components/ReadySignup/ReadySignup';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Review></Review>
             <Booking></Booking>
             <PowerfulFeatures></PowerfulFeatures>
+            <ReadySignup></ReadySignup>
         </div>
     );
 };
