@@ -20,7 +20,10 @@ const Meeting = () => {
                 <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
               </figure>
               <h2 class="card-title">Promote your availability.</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <p className="text-xs text-left">
+                Share your available hours and let clients book and reschedule
+                appointments.
+              </p>
             </div>
           </div>
           <div class="card w-80">
@@ -29,7 +32,11 @@ const Meeting = () => {
                 <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
               </figure>
               <h2 class="card-title">Stay organized.</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <p className="text-xs text-left">
+                Get notified when a new appointment is booked and sync upcoming
+                appointments with the calendar you already use, like Google,
+                Outlook, iCloud, or Office 365.
+              </p>
             </div>
           </div>
           <div class="card w-80">
@@ -38,7 +45,11 @@ const Meeting = () => {
                 <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
               </figure>
               <h2 class="card-title">Save time.</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <p className="text-left text-xs">
+                Automate and customize appointment confirmations, reminders,
+                follow-ups, and intake forms to keep clients prompt and client
+                information organized.
+              </p>
             </div>
           </div>
         </div>
