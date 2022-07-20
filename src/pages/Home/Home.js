@@ -1,30 +1,22 @@
 import React from "react";
-import Booking from "./components/Booking/Booking";
-import Carousel from "./components/Carousel/Carousel";
 import Review from "./components/Review/Review";
+import Booking from "./components/Booking/Booking";
 import Integration from "./components/integration/Integration";
-import PowerfulFeatures from './components/PowerfulFeatures/PowerfulFeatures';
-import ReadySignup from './components/ReadySignup/ReadySignup';
 import Support from "./components/support/Support";
 import Schedule from "./components/Schedule/Schedule";
 import Meeting from "./components/Meeting/Meeting";
-import Banner from './components/Banner/Banner';
-import Navbar from './components/Navbar/Navbar';
 
 const Home = () => {
   return (
     <div>
-      <Navbar></Navbar>
-      <Banner></Banner>
-      <Carousel />
+      <h6>Hello from home.</h6>
+      <h5>Checking github conflict</h5>
       <Integration />
       <Support />
       <Schedule></Schedule>
       <Meeting></Meeting>
       <Review></Review>
       <Booking></Booking>
-      <PowerfulFeatures></PowerfulFeatures>
-      <ReadySignup></ReadySignup>
     </div>
   );
 };
