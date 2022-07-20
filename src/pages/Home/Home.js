@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       <h6>Hello from home.</h6>
-      <h5>Testing merge</h5>
+      <h5>Checking github conflict</h5>
       <Integration />
       <Support />
       <Review></Review>
