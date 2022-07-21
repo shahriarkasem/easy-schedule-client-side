@@ -3,10 +3,10 @@ import integration from "../../../../media/images/integration.png";
 
 const Integration = () => {
   return (
-    <section className="bg-[#F5F9FA] px-12 mt-6 py-24">
+    <section className="bg-[#F5F9FA] p-5 my-6">
       <div className="lg:flex items-center lg:px-36 px-5">
-        <div className="lg:ml-12">
-          <h2 className="lg:text-4xl text-2xl font-bold mb-2">
+        <div>
+          <h2 className="text-4xl font-semibold mb-2">
             With integrations that <br /> make your life easier
           </h2>
           <p>
@@ -16,7 +16,7 @@ const Integration = () => {
           </p>
         </div>
         <div>
-          <img className="mt-6 lg:mr-24" src={integration} alt="" />
+          <img className="mt-6" src={integration} alt="" />
         </div>
       </div>
     </section>
