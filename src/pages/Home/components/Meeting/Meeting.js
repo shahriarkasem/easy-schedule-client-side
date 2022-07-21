@@ -4,7 +4,9 @@ const Meeting = () => {
   return (
     <div className="my-12">
       <div className="text-center">
-        <h1 className="text-4xl font-bold ">Simplicity Meets Power</h1>
+        <h1 className="text-4xl font-bold  text-[#ef7841]">
+          Simplicity Meets Power
+        </h1>
         <p className="my-4">
           <span className="font-medium ">
             Tools that take the hassle out of online <br /> scheduling, booking
