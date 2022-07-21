@@ -16,7 +16,7 @@ const Schedule = () => {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi
               libero qui a voluptate provident et accusamus dolor earum totam
               amet. Iste repellendus rem nostrum recusandae soluta suscipit
-              inventore hic reprehenderit.
+              inventore hic reprehenderit. arif arif arif
             </p>
           </div>
         </div>
