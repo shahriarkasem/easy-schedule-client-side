@@ -9,7 +9,7 @@ const Schedule = () => {
             <img src="https://placeimg.com/400/400/arch" alt="Album" />
           </figure>
           <div className="card-body">
-            <h2 className="text-4xl font-bold">
+            <h2 className="text-4xl font-bold text-red-400">
               Working 24/7 to fill <br /> your schedule!
             </h2>
             <p>
