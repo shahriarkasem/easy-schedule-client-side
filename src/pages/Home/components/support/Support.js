@@ -20,10 +20,10 @@ const Support = () => {
         className="p-24 md:py-40"
       >
         <div>
-          <h3 className="lg:text-3xl text-xl font-bold text-my-default text-center ">
+          <h3 className="lg:text-3xl text-xl font-bold text-white text-center ">
             We've got your back — every step of the way.
           </h3>
-          <p className="text-my-default text-center">
+          <p className="text-white text-center">
             Because you shouldn't have to figure it out on your own.
           </p>
         </div>
@@ -34,7 +34,7 @@ const Support = () => {
               <p className="font-semibold mt-3">
                 Have questions? Give us a call and we'll walk you through it.
               </p>
-              <p className="text-my-green btn-link text-center">
+              <p className="text-blue-500 btn-link text-center">
                 {" "}
                 +1 855-825-7388
               </p>
@@ -42,39 +42,23 @@ const Support = () => {
           </div>
         </div>
       </div>
-
       <div className="lg:px-28 md:mt-[-50px] lg:mt-[-50px] mt-[-30px]">
         <Swiper
           // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          // slidesPerView={3}
-          // centeredSlides={true}
-          grabCursor={true}
+          slidesPerView={"auto"}
+          centeredSlides={true}
           spaceBetween={0}
           navigation
           pagination={{ clickable: true }}
           // scrollbar={{ draggable: true }}
-          breakpoints={{
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 40,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 0,
-            },
-          }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
         >
           <SwiperSlide>
-            <div class="card ml-10 mb-16 w-80 bg-base-100 shadow-xl border border-blue-200">
+            <div class="card ml-10 mb-16 lg:w-96 w-80 bg-base-100 shadow-xl border border-blue-200">
               <div class="card-body">
-                <h2 class="text-xl font-bold text-center">
+                <h2 class="text-2xl font-bold text-center">
                   24/7 Customer Support
                 </h2>
                 <p>
@@ -86,7 +70,7 @@ const Support = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div class="card ml-10 w-80 bg-base-100 shadow-xl border border-blue-200">
+            <div class="card ml-10 lg:w-96 w-80 bg-base-100 shadow-xl border border-blue-200">
               <div class="card-body">
                 <h2 class="text-2xl font-bold text-center">Services</h2>
                 <p>
@@ -98,7 +82,7 @@ const Support = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div class="card ml-10 w-80 bg-base-100 shadow-xl border border-blue-200">
+            <div class="card ml-10 lg:w-96 w-80 bg-base-100 shadow-xl border border-blue-200">
               <div class="card-body">
                 <h2 class="text-2xl font-bold text-center">Education</h2>
                 <p>
