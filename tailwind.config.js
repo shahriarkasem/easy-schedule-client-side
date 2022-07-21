@@ -2,15 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    colors: {
-      "my-blue": "#6099d0",
-      "my-blue-hover": "#6285a7",
-      "my-orange": "#FF5722",
-      "my-orange-hover": "#e97a57",
-      "my-green": "#13d58b",
-      "my-green-hover": "#65eeba",
-      "my-default": "#ffff",
-    },
+  
     extend: {},
   },
   daisyui: {
