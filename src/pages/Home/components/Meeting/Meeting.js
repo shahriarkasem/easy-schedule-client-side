@@ -3,16 +3,18 @@ import React from "react";
 const Meeting = () => {
   return (
     <div className="my-12">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold  text-[#ef7841]">
+          Simplicity Meets Power
+        </h1>
+        <p className="my-4">
+          <span className="font-medium ">
+            Tools that take the hassle out of online <br /> scheduling, booking
+            and payments.
+          </span>
+        </p>
+      </div>
       <div className="bg-base-100 shadow-xl p-8 md:mx-20 lg:mx-36 rounded">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold">Simplicity Meets Power</h1>
-          <p className="my-4">
-            <span className="font-medium">
-              Tools that take the hassle out of online <br /> scheduling,
-              booking and payments.
-            </span>
-          </p>
-        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
           <div class="card w-80">
             <div class="card-body">
