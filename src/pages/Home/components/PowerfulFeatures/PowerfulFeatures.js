@@ -39,7 +39,7 @@ const PowerfulFeatures = () => {
         <div className='mt-20'>
             <h1 className='text-2xl font-medium mt-10'>Powerful Feature</h1>
             <p className='py-8'>Simple,easy to use features to help automate scheduling with yours customers</p>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 px-7 lg:px-60'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 lg:px-7 lg:px-60'>
                 {
                     features.map(feature => <Feature
                         feature={feature}
