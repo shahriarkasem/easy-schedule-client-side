@@ -13,10 +13,10 @@ const Schedule = () => {
               Working 24/7 to fill <br /> your schedule!
             </h2>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi
-              libero qui a voluptate provident et accusamus dolor earum totam
-              amet. Iste repellendus rem nostrum recusandae soluta suscipit
-              inventore hic reprehenderit. arif arif arif
+              With sequarespace scheduling, clients can quickly view your
+              availability and book their own classes or appointments. They can
+              even pay online and reschedule with a click. Never ask "what time
+              works for you? again.
             </p>
           </div>
         </div>
