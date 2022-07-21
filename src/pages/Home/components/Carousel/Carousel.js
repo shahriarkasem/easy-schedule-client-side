@@ -14,9 +14,9 @@ import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 const Carousel = () => {
   return (
     <div>
-      <div class="flex flex-col w-full border-opacity-50">
+      {/* <div class="flex flex-col w-full border-opacity-50">
         <div class="divider"></div>
-      </div>
+      </div> */}
       <Swiper
         // install Swiper modules
         modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}

@@ -16,9 +16,9 @@ import React from "react";
 const EasySchedule = () => {
   return (
     <div>
-      <div class="flex flex-col w-full border-opacity-50">
+      {/* <div class="flex flex-col w-full border-opacity-50">
         <div class="divider"></div>
-      </div>
+      </div> */}
       <div className=" p-5  lg:px-12 ">
         <div className="flex justify-center border p-2  ">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10">
