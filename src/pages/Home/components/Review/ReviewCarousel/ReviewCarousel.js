@@ -15,7 +15,7 @@ import fourHalfStars from "../../../../../media/images/review/4-half-stars.png";
 const ReviewCarousel = () => {
   return (
     <div>
-      <h2 className="text-center font-semibold my-2 md:my-4 text-4xl">
+      <h2 className="text-center font-semibold my-2 md:my-4 text-4xl text-[#ef7841]">
         Appointment scheduling software trusted worldwide
       </h2>
       <div className="review-container">
