@@ -16,11 +16,11 @@ const Carousel = () => {
     <div>
       <Swiper
         // install Swiper modules
-        modules={[Autoplay, Pagination, Scrollbar, A11y]}
+        modules={[Autoplay, Pagination, Scrollbar, A11y, Navigation]}
         // slidesPerView={"auto"}
         centeredSlides={true}
         // spaceBetween={0}
-        // navigation
+        navigation
         autoplay={{
           delay: 4000,
           disableOnInteraction: false,

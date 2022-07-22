@@ -17,7 +17,12 @@ const Meeting = () => {
           </span>
         </p>
       </div>
-      <div className="bg-base-100 shadow-xl p-8 md:mx-20 lg:mx-36 rounded">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="400"
+        className="bg-base-100 shadow-xl p-8 md:mx-20 lg:mx-36 rounded"
+      >
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
           <div class="card w-80">
             <div class="card-body">
