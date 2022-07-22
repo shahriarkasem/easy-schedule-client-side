@@ -19,30 +19,32 @@ const Meeting = () => {
       </div>
       <div className="bg-base-100 shadow-xl p-8 md:mx-20 lg:mx-36 rounded">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
-          <div class="card w-80">
-            <div class="card-body">
+          <div className="card w-80">
+            <div className="card-body">
               <figure>
                 <img src={meet1} alt="Shoes" />
               </figure>
-              <h2 class="card-title">Promote your availability.</h2>
+              <h2 className="card-title text-[#13d58b]">
+                Promote your availability.
+              </h2>
               <p>If a dog chews shoes whose shoes does he choose?</p>
             </div>
           </div>
-          <div class="card w-80">
-            <div class="card-body">
+          <div className="card w-80">
+            <div className="card-body">
               <figure>
                 <img src={meet2} alt="Shoes" />
               </figure>
-              <h2 class="card-title">Stay organized.</h2>
+              <h2 className="card-title text-[#13d58b]">Stay organized.</h2>
               <p>If a dog chews shoes whose shoes does he choose?</p>
             </div>
           </div>
-          <div class="card w-80">
-            <div class="card-body">
+          <div className="card w-80">
+            <div className="card-body">
               <figure>
                 <img src={meet3} alt="Shoes" />
               </figure>
-              <h2 class="card-title">Save time.</h2>
+              <h2 className="card-title text-[#13d58b]">Save time.</h2>
               <p>If a dog chews shoes whose shoes does he choose?</p>
             </div>
           </div>
