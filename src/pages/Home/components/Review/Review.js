@@ -9,7 +9,7 @@ import ReviewCarousel from "./ReviewCarousel/ReviewCarousel";
 
 const Review = () => {
   return (
-    <div className="my-10">
+    <div className="my-20">
       <div>
         <ReviewCarousel></ReviewCarousel>
       </div>
