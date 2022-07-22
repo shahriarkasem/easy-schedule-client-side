@@ -11,48 +11,44 @@ const Booking = () => {
   return (
     <div>
       <div className="md:mx-20 lg:mx-36">
-        <h2 className="font-semibold text-4xl text-center text-[#ef7841]">
-          We handle 1000's of bookings for our users every single day
+        <h2 className=" font-medium text-3xl text-center ">
+          We handle 1000's of{" "}
+          <span className="font-bold text-4xl text-[#ef7841]">bookings</span>{" "}
+          for <br /> our users every single day
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mt-4">
-          <div className="flex flex-col mx-auto text-center">
-            <div className="flex mx-auto">
-              <img className="w-20" src={todayBookings} alt=""></img>
+          <div className="mx-auto text-center">
+            <div className="flex justify-center mx-auto">
+              <img className="w-20" src={todayBookings} alt="" />
             </div>
             <div>
-              <h5 className="text-xl md:text-3xl lg:text-3xl font-bold  mt-3">
+              <h5 className="text-xl md:text-2xl lg:text-2xl font-bold text-[#ef7841]  mt-3">
                 {todayBooking}
               </h5>
-              <p className=" font-medium lg:text-xl mt-1 md:mt-2">
-                Bookings today
-              </p>
+              <p className=" font-medium lg:text-xl mt-1 md:mt-2">weekly</p>
             </div>
           </div>
-          <div className="flex flex-col mx-auto text-center">
-          <div className="flex mx-auto">
-              <img className="w-20" src={monthBookings} alt=""></img>
+          <div className="mx-auto text-center">
+            <div className="flex justify-center mx-auto">
+              <img className="w-20" src={monthBookings} alt="" />
             </div>
-           <div>
-           <h5 className="text-xl md:text-3xl lg:text-3xl font-bold  mt-3">
-              {monthBooking}
-            </h5>
-            <p className=" font-medium lg:text-xl mt-1 md:mt-2">
-              Bookings this month
-            </p>
-           </div>
+            <div>
+              <h5 className="text-xl md:text-2xl lg:text-2xl text-[#ef7841] font-bold  mt-3">
+                {monthBooking}
+              </h5>
+              <p className=" font-medium lg:text-xl mt-1 md:mt-2">monthly</p>
+            </div>
           </div>
-          <div className="flex flex-col mx-auto text-center">
-          <div className="flex mx-auto">
-              <img className="w-20" src={allTImeBookings} alt=""></img>
+          <div className="mx-auto text-center">
+            <div className="flex justify-center mx-auto">
+              <img className="w-20" src={allTImeBookings} alt="" />
             </div>
-           <div>
-           <h5 className="text-xl md:text-3xl lg:text-3xl font-bold  mt-3">
-              {allTimeBooking}
-            </h5>
-            <p className=" font-medium lg:text-xl mt-1 md:mt-2">
-              Bookings all time
-            </p>
-           </div>
+            <div>
+              <h5 className="text-xl md:text-2xl lg:text-2xl  text-[#ef7841] font-bold  mt-3">
+                {allTimeBooking}
+              </h5>
+              <p className=" font-medium lg:text-xl mt-1 md:mt-2">yearly</p>
+            </div>
           </div>
         </div>
       </div>
