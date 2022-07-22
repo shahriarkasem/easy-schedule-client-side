@@ -15,159 +15,183 @@ import fourHalfStars from "../../../../../media/images/review/4-half-stars.png";
 const ReviewCarousel = () => {
   return (
     <div>
-        <h2 className="text-center font-semibold my-2 md:my-4 text-4xl">Appointment scheduling software trusted worldwide</h2>
-      <div class="slider">
-        <div class="slide-track">
-          <div class="slide flex flex-col justify-center items-center  ml-10">
-            <img class="mt-10"
-              src={capterra}
-              height="100"
-              width="250"
-              alt=""
-            />
-            <img className="mt-15 ml-9"
-              src={fiveStars}
-              height="100"
-              width="200"
-              alt=""
-            />
+      <h2 className="text-center font-semibold my-2 md:my-4 text-4xl">
+        Appointment scheduling software trusted worldwide
+      </h2>
+      <div className="review-container">
+        <div class="slider">
+          <div class="slide-track">
+            <div class="slide flex flex-col justify-center items-center  ml-10">
+              <img
+                class="mt-10 h-96"
+                src={capterra}
+                height=""
+                width="250"
+                alt=""
+              />
+              <img
+                className="mt-15 ml-9"
+                src={fiveStars}
+                height="100"
+                width="200"
+                alt=""
+              />
+            </div>
+            <div class="slide ml-10">
+              <img
+                className="ml-10 mt-8"
+                src={financesOnline}
+                height="100"
+                width="250"
+                alt=""
+              />
+              <img
+                className="ml-16 mt-1"
+                src={fiveStars}
+                height="100"
+                width="200"
+                alt=""
+              />
+            </div>
+            <div class="slide felx flex-col justify-center ml-10">
+              <img
+                className="ml-14 mt-6"
+                src={g2}
+                height="100"
+                width="200"
+                alt=""
+              />
+              <img
+                className="ml-16 mt-[-5px]"
+                src={fourHalfStars}
+                height="100"
+                width="200"
+                alt=""
+              />
+            </div>
+            <div class="slide ml-10">
+              <img
+                class="mt-8 ml-24"
+                src={twitter}
+                height="100"
+                width="50"
+                alt=""
+              />
+              <img
+                className="ml-4"
+                src={fiveStars}
+                height="100"
+                width="200"
+                alt=""
+              />
+            </div>
+            <div class="slide ml-10">
+              <img
+                className="mt-4 ml-10"
+                src={apple}
+                height="100"
+                width="130"
+                alt=""
+              />
+              <img
+                className="mt-[-12px]"
+                src={fiveStars}
+                height="100"
+                width="200"
+                alt=""
+              />
+            </div>
+            <div class="slide ml-10">
+              <img
+                className="mt-4 ml-6"
+                src={samsung}
+                height="100"
+                width="150"
+                alt=""
+              />
+              <img
+                className="mt-[-24px]"
+                src={fourHalfStars}
+                height="100"
+                width="200"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                className="mt-[-5px]"
+                src={tesla}
+                height="100"
+                width="200"
+                alt=""
+              />
+              <img
+                className="mt-[-34px] ml-1"
+                src={fiveStars}
+                height="100"
+                width="200"
+                alt=""
+              />
+            </div>
+            <div class="slide ml-10">
+              <img
+                className="mt-8 ml-6"
+                src={google}
+                height="100"
+                width="150"
+                alt=""
+              />
+              <img
+                className="mt-[-8px]"
+                src={fiveStars}
+                height="100"
+                width="200"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                className=""
+                src={invision}
+                height="100"
+                width="250"
+                alt=""
+              />
+              <img
+                className="mt-[-20px] ml-8"
+                src={fourHalfStars}
+                height="100"
+                width="200"
+                alt=""
+              />
+            </div>
+            <div class="slide flex flex-col justify-center items-center  ml-10">
+              <img
+                class="mt-10"
+                src={capterra}
+                height="100"
+                width="250"
+                alt=""
+              />
+              <img
+                className="mt-15 ml-9"
+                src={fiveStars}
+                height="100"
+                width="200"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png"
+                height="100"
+                width="250"
+                alt=""
+              />
+            </div>
           </div>
-          <div class="slide ml-10">
-            <img  className="ml-10 mt-8"
-              src={financesOnline}
-              height="100"
-              width="250"
-              alt=""
-            />
-            <img className="ml-16 mt-1"
-              src={fiveStars}
-              height="100"
-              width="200"
-              alt=""
-            />
-          </div>
-          <div class="slide felx flex-col justify-center ml-10">
-            <img className="ml-14 mt-6"
-              src={g2}
-              height="100"
-              width="200"
-              alt=""
-            />
-            <img className="ml-16 mt-[-5px]"
-              src={fourHalfStars}
-              height="100"
-              width="200"
-              alt=""
-            />
-          </div>
-          <div class="slide ml-10">
-            <img class="mt-8 ml-24"
-              src={twitter}
-              height="100"
-              width="50"
-              alt=""
-            />
-            <img className="ml-4"
-              src={fiveStars}
-              height="100"
-              width="200"
-              alt=""
-            />
-          </div>
-          <div class="slide ml-10">
-            <img className="mt-4 ml-10"
-              src={apple}
-              height="100"
-              width="130"
-              alt=""
-            />
-            <img className="mt-[-12px]"
-              src={fiveStars}
-              height="100"
-              width="200"
-              alt=""
-            />
-          </div>
-          <div class="slide ml-10">
-            <img className="mt-4 ml-6"
-              src={samsung}
-              height="100"
-              width="150"
-              alt=""
-            />
-            <img className="mt-[-24px]"
-              src={fourHalfStars}
-              height="100"
-              width="200"
-              alt=""
-            />
-          </div>
-          <div class="slide">
-            <img className="mt-[-5px]"
-              src={tesla}
-              height="100"
-              width="200"
-              alt=""
-            />
-            <img className="mt-[-34px] ml-1"
-              src={fiveStars}
-              height="100"
-              width="200"
-              alt=""
-            />
-          </div>
-          <div class="slide ml-10">
-            <img className="mt-8 ml-6"
-              src={google}
-              height="100"
-              width="150"
-              alt=""
-            />
-            <img className="mt-[-8px]"
-              src={fiveStars}
-              height="100"
-              width="200"
-              alt=""
-            />
-          </div>
-          <div class="slide">
-            <img className=""
-              src={invision}
-              height="100"
-              width="250"
-              alt=""
-            />
-            <img className="mt-[-20px] ml-8"
-              src={fourHalfStars}
-              height="100"
-              width="200"
-              alt=""
-            />
-          </div>
-          <div class="slide flex flex-col justify-center items-center  ml-10">
-            <img class="mt-10"
-              src={capterra}
-              height="100"
-              width="250"
-              alt=""
-            />
-            <img className="mt-15 ml-9"
-              src={fiveStars}
-              height="100"
-              width="200"
-              alt=""
-            />
-          </div>
-          <div class="slide">
-            <img
-              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png"
-              height="100"
-              width="250"
-              alt=""
-            />
-          </div>
-
         </div>
+        {}
       </div>
     </div>
   );
