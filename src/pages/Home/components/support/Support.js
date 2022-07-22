@@ -91,7 +91,7 @@ const Support = () => {
                 <h2 class="text-xl font-bold text-center">
                   24/7 Customer Support
                 </h2>
-                <p>
+                <p className="text-1xl">
                   HubSpot's award-winning customer support team is ready to help
                   you with all your technical questions, and can be reached by
                   live chat, email, or phone depending on your plan.

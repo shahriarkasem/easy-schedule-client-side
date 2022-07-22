@@ -34,9 +34,9 @@ const Carousel = () => {
           <SwiperSlide>
             <div className="p-5 ">
               <div className="">
-                <h1 className="  p-5 text-xl  py-5 flex text-center justify-center ">
+                {/* <h1 className="  p-5 text-xl  py-5 flex text-center justify-center ">
                   We are making appointments with Doctors
-                </h1>
+                </h1> */}
               </div>
               <div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-items-center lg:px-40 ">
@@ -67,9 +67,9 @@ const Carousel = () => {
           <SwiperSlide>
             <div className="px-5">
               <div>
-                <h1 className=" p-5 text-xl py-5 text-center justify-center">
+                {/* <h1 className=" p-5 text-xl py-5 text-center justify-center">
                   We are arranging business meetings.
-                </h1>
+                </h1> */}
               </div>
               <div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-items-center lg:px-40 ">
@@ -100,9 +100,9 @@ const Carousel = () => {
           <SwiperSlide>
             <div className="px-5">
               <div>
-                <h1 className="p-5 text-xl py-5 text-center justify-center">
+                {/*  <h1 className="p-5 text-xl py-5 text-center justify-center">
                   We are arranging educational meetings.
-                </h1>
+                </h1> */}
               </div>
               <div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-items-center lg:px-40 ">

@@ -43,7 +43,7 @@ const PowerfulFeatures = () => {
   return (
     <div className="mt-20 text-center">
       {/* text-2xl font-medium */}
-      <h1 className=" mt-10 text-4xl font-bold  text-[#ef7841]">
+      <h1 className=" mt-10 text-4xl font-bold  text-[#ef5541]">
         Powerful Feature
       </h1>
       <p className="py-4">
