@@ -19,7 +19,7 @@ const ReviewCarousel = () => {
         Appointment scheduling software trusted worldwide
       </h2>
       <div className="review-container">
-        <div class="slider">
+        <div class="slider bg-white">
           <div class="slide-track">
             <div class="slide flex flex-col justify-center items-center  ml-10">
               <img
