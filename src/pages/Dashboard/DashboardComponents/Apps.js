@@ -2,7 +2,7 @@ import React from 'react';
 
 const Apps = () => {
     return (
-        <div>
+        <div className="min-h-screen">
             
         </div>
     );
