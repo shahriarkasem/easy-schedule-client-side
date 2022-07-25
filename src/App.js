@@ -7,6 +7,8 @@ import Navbar from "./pages/Home/components/Navbar/Navbar";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Login from "./pages/login/Login";
+import SignUp from "./pages/login/SignUp";
 
 function App() {
   useEffect(() => {
@@ -18,6 +20,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
       <Footer></Footer>
     </div>
