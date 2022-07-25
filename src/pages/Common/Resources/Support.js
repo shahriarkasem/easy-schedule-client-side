@@ -2,7 +2,7 @@ import React from 'react';
 
 const Support = () => {
     return (
-        <div>
+        <div className="min-h-screen">
             
         </div>
     );
