@@ -10,13 +10,13 @@ import "aos/dist/aos.css";
 import Login from "./pages/login/Login";
 import SignUp from "./pages/login/SignUp";
 import HowItWorks from "./pages/Common/HowItWorks";
-import Feature from "./pages/Home/components/PowerfulFeatures/Feature";
 import Individuals from "./pages/Common/Individuals";
 import Teams from "./pages/Common/Teams";
 import Pricing from "./pages/Common/Pricing";
 import Blog from "./pages/Common/Resources/Blog";
 import Support from "./pages/Common/Resources/Support";
 import WhatsNew from "./pages/Common/Resources/WhatsNew";
+import Features from "./pages/Common/Features";
 
 function App() {
   useEffect(() => {
@@ -28,7 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/howitworks" element={<HowItWorks></HowItWorks>}></Route>
-        <Route path="/feature" element={<Feature></Feature>}></Route>
+        <Route path="/features" element={<Features></Features>}></Route>
         <Route path="/individuals" element={<Individuals></Individuals>}></Route>
         <Route path="/teams" element={<Teams></Teams>}></Route>
         <Route path="/pricing" element={<Pricing></Pricing>}></Route>
