@@ -1,7 +1,32 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../../../firebase.init";
 import "./Navbar.css";
+import { signOut } from "firebase/auth";
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+
+  const navItem = (
+    <>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/">About</Link>
+      </li>
+      <li>
+        <Link to="/">Pricing</Link>
+      </li>
+      <li>
+        <Link to="/">Services</Link>
+      </li>
+      <li>
+        <Link to="/">Contact</Link>
+      </li>
+    </>
+  );
+
   return (
     <div className="container mx-auto">
       <div class="navbar bg-base-100">
@@ -27,49 +52,32 @@ const Navbar = () => {
               tabindex="0"
               class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <Link to="/aboutus">
-                  <a className="header-link">About</a>
-                </Link>
-              </li>
-              <li>
-                <a className="header-link">Pricing</a>
-              </li>
-              <li>
-                <a className="header-link">Services</a>
-              </li>
-              <li>
-                <a className="header-link">Contact</a>
-              </li>
+              {navItem}
             </ul>
           </div>
           <div class="w-10 rounded-full">
-            <img src="https://i.ibb.co/QnJPG33/easy-Schedule-Icon.jpg" />
+            <img src="https://i.ibb.co/QnJPG33/easy-Schedule-Icon.jpg" alt="" />
           </div>
-          <Link to="/">
-            <a class="btn btn-ghost normal-case text-xl">Easy Schedule</a>
+          <Link to="/" class="btn btn-ghost normal-case text-xl">
+            Easy Schedule
           </Link>
         </div>
         <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal p-0">
-            <li>
-              <Link to="/aboutus">
-                <a className="header-link">About</a>
-              </Link>
-            </li>
-            <li>
-              <a className="header-link">Pricing</a>
-            </li>
-            <li>
-              <a className="header-link">Services</a>
-            </li>
-            <li>
-              <a className="header-link">Contact</a>
-            </li>
-          </ul>
+          <ul class="menu menu-horizontal p-0">{navItem}</ul>
         </div>
         <div class="navbar-end">
-          <a class="button-orange-border-h40">Login</a>
+          {user ? (
+            <button
+              onClick={() => signOut(auth)}
+              className="btn btn-outline button-orange-border-h40"
+            >
+              Log Out
+            </button>
+          ) : (
+            <Link to="/login" class="button-orange-border-h40">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>
