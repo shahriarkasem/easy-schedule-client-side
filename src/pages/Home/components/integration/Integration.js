@@ -29,7 +29,7 @@ const Integration = () => {
             data-aos="fade-left"
             data-aos-duration="1000"
             data-aos-delay="400"
-            className="mt-6 lg:mr-24"
+            className="mt-6 w-80 lg:w-full lg:mr-24"
             src={integration}
             alt=""
           />

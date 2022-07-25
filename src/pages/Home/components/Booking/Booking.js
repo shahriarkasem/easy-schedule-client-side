@@ -19,7 +19,7 @@ const Booking = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mt-4">
           <div className="mx-auto text-center">
             <div className="flex justify-center mx-auto">
-              <img className="w-20" src={todayBookings} alt="" />
+              <img className="w-28" src={todayBookings} alt="" />
             </div>
             <div>
               <h5 className="text-xl md:text-2xl lg:text-2xl font-bold text-[#ef7841]  mt-3">
@@ -30,7 +30,7 @@ const Booking = () => {
           </div>
           <div className="mx-auto text-center">
             <div className="flex justify-center mx-auto">
-              <img className="w-20" src={monthBookings} alt="" />
+              <img className="w-28" src={monthBookings} alt="" />
             </div>
             <div>
               <h5 className="text-xl md:text-2xl lg:text-2xl text-[#ef7841] font-bold  mt-3">
@@ -41,7 +41,7 @@ const Booking = () => {
           </div>
           <div className="mx-auto text-center">
             <div className="flex justify-center mx-auto">
-              <img className="w-20" src={allTImeBookings} alt="" />
+              <img className="w-28" src={allTImeBookings} alt="" />
             </div>
             <div>
               <h5 className="text-xl md:text-2xl lg:text-2xl  text-[#ef7841] font-bold  mt-3">
