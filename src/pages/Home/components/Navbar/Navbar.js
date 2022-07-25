@@ -10,19 +10,22 @@ const Navbar = () => {
   const navItem = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <Link to="/">How It Works</Link>
       </li>
       <li>
-        <Link to="/">About</Link>
+        <Link to="/">Features</Link>
+      </li>
+      <li>
+        <Link to="/">Individuals</Link>
+      </li>
+      <li>
+        <Link to="/">Teams</Link>
       </li>
       <li>
         <Link to="/">Pricing</Link>
       </li>
       <li>
-        <Link to="/">Services</Link>
-      </li>
-      <li>
-        <Link to="/">Contact</Link>
+        <Link to="/">Resources</Link>
       </li>
     </>
   );
