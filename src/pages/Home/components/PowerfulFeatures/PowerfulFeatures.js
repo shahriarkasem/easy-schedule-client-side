@@ -54,7 +54,7 @@ const PowerfulFeatures = () => {
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-delay="400"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-7 lg:px-40"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:px-24 justify-items-center"
       >
         {features.map((feature) => (
           <Feature feature={feature}></Feature>

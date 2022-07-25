@@ -17,7 +17,7 @@ const EasySchedule = () => {
   return (
     <div className=" p-5  lg:px-12 mt-10">
       <div className="flex justify-center border p-2  ">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10">
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
