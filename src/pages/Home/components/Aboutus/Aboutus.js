@@ -7,11 +7,11 @@ import about from "../../../../media/images/about/a.png";
 
 const Aboutus = () => {
   return (
-    <div className="lg:h-fit mb-36 ">
+    <div className="lg:h-screen mb-10">
       <div class="w-full  flex justify-center ">
         <div class="flex justify-between  items-center ">
           <div className="">
-            <div className=" lg:mt-20  mt-10">
+            <div className="lg:mt-40 ">
               <h1 class="text-5xl font-bold py-5 text-center text-blue-500">
                 We are Easy Scheduler
               </h1>
