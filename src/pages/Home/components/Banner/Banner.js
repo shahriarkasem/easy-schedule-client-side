@@ -1,4 +1,5 @@
 import React from "react";
+import Wave from "react-wavify";
 import "./Banner.css";
 
 const Banner = () => {
@@ -52,6 +53,15 @@ const Banner = () => {
           </button>
         </div>
       </div>
+      <Wave fill="#f7550f"
+        paused={false}
+        options={{
+          height: 80,
+          amplitude: 50,
+          speed: 0.20,
+          points: 5
+        }}
+      />
     </div>
   );
 };
