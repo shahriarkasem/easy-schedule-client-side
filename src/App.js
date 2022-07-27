@@ -21,9 +21,13 @@ import Availability from "./pages/Dashboard/DashboardComponents/Availability";
 import Integrations from "./pages/Dashboard/DashboardComponents/Integrations";
 import Help from "./pages/Dashboard/DashboardComponents/Help";
 import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypes";
-import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
+// import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
+import Upcoming from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Upcoming/Upcoming";
+import Pending from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Pending/Pending";
+import Past from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Past/Past";
+import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/ScheduledEvent";
 
 function App() {
   useEffect(() => {
@@ -55,7 +59,12 @@ function App() {
           <Route path="d-home" element={<DashboardHome />}>
             {/* home nested */}
             <Route path="event-types" element={<EventTypes />} />
-            <Route path="Scheduled" element={<ScheduledEvents />} />
+            <Route path="Scheduled" element={<ScheduledEvents />}>
+              {/* Scheduled Event nested */}
+              <Route path="upcoming" element={<Upcoming />}></Route>
+              <Route path="pending" element={<Pending />}></Route>
+              <Route path="past" element={<Past />}></Route>
+            </Route>
             <Route path="workflows" element={<Workflows />} />
             <Route path="routing" element={<RoutingForms />} />
           </Route>
