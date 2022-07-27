@@ -3,7 +3,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../../firebase.init";
 import "./Navbar.css";
-import { signOut } from "firebase/auth";
 const Navbar = () => {
   const [user] = useAuthState(auth);
 
@@ -25,7 +24,7 @@ const Navbar = () => {
         <Link to="/pricing">Pricing</Link>
       </li>
       <li>
-        <Link to="/blog">Resources/Blog</Link>
+        <Link to="/blog">Resources</Link>
       </li>
     </>
   );
@@ -70,12 +69,12 @@ const Navbar = () => {
         </div>
         <div class="navbar-end">
           {user ? (
-            <button
-              onClick={() => signOut(auth)}
-              className="btn btn-outline button-orange-border-h40"
+            <Link
+              to="/dashboard/d-home/event-types"
+              className="button-orange-border-h40"
             >
-              Log Out
-            </button>
+              My Account
+            </Link>
           ) : (
             <Link to="/login" class="button-orange-border-h40">
               Login
