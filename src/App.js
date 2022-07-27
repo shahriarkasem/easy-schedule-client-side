@@ -17,6 +17,7 @@ import Blog from "./pages/Common/Resources/Blog";
 import Support from "./pages/Common/Resources/Support";
 import WhatsNew from "./pages/Common/Resources/WhatsNew";
 import Features from "./pages/Common/Features";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   useEffect(() => {
@@ -36,8 +37,10 @@ function App() {
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/support" element={<Support></Support>}></Route>
         <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
+        <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+
       </Routes>
       <Footer></Footer>
     </div>

@@ -27,6 +27,24 @@ const Navbar = () => {
       <li>
         <Link to="/blog">Resources/Blog</Link>
       </li>
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+          <div class="w-10 rounded-full">
+            <img src="https://placeimg.com/80/80/people" />
+          </div>
+        </label>
+        <ul tabindex="0" class="mt-3 p-4 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-60">
+          <Link className="p-2" to="/accountSetting">Account Settings</Link>
+          <Link className="p-2" to="/adminmanagement">Admin Management</Link>
+          <Link className="p-2" to="/apps">Apps</Link>
+          <Link className="p-2" to="/billings">Billings</Link>
+          <Link className="p-2" to="/dashboardHome">Dashboard Home</Link>
+          <Link className="p-2" to="/Help">Help</Link>
+          <Link className="p-2" to="/intregrations">Integrations</Link>
+          <Link className="p-2" to="/dashboard">Dashboard</Link>
+
+        </ul>
+      </div>
     </>
   );
 
