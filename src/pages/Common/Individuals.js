@@ -4,7 +4,7 @@ import Navbar from "../Home/components/Navbar/Navbar";
 const Individuals = () => {
   return (
     <>
-      <Navbar></Navbar>
+      
       <div className="min-h-screen">
         {/* top banner */}
         <div className="text-center min-h-16">
