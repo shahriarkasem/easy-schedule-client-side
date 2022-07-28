@@ -24,6 +24,8 @@ import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Comp
 import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
+import Navbar from "./pages/Home/components/Navbar/Navbar";
+import Footer from "./pages/Home/components/Footer/Footer";
 
 function App() {
   useEffect(() => {

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const WhatsNew = () => {
-    return (
-        <div className="min-h-screen">
-            
-        </div>
-    );
+  return (
+    <div className="min-h-screen">
+      
+    </div>
+  );
 };
 
 export default WhatsNew;
