@@ -21,7 +21,7 @@ const EventTypes = () => {
           </div>
         </div>
         {/* Header section */}
-        <div className="py-5 border-b-2 flex flex-row justify-between items-center">
+        <div className="py-5 border-b-2 flex flex-col md:flex-row justify-between items-center">
           <div class="card bg-base-100">
             <div class="flex flex-row">
               <div class="avatar">
@@ -35,15 +35,21 @@ const EventTypes = () => {
               </div>
             </div>
           </div>
-          <div>
-            <button className="border-2 py-1 px-2 rounded-xl border-blue-500 hover:bg-blue-100">
+          <div className="mt-5 md:mt-0">
+            <button className="border-2 py-1 px-2 rounded-xl border-blue-400 hover:bg-blue-100">
             <span>➕</span>
             <span className="pl-1 text-blue-500">New event type</span>
             </button>
           </div>
         </div>
         {/* events details section */}
-       
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 md:mt-8">
+          <div class="card bg-base-100 shadow-xl border-t-4 border-red-500">
+            <div class="card-body">
+             
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
