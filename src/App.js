@@ -24,6 +24,10 @@ import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Comp
 import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
+import Apps from "./pages/Dashboard/DashboardComponents/Apps";
+import OneOnOne from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/OneOnOne";
+import Group from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/Group";
+import EventTypesName from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/EventTypesName";
 
 function App() {
   useEffect(() => {
@@ -60,8 +64,12 @@ function App() {
             <Route path="routing" element={<RoutingForms />} />
           </Route>
 
+          <Route path="event-type" element={<EventTypesName />}></Route>
+          <Route path="event-type/one-on-one" element={<OneOnOne />}></Route>
+          <Route path="event-type/group" element={<Group />}></Route>
           <Route path="availability" element={<Availability />}></Route>
           <Route path="integration" element={<Integrations />}></Route>
+          <Route path="apps" element={<Apps />}></Route>
           <Route path="help" element={<Help />}></Route>
           <Route path="account"></Route>
         </Route>
