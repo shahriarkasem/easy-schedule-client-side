@@ -1,10 +1,12 @@
 import React from "react";
 import auth from "../../../../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 
 const EventTypes = () => {
   const [user] = useAuthState(auth);
-  console.log(user?.photoURL);
+  // console.log(user?.photoURL);
+  const navigate = useNavigate();
 
   return (
     <div className="my-12">
@@ -36,7 +38,7 @@ const EventTypes = () => {
             </div>
           </div>
           <div className="mt-5 md:mt-0">
-            <button className="border-2 py-1 px-2 rounded-xl border-blue-400 hover:bg-blue-100">
+            <button onClick={() => navigate('/dashboard/event-type')} className="border-2 py-1 px-2 rounded-xl border-blue-400 hover:bg-blue-100">
             <span>➕</span>
             <span className="pl-1 text-blue-500">New event type</span>
             </button>
