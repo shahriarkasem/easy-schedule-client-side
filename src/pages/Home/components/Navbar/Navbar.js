@@ -26,6 +26,7 @@ const Navbar = () => {
       <li>
         <Link to="/blog">Resources</Link>
       </li>
+
     </>
   );
 
