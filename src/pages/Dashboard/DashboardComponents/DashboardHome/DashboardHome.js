@@ -9,7 +9,7 @@ const DashboardHome = () => {
         <button className="button-orange-border-h40">+ Create</button>
       </div>
 
-      <div class="navbar bg-base-100 overflow-x-auto">
+      <div class="navbar bg-base-100 overflow-x-auto border-b-2 drop-shadow-lg">
         <div class="navbar-center">
           <ul class="menu menu-horizontal p-0">
             <li>
