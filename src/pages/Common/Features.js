@@ -33,13 +33,15 @@ const Features = () => {
             Set up a regular weekly schedule or customize for every week.
             Complete control over when you want to schedule meetings.
           </p>
-          <h3 className="text-1xl font-bold ">
-            Duration and appointment padding
-          </h3>
-          <p className="text-sm font-sans">
-            Offer fixed appointment durations or give customers a choice. Add
-            padding between appointments for preparation or travel time.
-          </p>
+          <div className="my-5">
+            <h3 className="text-1xl font-bold ">
+              Duration and appointment padding
+            </h3>
+            <p className="text-sm font-sans">
+              Offer fixed appointment durations or give customers a choice. Add
+              padding between appointments for preparation or travel time.
+            </p>
+          </div>
           <h3 className="text-1xl font-bold ">
             Time zones automatically detected
           </h3>
@@ -47,6 +49,9 @@ const Features = () => {
             Time zones completely solved. We automatically detect time zones so
             everyone sees the right times.
           </p>
+          <div class=" justify-start">
+            <button class="btn button-orange text-white"> Learn More</button>
+          </div>
         </div>
       </div>
       {/* card - 1 */}
@@ -67,6 +72,38 @@ const Features = () => {
             </button>
           </div>
         </div>
+      </div>
+      {/* feature - 2 */}
+      <div class="card lg:card-side  mx-12 mb-8">
+        <div class="card-body">
+          <h2 class="card-title text-3xl my-5">Customizable notifications</h2>
+
+          <h3 className="text-1xl font-bold ">Confirmations and reminders</h3>
+          <p className="text-sm font-sans">
+            Brand and customize confirmation emails. Reduce no shows with email
+            and SMS reminders.
+          </p>
+          <div className="my-5">
+            <h3 className="text-1xl font-bold ">
+              Customize your calendar events
+            </h3>
+            <p className="text-sm font-sans">
+              Set up how new booking events appear in your calendar. Include
+              information entered by customers at time of booking.
+            </p>
+          </div>
+          <h3 className="text-1xl font-bold ">Automated follow-up emails</h3>
+          <p className="text-sm font-sans">
+            Send follow-up emails after your meeting to thank customers or
+            outline next steps.
+          </p>
+          <div class=" justify-start">
+            <button class="btn button-orange text-white"> Learn More</button>
+          </div>
+        </div>
+        <figure>
+          <img className="w-[600px]" src={img1} alt="Album" />
+        </figure>
       </div>
     </div>
   );
