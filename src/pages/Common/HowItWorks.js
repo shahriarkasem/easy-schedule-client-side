@@ -6,7 +6,7 @@ import card1 from "../../media/images/howItWorks/card1.webp";
 const HowItWorks = () => {
   return (
     <>
-      <Navbar></Navbar>
+    
       <div className="min-h-screen">
         {/* top banner */}
         <div className="text-center min-h-16">

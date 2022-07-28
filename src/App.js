@@ -24,6 +24,8 @@ import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Comp
 import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
+import Navbar from "./pages/Home/components/Navbar/Navbar";
+import Footer from "./pages/Home/components/Footer/Footer";
 import Apps from "./pages/Dashboard/DashboardComponents/Apps";
 import OneOnOne from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/OneOnOne";
 import Group from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/Group";
@@ -35,6 +37,7 @@ function App() {
   }, []);
   return (
     <div className="App">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/howitworks" element={<HowItWorks></HowItWorks>}></Route>
@@ -74,6 +77,7 @@ function App() {
           <Route path="account"></Route>
         </Route>
       </Routes>
+      <Footer/>
     </div>
   );
 }
