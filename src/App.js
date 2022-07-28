@@ -61,6 +61,7 @@ function App() {
             <Route path="event-types" element={<EventTypes />} />
             <Route path="Scheduled" element={<ScheduledEvents />}>
               {/* Scheduled Event nested */}
+              <Route path="Scheduled" element={<Upcoming />}></Route>
               <Route path="upcoming" element={<Upcoming />}></Route>
               <Route path="pending" element={<Pending />}></Route>
               <Route path="past" element={<Past />}></Route>

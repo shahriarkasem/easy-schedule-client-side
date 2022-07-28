@@ -16,7 +16,7 @@ const DashboardHome = () => {
               <Link to="/dashboard/d-home/event-types">Event Types</Link>
             </li>
             <li>
-              <Link to="/dashboard/d-home/scheduled">Scheduled Events</Link>
+              <Link to="/dashboard/d-home/scheduled/upcoming">Scheduled Events</Link>
             </li>
             <li>
               <Link to="/dashboard/d-home/workflows">Workflows</Link>
