@@ -2,7 +2,7 @@ import React from 'react';
 
 const Group = () => {
     return (
-        <div>
+        <div className='my-20'>
             <p>Hello from group</p>
         </div>
     );
