@@ -18,7 +18,7 @@ const Navbar = () => {
         <Link to="/individuals">Individuals</Link>
       </li>
       <li>
-        <Link to="/team">Teams</Link>
+        <Link to="/teams">Teams</Link>
       </li>
       <li>
         <Link to="/pricing">Pricing</Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
             Easy Schedule
           </Link>
         </div>
-        <div class="navbar-center hidden lg:flex">
+        <div class="navbar-center hidden lg:flex ">
           <ul class="menu menu-horizontal p-0">{navItem}</ul>
         </div>
         <div class="navbar-end">

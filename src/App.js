@@ -9,7 +9,7 @@ import Login from "./pages/login/Login";
 import SignUp from "./pages/login/SignUp";
 import HowItWorks from "./pages/Common/HowItWorks";
 import Individuals from "./pages/Common/Individuals";
-import Teams from "./pages/Common/Team";
+import Teams from "./pages/Common/Teams";
 import Pricing from "./pages/Common/Pricing";
 import Blog from "./pages/Common/Resources/Blog";
 import Support from "./pages/Common/Resources/Support";
@@ -46,7 +46,7 @@ function App() {
           path="/individuals"
           element={<Individuals></Individuals>}
         ></Route>
-        <Route path="/team" element={<Teams></Teams>}></Route>
+        <Route path="/teams" element={<Teams></Teams>}></Route>
         <Route path="/pricing" element={<Pricing></Pricing>}></Route>
         <Route path="/whatsnew" element={<WhatsNew></WhatsNew>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
@@ -77,6 +77,7 @@ function App() {
           <Route path="account"></Route>
         </Route>
       </Routes>
+      <Footer/>
     </div>
   );
 }
