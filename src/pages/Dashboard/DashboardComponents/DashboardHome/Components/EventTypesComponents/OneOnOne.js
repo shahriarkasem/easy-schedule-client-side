@@ -6,8 +6,8 @@ const OneOnOne = () => {
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
-    // console.log(data);
-    // console.log(event.target);
+    console.log(data);
+    console.log(event.target.location.value);
   };
 
   return (
@@ -51,7 +51,7 @@ const OneOnOne = () => {
               <label class="label">
                 <span class="label-text font-semibold">Location</span>
               </label>
-              <select class="select select-bordered">
+              <select class="select select-bordered" name="location" >
                 <option disabled selected>
                   Pick one
                 </option>
