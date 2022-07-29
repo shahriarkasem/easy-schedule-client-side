@@ -15,7 +15,7 @@ const Dashboard = () => {
   const navItem = (
     <>
       <li>
-        <Link to="/dashboard/d-home">Home</Link>
+        <Link to="/dashboard/d-home/event-types">Home</Link>
       </li>
       <li>
         <Link to="/dashboard/availability">Availability</Link>
