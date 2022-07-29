@@ -24,6 +24,7 @@ import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Comp
 import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
+import Billing from "./pages/Dashboard/DashboardComponents/Billing";
 
 function App() {
   useEffect(() => {
@@ -63,7 +64,7 @@ function App() {
           <Route path="availability" element={<Availability />}></Route>
           <Route path="integration" element={<Integrations />}></Route>
           <Route path="help" element={<Help />}></Route>
-          <Route path="account"></Route>
+          <Route path="billing" element={<Billing />}></Route>
         </Route>
       </Routes>
     </div>

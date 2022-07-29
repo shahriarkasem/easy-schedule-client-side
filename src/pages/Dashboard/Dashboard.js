@@ -4,14 +4,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
 import auth from "../../firebase.init";
 
-
 const Dashboard = () => {
   const [user] = useAuthState(auth);
   const handleSignOut = () => {
     signOut(auth);
-    localStorage.removeItem('accessToken');
-
-  }
+    localStorage.removeItem("accessToken");
+  };
   const navItem = (
     <>
       <li>
@@ -29,22 +27,42 @@ const Dashboard = () => {
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
-            <img src="https://placeimg.com/80/80/people" />
+            <img src="https://placeimg.com/80/80/people" alt="" />
           </div>
         </label>
-        <ul tabindex="0" class="mt-3 p-4 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-60">
-          <Link className="p-2" to="/accountSetting">Account Settings</Link>
-          <Link className="p-2" to="/adminmanagement">Admin Management</Link>
-          <Link className="p-2" to="/apps">Apps</Link>
-          <Link className="p-2" to="/billings">Billings</Link>
-          <Link className="p-2" to="/dashboardHome">Dashboard Home</Link>
-          <Link className="p-2" to="/Help">Help</Link>
-          <Link className="p-2" to="/intregrations">Integrations</Link>
-          <Link className="p-2" to="/dashboard">Dashboard</Link>
+        <ul
+          tabindex="0"
+          class="mt-3 p-4 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-60"
+        >
+          <Link className="p-2" to="/accountSetting">
+            Account Settings
+          </Link>
+          <Link className="p-2" to="/admin-management">
+            Admin Management
+          </Link>
+          <Link className="p-2" to="/apps">
+            Apps
+          </Link>
+          <Link className="p-2" to="/dashboard/billing">
+            Billings
+          </Link>
+          <Link className="p-2" to="/dashboardHome">
+            Dashboard Home
+          </Link>
+          <Link className="p-2" to="/Help">
+            Help
+          </Link>
+          <Link className="p-2" to="/integrations">
+            Integrations
+          </Link>
+          <Link className="p-2" to="/dashboard">
+            Dashboard
+          </Link>
           {user ? (
             <Link
               to="/"
-              className="button-orange-border-h40" onClick={handleSignOut}
+              className="button-orange-border-h40"
+              onClick={handleSignOut}
             >
               Logout
             </Link>
