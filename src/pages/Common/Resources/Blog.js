@@ -7,10 +7,12 @@ import blog3 from "../../../media/images/blog/44.jpg";
 import blog4 from "../../../media/images/blog/55.jpg";
 import blog5 from "../../../media/images/blog/66.jpg";
 import blog6 from "../../../media/images/blog/77.jpg";
+import Navbar from "../../Home/components/Navbar/Navbar";
 
 const Blog = () => {
   return (
     <div className="min-h-screen">
+      <Navbar />
       <div className=" blog-bg-2 pb-40  pt-20  flex justify-center items-center">
         <div class="">
           <h2 className=" text-gray-800 lg:text-6xl text-center  text-3xl  font-bold">

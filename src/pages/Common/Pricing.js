@@ -9,10 +9,12 @@ import {
   faArrowRightArrowLeft,
   faCheckCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import Navbar from "../Home/components/Navbar/Navbar";
 
 const Pricing = () => {
   return (
     <div className="min-h-screen px-5">
+      <Navbar />
       <div className="-mx-5 blog-bg-2  p-20 mb-5 pb-40 flex justify-center items-center">
         <div class="">
           <h2 className=" text-gray-800 lg:text-6xl  text-3xl  font-bold">
