@@ -4,10 +4,12 @@ import card3 from "../../media/images/howItWorks/card3.webp";
 import card4 from "../../media/images/howItWorks/card4.webp";
 import card5 from "../../media/images/howItWorks/card5.webp";
 import card6 from "../../media/images/howItWorks/card6.webp";
+import Navbar from "../Home/components/Navbar/Navbar";
 
 const HowItWorks = () => {
   return (
     <>
+      <Navbar />
       <div className="min-h-screen">
         {/* top banner */}
         <div className="-mx-5 blog-bg-2  p-20 mb-5 pb-40 flex justify-center items-center">

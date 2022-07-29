@@ -17,6 +17,7 @@ import Footer from "./components/Footer/Footer";
 const Home = () => {
   return (
     <div>
+      <Navbar />
       <Banner></Banner>
       <EasySchedule />
       <Carousel />

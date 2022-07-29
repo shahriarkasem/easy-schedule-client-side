@@ -1,7 +1,9 @@
 import React from "react";
+import Navbar from "../Home/components/Navbar/Navbar";
 const Individuals = () => {
   return (
     <div className="min-h-screen">
+      <Navbar />
       {/* top banner */}
       <div className="text-center min-h-16">
         <h1 className="text-5xl font-bold">
