@@ -24,6 +24,7 @@ import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Comp
 import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
+import AccountSettings from "./pages/Dashboard/DashboardComponents/AccountSettings";
 
 function App() {
   useEffect(() => {
@@ -65,6 +66,7 @@ function App() {
           <Route path="help" element={<Help />}></Route>
           <Route path="account"></Route>
         </Route>
+        <Route path="accountSetting" element={<AccountSettings></AccountSettings>}></Route>
       </Routes>
     </div>
   );
