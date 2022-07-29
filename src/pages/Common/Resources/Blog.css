@@ -1,0 +1,12 @@
+.blog-bg-1 {
+  background-image: url("../../../media/images/blog/bg.png");
+  background-repeat: no-repeat;
+
+  background-size: 100%;
+}
+.blog-bg-2 {
+  background-image: url("../../../media/images/blog/bg2.png");
+  background-repeat: no-repeat;
+
+  background-size: 100%;
+}
