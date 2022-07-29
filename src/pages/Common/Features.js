@@ -4,10 +4,13 @@ import img2 from "../../media/images/features/img2.webp";
 import img3 from "../../media/images/features/img3.webp";
 import card1 from "../../media/images/features/card1.webp";
 import card2 from "../../media/images/features/card2.webp";
+import Navbar from "../Home/components/Navbar/Navbar";
 
 const Features = () => {
   return (
+    
     <div className="min-h-screen ">
+      <Navbar />
       {/* top banner */}
       <div className="-mx-5 blog-bg-2  p-20 mb-5 pb-40 flex justify-center items-center">
         <div class="">
