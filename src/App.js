@@ -28,6 +28,7 @@ import Upcoming from "./pages/Dashboard/DashboardComponents/DashboardHome/Compon
 import Pending from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Pending/Pending";
 import Past from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Past/Past";
 import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/ScheduledEvent";
+import DateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/DateRange";
 
 function App() {
   useEffect(() => {
@@ -65,6 +66,7 @@ function App() {
               <Route path="upcoming" element={<Upcoming />}></Route>
               <Route path="pending" element={<Pending />}></Route>
               <Route path="past" element={<Past />}></Route>
+              {/* <Route path="date" element={<DateRange />}></Route> */}
             </Route>
             <Route path="workflows" element={<Workflows />} />
             <Route path="routing" element={<RoutingForms />} />
