@@ -29,8 +29,6 @@ const Home = () => {
       <Booking></Booking>
       <PowerfulFeatures></PowerfulFeatures>
       <ReadySignup></ReadySignup>
-
-      <Footer />
     </div>
   );
 };

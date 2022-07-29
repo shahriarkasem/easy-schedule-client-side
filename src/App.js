@@ -21,10 +21,20 @@ import Availability from "./pages/Dashboard/DashboardComponents/Availability";
 import Integrations from "./pages/Dashboard/DashboardComponents/Integrations";
 import Help from "./pages/Dashboard/DashboardComponents/Help";
 import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypes";
-import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
+// import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
 import AccountSettings from "./pages/Dashboard/DashboardComponents/AccountSettings";
+import Upcoming from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Upcoming/Upcoming";
+import Pending from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Pending/Pending";
+import Past from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Past/Past";
+import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/ScheduledEvent";
+import Navbar from "./pages/Home/components/Navbar/Navbar";
+import Footer from "./pages/Home/components/Footer/Footer";
+import Apps from "./pages/Dashboard/DashboardComponents/Apps";
+import OneOnOne from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/OneOnOne";
+import Group from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/Group";
+import EventTypesName from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/EventTypesName";
 
 function App() {
   useEffect(() => {
@@ -56,18 +66,30 @@ function App() {
           <Route path="d-home" element={<DashboardHome />}>
             {/* home nested */}
             <Route path="event-types" element={<EventTypes />} />
-            <Route path="Scheduled" element={<ScheduledEvents />} />
+            <Route path="Scheduled" element={<ScheduledEvents />}>
+              {/* Scheduled Event nested */}
+              <Route path="Scheduled" element={<Upcoming />}></Route>
+              <Route path="upcoming" element={<Upcoming />}></Route>
+              <Route path="pending" element={<Pending />}></Route>
+              <Route path="past" element={<Past />}></Route>
+              {/* <Route path="date" element={<DateRange />}></Route> */}
+            </Route>
             <Route path="workflows" element={<Workflows />} />
             <Route path="routing" element={<RoutingForms />} />
           </Route>
 
+          <Route path="event-type" element={<EventTypesName />}></Route>
+          <Route path="event-type/one-on-one" element={<OneOnOne />}></Route>
+          <Route path="event-type/group" element={<Group />}></Route>
           <Route path="availability" element={<Availability />}></Route>
           <Route path="integration" element={<Integrations />}></Route>
+          <Route path="apps" element={<Apps />}></Route>
           <Route path="help" element={<Help />}></Route>
           <Route path="account"></Route>
         </Route>
         <Route path="accountSetting" element={<AccountSettings></AccountSettings>}></Route>
       </Routes>
+      <Footer />
     </div>
   );
 }
