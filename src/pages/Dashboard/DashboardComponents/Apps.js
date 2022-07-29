@@ -12,9 +12,9 @@ import firefox from "../../../media/images/dashboardApps/Firefox_logo,_2017.svg.
 const Apps = () => {
   return (
     <div className="min-h-screen my-10">
-      <div className=" mx-4 mt-10 lg:mx-48">
+      <div className="mt-20">
         <div>
-          <h2 className="my-5 text-lg font-bold">Apps</h2>
+          <h2 className="my-5 text-2xl font-bold">Apps</h2>
         </div>
         <div className="mb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8">

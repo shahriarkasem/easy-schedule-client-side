@@ -28,7 +28,12 @@ import Upcoming from "./pages/Dashboard/DashboardComponents/DashboardHome/Compon
 import Pending from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Pending/Pending";
 import Past from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Past/Past";
 import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/ScheduledEvent";
-import DateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/DateRange";
+import Navbar from "./pages/Home/components/Navbar/Navbar";
+import Footer from "./pages/Home/components/Footer/Footer";
+import Apps from "./pages/Dashboard/DashboardComponents/Apps";
+import OneOnOne from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/OneOnOne";
+import Group from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/Group";
+import EventTypesName from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/EventTypesName";
 
 function App() {
   useEffect(() => {
@@ -36,6 +41,7 @@ function App() {
   }, []);
   return (
     <div className="App">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/howitworks" element={<HowItWorks></HowItWorks>}></Route>
@@ -72,12 +78,17 @@ function App() {
             <Route path="routing" element={<RoutingForms />} />
           </Route>
 
+          <Route path="event-type" element={<EventTypesName />}></Route>
+          <Route path="event-type/one-on-one" element={<OneOnOne />}></Route>
+          <Route path="event-type/group" element={<Group />}></Route>
           <Route path="availability" element={<Availability />}></Route>
           <Route path="integration" element={<Integrations />}></Route>
+          <Route path="apps" element={<Apps />}></Route>
           <Route path="help" element={<Help />}></Route>
           <Route path="account"></Route>
         </Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

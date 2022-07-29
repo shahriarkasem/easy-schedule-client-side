@@ -1,11 +1,21 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
+import auth from "../../firebase.init";
+
 
 const Dashboard = () => {
+  const [user] = useAuthState(auth);
+  const handleSignOut = () => {
+    signOut(auth);
+    localStorage.removeItem('accessToken');
+
+  }
   const navItem = (
     <>
       <li>
-        <Link to="/dashboard/d-home">Home</Link>
+        <Link to="/dashboard/d-home/event-types">Home</Link>
       </li>
       <li>
         <Link to="/dashboard/availability">Availability</Link>
@@ -16,9 +26,35 @@ const Dashboard = () => {
       <li>
         <Link to="/dashboard/help">Help</Link>
       </li>
-      <li>
-        <Link to="/dashboard/account">Account</Link>
-      </li>
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+          <div class="w-10 rounded-full">
+            <img src="https://placeimg.com/80/80/people" />
+          </div>
+        </label>
+        <ul tabindex="0" class="mt-3 p-4 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-60">
+          <Link className="p-2" to="/accountSetting">Account Settings</Link>
+          <Link className="p-2" to="/adminmanagement">Admin Management</Link>
+          <Link className="p-2" to="/dashboard/apps">Apps</Link>
+          <Link className="p-2" to="/billings">Billings</Link>
+          <Link className="p-2" to="/dashboardHome">Dashboard Home</Link>
+          <Link className="p-2" to="/Help">Help</Link>
+          <Link className="p-2" to="/intregrations">Integrations</Link>
+          <Link className="p-2" to="/dashboard">Dashboard</Link>
+          {user ? (
+            <Link
+              to="/"
+              className="button-orange-border-h40" onClick={handleSignOut}
+            >
+              Logout
+            </Link>
+          ) : (
+            <Link to="/login" class="button-orange-border-h40">
+              Login
+            </Link>
+          )}
+        </ul>
+      </div>
     </>
   );
 

@@ -64,7 +64,7 @@ const Navbar = () => {
             Easy Schedule
           </Link>
         </div>
-        <div class="navbar-center hidden lg:flex">
+        <div class="navbar-center hidden lg:flex ">
           <ul class="menu menu-horizontal p-0">{navItem}</ul>
         </div>
         <div class="navbar-end">
