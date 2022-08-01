@@ -13,7 +13,10 @@ const Dashboard = () => {
   const navItem = (
     <>
       <li>
-        <Link to="/dashboard/d-home">Home</Link>
+        <Link to="/dashboard/d-home/event-types">Home</Link>
+      </li>
+      <li>
+        <Link to="/dashboard/billing">Billing</Link>
       </li>
       <li>
         <Link to="/dashboard/availability">Availability</Link>
@@ -43,9 +46,7 @@ const Dashboard = () => {
           <Link className="p-2" to="/apps">
             Apps
           </Link>
-          <Link className="p-2" to="/dashboard/billing">
-            Billings
-          </Link>
+
           <Link className="p-2" to="/dashboardHome">
             Dashboard Home
           </Link>
