@@ -24,6 +24,7 @@ import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Comp
 // import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
+import Billing from "./pages/Dashboard/DashboardComponents/Billing";
 import Upcoming from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Upcoming/Upcoming";
 import Pending from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Pending/Pending";
 import Past from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Past/Past";
@@ -34,6 +35,7 @@ import Apps from "./pages/Dashboard/DashboardComponents/Apps";
 import OneOnOne from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/OneOnOne";
 import Group from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/Group";
 import EventTypesName from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/EventTypesName";
+import DateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/DateRange";
 
 function App() {
   useEffect(() => {
@@ -71,7 +73,7 @@ function App() {
               <Route path="upcoming" element={<Upcoming />}></Route>
               <Route path="pending" element={<Pending />}></Route>
               <Route path="past" element={<Past />}></Route>
-              {/* <Route path="date" element={<DateRange />}></Route> */}
+              <Route path="date" element={<DateRange />}></Route>
             </Route>
             <Route path="workflows" element={<Workflows />} />
             <Route path="routing" element={<RoutingForms />} />
@@ -81,10 +83,10 @@ function App() {
           <Route path="event-type/one-on-one" element={<OneOnOne />}></Route>
           <Route path="event-type/group" element={<Group />}></Route>
           <Route path="availability" element={<Availability />}></Route>
+          <Route path="billing" element={<Billing />}></Route>
           <Route path="integration" element={<Integrations />}></Route>
           <Route path="apps" element={<Apps />}></Route>
           <Route path="help" element={<Help />}></Route>
-          <Route path="account"></Route>
         </Route>
       </Routes>
       <Footer />
