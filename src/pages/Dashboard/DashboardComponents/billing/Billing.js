@@ -1,6 +1,7 @@
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import BillingModal from "./BillingModal";
 
 const Billing = () => {
   return (
@@ -24,7 +25,7 @@ const Billing = () => {
             <p className=" text-8xl font-bold">10</p>
           </div>
           <h3 className="text-center py-5 text-xl">per calendar / month</h3>
-          <div className="flex justify-center items-center lg:gap-5 gap-2">
+          {/* <div className="flex justify-center items-center lg:gap-5 gap-2">
             <h3 className=" ">Billed</h3>
             <div class="form-control w-36  max-w-xs">
               <select class="select select-bordered">
@@ -39,7 +40,7 @@ const Billing = () => {
                 <option>৳ BDT</option>
               </select>
             </div>
-          </div>
+          </div> */}
           <div className="flex justify-start items-center gap-5 pb-4 pt-10">
             <FontAwesomeIcon
               style={{ color: "#F88148" }}
@@ -63,12 +64,15 @@ const Billing = () => {
           </div>
           <div className="flex justify-center w-full py-7">
             {" "}
-            <button className="btn button-orange rounded-3xl px-16">
+            <label
+              for="my-modal-6"
+              className="btn button-orange rounded-3xl px-16"
+            >
               Select
-            </button>
+            </label>
           </div>
 
-          <h3 className="text-center text-gray-400">
+          <h3 className="text-center text-gray-500">
             Stripe, SSLCOMMERZ and PayPal payment method are available.
           </h3>
         </div>
@@ -86,7 +90,7 @@ const Billing = () => {
           </div>
 
           <h3 className="text-center py-5 text-xl">per calendar / month</h3>
-          <div className="flex justify-center items-center lg:gap-5 gap-2">
+          {/* <div className="flex justify-center items-center lg:gap-5 gap-2">
             <h3 className=" ">Billed</h3>
             <div class="form-control w-36  max-w-xs">
               <select class="select select-bordered">
@@ -101,7 +105,7 @@ const Billing = () => {
                 <option>৳ BDT</option>
               </select>
             </div>
-          </div>
+          </div> */}
 
           <div className="flex justify-start items-center gap-5 pb-4 pt-10">
             <FontAwesomeIcon
@@ -129,16 +133,20 @@ const Billing = () => {
           </div>
           <div className="flex justify-center w-full py-7">
             {" "}
-            <button className="btn button-orange rounded-3xl px-16">
+            <label
+              for="my-modal-6"
+              className="btn button-orange rounded-3xl px-16"
+            >
               Select
-            </button>
+            </label>
           </div>
 
-          <h3 className="text-center text-gray-400">
+          <h3 className="text-center text-gray-500">
             Stripe, SSLCOMMERZ and PayPal payment method are available.
           </h3>
         </div>
       </div>
+      <BillingModal />
     </div>
   );
 };
