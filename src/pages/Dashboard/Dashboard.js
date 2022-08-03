@@ -1,15 +1,22 @@
 import { signOut } from "firebase/auth";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
+  const [firstLetter, setFirstLetter] = useState("");
   const handleSignOut = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
   };
+
+  useEffect(() => {
+    const userNameFirstLetter = user?.displayName?.charAt(0);
+    setFirstLetter(userNameFirstLetter);
+  }, [user]);
+
   const navItem = (
     <>
       <li>
@@ -30,7 +37,13 @@ const Dashboard = () => {
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
-            <img src="https://placeimg.com/80/80/people" alt="" />
+            {user?.photoURL ? (
+              <img src={user?.photoURL || ""} alt="N/A" />
+            ) : (
+              <div className="w-full bg-green-400 h-full text-center flex items-center justify-center">
+                <p className="text-lg font-thin">{firstLetter}</p>
+              </div>
+            )}
           </div>
         </label>
         <ul
