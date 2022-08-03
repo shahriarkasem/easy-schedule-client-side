@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -8,6 +9,24 @@ const Group = () => {
   const onSubmit = (data, event) => {
     // console.log(data);
     // console.log(event.target);
+    const eventName = data.eventName;
+    const description = data.description;
+    const eventLink = data.eventLink;
+    const location = event.target.location.value;
+    const fullData = { eventName, description, eventLink, location };
+    console.log(fullData);
+    axios({
+      method: 'POST',
+      headers: {
+        // authorization
+      },
+      url: `http://localhost:5000/`,
+      data: fullData,
+    }).then(res=>{
+      console.log(res)
+    }).catch(error => {
+      console.log(error);
+    })
   };
 
   return (
@@ -20,7 +39,7 @@ const Group = () => {
           Back
         </button>
         <h4 className="text-center w-full font-semibold text-2xl">
-        Add Group Event Type
+          Add Group Event Type
         </h4>
       </div>
       <div className="border-2 rounded-md border-sky-800">
@@ -51,19 +70,23 @@ const Group = () => {
               <label class="label">
                 <span class="label-text font-semibold">Location</span>
               </label>
-              <select class="select select-bordered">
-                <option disabled selected>
+              <select
+                defaultValue={"DEFAULT"}
+                class="select select-bordered"
+                name="location"
+              >
+                <option disabled value="DEFAULT">
                   Pick one
                 </option>
-                <option>In-person meeting</option>
-                <option>Phone call</option>
-                <option>Google Meet</option>
-                <option>Zoom</option>
-                <option>Microsoft Teams</option>
-                <option>Webex</option>
-                <option>GoTo Meeting</option>
-                <option>Custom</option>
-                <option>Ask invitee</option>
+                <option value="In-person meeting">In-person meeting</option>
+                <option value="Phone call">Phone call</option>
+                <option value="Google Meet">Google Meet</option>
+                <option value="Zoom">Zoom</option>
+                <option value="Microsoft Teams">Microsoft Teams</option>
+                <option value="Webex">Webex</option>
+                <option value="GoTo Meeting">GoTo Meeting</option>
+                <option value="Custom">Custom</option>
+                <option value="Ask invitee">Ask invitee</option>
               </select>
             </div>
             <div class="form-control w-full max-w-md mt-3 md:mt-5">
@@ -94,13 +117,15 @@ const Group = () => {
             </div>
             <div class="form-control w-full max-w-md mt-3 md:mt-5">
               <label class="label">
-                <span class="label-text font-semibold">Max invitees in a spot</span>
+                <span class="label-text font-semibold">
+                  Max invitees in a spot
+                </span>
               </label>
               <input
                 type="text"
                 placeholder=""
                 class="input input-bordered w-full max-w-md"
-                {...register("maxInvite", { required: true,  min: 2, max: 99 })}
+                {...register("maxInvite", { required: true, min: 2, max: 99 })}
               />
             </div>
             <input
