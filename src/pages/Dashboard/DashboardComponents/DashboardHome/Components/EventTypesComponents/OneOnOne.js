@@ -1,31 +1,34 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import auth from "../../../../../../firebase.init";
 
 const OneOnOne = () => {
+  const [user] = useAuthState(auth);
+
   const [eventLocation, setEventLocation] = useState();
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
-    // console.log(data);
-    // console.log(event.target.location.value);
+    const userEmail = user?.email;
+    const eventType = 'OneOnOne';
     const eventName = data.eventName;
     const description = data.description;
     const eventLink = data.eventLink;
     const location = event.target.location.value;
-    const fullData = { eventName, description, eventLink, location };
-    console.log(fullData);
+    const fullData = { userEmail, eventType, eventName, description, eventLink, location };
     axios({
       method: 'POST',
       headers: {
         // authorization
       },
-      url: `http://localhost:5000/`,
+      url: `http://localhost:5000/event/create`,
       data: fullData,
     }).then(res=>{
-      console.log(res)
+      // console.log(res)
     }).catch(error => {
-      console.log(error);
+      // console.log(error);
     })
   };
 
