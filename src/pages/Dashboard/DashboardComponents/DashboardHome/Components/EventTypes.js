@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import auth from "../../../../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 
 const EventTypes = () => {
   const [user] = useAuthState(auth);
-  // console.log(user?.photoURL);
   const navigate = useNavigate();
+  const [firstLetter, setFirstLetter] = useState('');
+
+  useEffect(() => {
+    const userNameFirstLetter = user?.displayName?.charAt(0);
+    setFirstLetter(userNameFirstLetter);
+  },[user])
+  
 
   return (
     <div className="my-12">
@@ -28,7 +34,13 @@ const EventTypes = () => {
             <div class="flex flex-row">
               <div class="avatar">
                 <div class="w-10 md:w-12 rounded-full ring-offset-base-100">
-                  <img src={user?.photoURL || ""} alt="N/A" />
+                  {user?.photoURL ? (
+                    <img src={user?.photoURL || ""} alt="N/A" />
+                  ) : (
+                    <div className="w-full bg-red-400 h-full text-center flex items-center justify-center">
+                      <p className="text-lg">{firstLetter}</p>
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="pl-3">

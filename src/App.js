@@ -36,6 +36,8 @@ import OneOnOne from "./pages/Dashboard/DashboardComponents/DashboardHome/Compon
 import Group from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/Group";
 import EventTypesName from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/EventTypesName";
 import DateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/DateRange";
+import AccountSettings from "./pages/Dashboard/DashboardComponents/AccountSettings";
+import AdminManagement from "./pages/Dashboard/DashboardComponents/AdminManagement";
 
 function App() {
   useEffect(() => {
@@ -87,6 +89,9 @@ function App() {
           <Route path="integration" element={<Integrations />}></Route>
           <Route path="apps" element={<Apps />}></Route>
           <Route path="help" element={<Help />}></Route>
+          <Route path="accountSetting" element={<AccountSettings />}></Route>
+          <Route path="admin-management" element={<AdminManagement />}></Route>
+          <Route path="integrations" element={<Integrations />}></Route>
         </Route>
       </Routes>
       <Footer />
