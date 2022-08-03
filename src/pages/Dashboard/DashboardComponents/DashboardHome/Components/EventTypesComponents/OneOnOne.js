@@ -23,7 +23,7 @@ const OneOnOne = () => {
       headers: {
         // authorization
       },
-      url: `http://localhost:5000/event/create`,
+      url: `http://localhost:5000/event/create/OneOnOne`,
       data: fullData,
     }).then(res=>{
       // console.log(res)

@@ -1,31 +1,38 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import auth from "../../../../../../firebase.init";
 
 const Group = () => {
   const [eventLocation, setEventLocation] = useState();
+  const [user] = useAuthState(auth);
+
+  const handleLocation = (e) => {
+    const location = e.target.value;
+    setEventLocation(location);
+  }
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
-    // console.log(data);
-    // console.log(event.target);
+    const userEmail = user?.email;
+    const eventType = 'Group';
     const eventName = data.eventName;
     const description = data.description;
     const eventLink = data.eventLink;
     const location = event.target.location.value;
-    const fullData = { eventName, description, eventLink, location };
-    console.log(fullData);
+    const fullData = { userEmail, eventType, eventName, description, eventLink, location };
     axios({
       method: 'POST',
       headers: {
         // authorization
       },
-      url: `http://localhost:5000/`,
+      url: `http://localhost:5000/event/create/group`,
       data: fullData,
     }).then(res=>{
-      console.log(res)
+      // console.log(res)
     }).catch(error => {
-      console.log(error);
+      // console.log(error);
     })
   };
 
@@ -66,7 +73,7 @@ const Group = () => {
                 {...register("eventName", { required: true, maxLength: 40 })}
               />
             </div>
-            <div class="form-control w-full max-w-md mt-3 md:mt-5">
+            <div class="form-control w-full max-w-md mt-3 md:mt-5" onChange={handleLocation}>
               <label class="label">
                 <span class="label-text font-semibold">Location</span>
               </label>
