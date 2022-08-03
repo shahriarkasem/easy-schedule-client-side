@@ -9,6 +9,11 @@ const OneOnOne = () => {
 
   const [eventLocation, setEventLocation] = useState();
 
+  const handleLocation = e => {
+    const location = e.target.value;
+    setEventLocation(location);
+  }
+
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
     const userEmail = user?.email;
@@ -69,7 +74,7 @@ const OneOnOne = () => {
                 {...register("eventName", { required: true, maxLength: 40 })}
               />
             </div>
-            <div class="form-control w-full max-w-md mt-3 md:mt-5">
+            <div class="form-control w-full max-w-md mt-3 md:mt-5" onChange={handleLocation}>
               <label class="label">
                 <span class="label-text font-semibold">Location</span>
               </label>
