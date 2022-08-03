@@ -5,9 +5,11 @@ import img3 from "../../media/images/Individuals/img3.webp";
 import img4 from "../../media/images/Individuals/img4.webp";
 import img5 from "../../media/images/Individuals/img5.webp";
 import img6 from "../../media/images/Individuals/img6.webp";
+import Navbar from "../Home/components/Navbar/Navbar";
 const Individuals = () => {
   return (
     <div>
+      <Navbar />
       {/* top banner  className="min-h-screen" */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mx-12  mt-8">
         <div className="mt-10  ml-20">

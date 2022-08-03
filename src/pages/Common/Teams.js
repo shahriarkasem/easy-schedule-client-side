@@ -2,10 +2,12 @@ import React from "react";
 import team1 from "../../media/images/teams/team1.png";
 import team2 from "../../media/images/teams/team2.png";
 import team3 from "../../media/images/teams/team3.png";
+import Navbar from "../Home/components/Navbar/Navbar";
 
 const Teams = () => {
   return (
     <div className="min-h-screen px-11">
+      <Navbar />
       <div className=" mt-28 mb-40">
         <h1>EASY SCHEDULE FOR TEAMS</h1>
         <div className="grid  lg:grid-cols-2 grid-cols-1 gap-10">

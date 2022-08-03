@@ -34,9 +34,9 @@ const SignUp = () => {
     );
   }
 
-  const onSubmit = (data) => {
-    createUserWithEmailAndPassword(data.email, data.password);
-    updateProfile({ displayName: data.name });
+  const onSubmit = async (data) => {
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
 
     reset();
   };

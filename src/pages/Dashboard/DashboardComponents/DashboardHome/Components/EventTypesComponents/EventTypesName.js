@@ -24,7 +24,7 @@ const EventTypesName = () => {
                     </div>
                 </div>
                 <div className="flex md:justify-end w-full md:w-fit">
-                <button class="bg-blue-500 text-white px-4 py-3 rounded-3xl mt-5 md:mt-0 w-full md:w-fit">Create</button>
+                <button onClick={() => navigate('/dashboard/event-type/one-on-one')} class="bg-blue-500 text-white px-4 py-3 rounded-3xl mt-5 md:mt-0 w-full md:w-fit">Create</button>
                 </div>
             </div>
             <div className='flex flex-col md:flex-row justify-between items-center my-20'>
@@ -36,7 +36,7 @@ const EventTypesName = () => {
                     </div>
                 </div>
                 <div className="flex md:justify-end w-full md:w-fit">
-                <button class="bg-blue-500 text-white px-4 py-3 rounded-3xl mt-5 md:mt-0 w-full md:w-fit">Create</button>
+                <button onClick={() => navigate('/dashboard/event-type/group')} class="bg-blue-500 text-white px-4 py-3 rounded-3xl mt-5 md:mt-0 w-full md:w-fit">Create</button>
                 </div>
             </div>
             <div className='flex flex-col md:flex-row justify-between items-center my-20'>
@@ -63,12 +63,7 @@ const EventTypesName = () => {
                 <button class="bg-blue-500 text-white px-4 py-3 rounded-3xl mt-5 md:mt-0 w-full md:w-fit">Create</button>
                 </div>
             </div>
-           
 
-            {/* testing */}
-            {/* <h1>Hello from event type</h1>
-            <button className='btn btn-primary' onClick={() => navigate('/dashboard/event-type/one-on-one')}>One-On-One</button>
-            <button className='btn btn-primary' onClick={() => navigate('/dashboard/event-type/group')}>Group</button> */}
         </div>
     );
 };
