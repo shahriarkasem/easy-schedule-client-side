@@ -50,26 +50,26 @@ const Dashboard = () => {
           tabindex="0"
           class="mt-3 p-4 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-60"
         >
-          <Link className="p-2" to="/accountSetting">
+          <Link className="p-2" to="accountSetting">
             Account Settings
           </Link>
-          <Link className="p-2" to="/admin-management">
+          <Link className="p-2" to="admin-management">
             Admin Management
           </Link>
-          <Link className="p-2" to="/apps">
+          <Link className="p-2" to="apps">
             Apps
           </Link>
 
-          <Link className="p-2" to="/dashboardHome">
+          {/* <Link className="p-2" to="dashboardHome">
             Dashboard Home
-          </Link>
-          <Link className="p-2" to="/Help">
+          </Link> */}
+          <Link className="p-2" to="Help">
             Help
           </Link>
-          <Link className="p-2" to="/integrations">
+          <Link className="p-2" to="integrations">
             Integrations
           </Link>
-          <Link className="p-2" to="/dashboard">
+          <Link className="p-2" to="/dashboard/d-home/event-types">
             Dashboard
           </Link>
           {user ? (

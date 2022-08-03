@@ -2,7 +2,7 @@ import React from "react";
 
 const Integrations = () => {
   return (
-    <div className="">
+    <div className="min-h-screen">
       <h2 className="text-4xl"> Integration</h2>
     </div>
   );
