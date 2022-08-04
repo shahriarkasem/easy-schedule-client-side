@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import auth from "../../../../../../firebase.init";
+import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 const OneOnOne = () => {
   const [user] = useAuthState(auth);
+  const navigate = useNavigate('');
 
   const [eventLocation, setEventLocation] = useState();
 
@@ -36,7 +39,7 @@ const OneOnOne = () => {
       eventLink,
       location,
     };
-    console.log(fullData);
+    // console.log(fullData);
     axios({
       method: 'POST',
       headers: {
@@ -45,9 +48,13 @@ const OneOnOne = () => {
       url: `http://localhost:5000/event/create/OneOnOne`,
       data: fullData,
     }).then(res=>{
+      if(res.status === 200){
+        toast.success('Event created successfully')
+        navigate('/dashboard/d-home/event-types')
+      }
       // console.log(res)
     }).catch(error => {
-      // console.log(error);
+      console.log(error);
     })
   };
 

@@ -70,7 +70,7 @@ const EventTypes = () => {
         <div>
           <div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 mt-5 md:mt-8">
-              {userEvents.map((soloEvent, index) => (
+              { userEvents && userEvents.map((soloEvent, index) => (
                 <UserEvents
                 key={index}
                 soloEvent={soloEvent}
