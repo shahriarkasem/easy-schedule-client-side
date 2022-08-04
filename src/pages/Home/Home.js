@@ -14,11 +14,13 @@ import Meeting from "./components/Meeting/Meeting";
 import EasySchedule from "./components/EasySchedule/EasySchedule";
 import Footer from "./components/Footer/Footer";
 
+
 const Home = () => {
   return (
     <div>
       <Navbar />
       <Banner></Banner>
+
       <EasySchedule />
       <Carousel />
       <Integration />
@@ -29,6 +31,7 @@ const Home = () => {
       <Booking></Booking>
       <PowerfulFeatures></PowerfulFeatures>
       <ReadySignup></ReadySignup>
+
     </div>
   );
 };
