@@ -96,7 +96,6 @@ function App() {
           <Route path="admin-management" element={<AdminManagement />}></Route>
           <Route path="integrations" element={<Integrations />}></Route>
         </Route>
-        <Route path="accountSetting" element={<AccountSettings></AccountSettings>}></Route>
       </Routes>
       <Footer />
       <ToastContainer />
