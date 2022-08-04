@@ -24,7 +24,11 @@ import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Comp
 // import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
+<<<<<<< HEAD
+import AccountSettings from "./pages/Dashboard/DashboardComponents/AccountSettings";
+=======
 import Billing from "./pages/Dashboard/DashboardComponents/billing/Billing";
+>>>>>>> 90938624b200a211282e9184cbb102abab5ddc91
 import Upcoming from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Upcoming/Upcoming";
 import Pending from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Pending/Pending";
 import Past from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Past/Past";
@@ -95,6 +99,7 @@ function App() {
           <Route path="admin-management" element={<AdminManagement />}></Route>
           <Route path="integrations" element={<Integrations />}></Route>
         </Route>
+        <Route path="accountSetting" element={<AccountSettings></AccountSettings>}></Route>
       </Routes>
       <Footer />
       <ToastContainer />
