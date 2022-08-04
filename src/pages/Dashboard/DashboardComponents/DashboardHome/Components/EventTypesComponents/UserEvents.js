@@ -20,7 +20,7 @@ const UserEvents = ({soloEvent}) => {
             <p className="font-thin text-slate-500">
               Date:  {eventDate}
             </p>
-            <p className="my-2 md:my-3 text-blue-600 hover:cursor-pointer hover:underline">
+            <p className="mt-2 mb-1 text-blue-600 hover:cursor-pointer hover:underline">
               View booking page
             </p>
           </div>
