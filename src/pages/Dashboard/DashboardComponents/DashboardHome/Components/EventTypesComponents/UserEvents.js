@@ -1,7 +1,8 @@
 import React from 'react';
 
 const UserEvents = ({soloEvent}) => {
-    const {_id, userEmail, eventType, eventName, description, eventLink, location} = soloEvent;
+    const {_id, userEmail, eventType, eventName, description, eventLink, location, eventDate, eventTime, eventDuration} = soloEvent;
+    console.log(soloEvent);
 
     return (
         <div class="card bg-base-100 shadow-xl border-t-4 border-red-500">
@@ -14,7 +15,10 @@ const UserEvents = ({soloEvent}) => {
           <div className="mt-2 md:mt-5">
             <h4 className="text-2xl">{eventName}</h4>
             <p className="font-thin text-slate-400">
-              Event duration, {eventType}
+              {eventDuration}min, {eventType}
+            </p>
+            <p className="font-thin text-slate-500">
+              Date:  {eventDate}
             </p>
             <p className="my-2 md:my-3 text-blue-600 hover:cursor-pointer hover:underline">
               View booking page

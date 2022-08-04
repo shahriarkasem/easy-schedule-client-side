@@ -8,18 +8,13 @@ import UserEvents from "./EventTypesComponents/UserEvents";
 const EventTypes = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
+  const { isLoading, error, userEvents, refetch } = useUserEvents();
   const [firstLetter, setFirstLetter] = useState("");
 
   useEffect(() => {
     const userNameFirstLetter = user?.displayName?.charAt(0);
     setFirstLetter(userNameFirstLetter);
   }, [user]);
-
-  const { isLoading, error, userEvents, refetch } = useUserEvents();
-  console.log(userEvents);
-  // userEvents?.oneOnOneEvent?.map((oneEvent, index) => {
-  //   console.log(oneEvent)
-  // })
 
   return (
     <div className="my-12">
