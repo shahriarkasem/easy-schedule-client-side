@@ -34,10 +34,10 @@ const SignUp = () => {
     );
   }
 
-  const onSubmit = (data) => {
-    console.log(data.name);
-    createUserWithEmailAndPassword(data.email, data.password);
-    updateProfile({ displayName: data.name });
+  const onSubmit = async (data) => {
+    // console.log(data.name);
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
     const name = data.name;
     const email = data.email;
     // console.log(name, email);
