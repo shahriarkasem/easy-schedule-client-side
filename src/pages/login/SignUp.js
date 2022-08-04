@@ -34,6 +34,7 @@ const SignUp = () => {
     );
   }
 
+<<<<<<< HEAD
   const onSubmit = (data) => {
     console.log(data.name);
     createUserWithEmailAndPassword(data.email, data.password);
@@ -55,6 +56,12 @@ const SignUp = () => {
         console.log(data);
         alert("user added successfully");
       });
+=======
+  const onSubmit = async (data) => {
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
+
+>>>>>>> 90938624b200a211282e9184cbb102abab5ddc91
     reset();
   };
 

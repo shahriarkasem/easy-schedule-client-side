@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import allTImeBookings from "../../../../media/images/booking/alltimebooking.png";
 import monthBookings from "../../../../media/images/booking/month.png";
 import todayBookings from "../../../../media/images/booking/today.png";
+import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
 
 const Booking = () => {
   const [todayBooking, setTodayBooking] = useState(48805);
@@ -11,7 +13,7 @@ const Booking = () => {
   return (
     <div>
       <div className="md:mx-20 lg:mx-36">
-        <h2 className=" font-medium text-3xl text-center ">
+        <h2 className=" font-medium text-3xl text-center">
           We handle 1000's of{" "}
           <span className="font-bold text-4xl text-[#ef7841]">bookings</span>{" "}
           for <br /> our users every single day
@@ -22,9 +24,15 @@ const Booking = () => {
               <img className="w-28" src={todayBookings} alt="" />
             </div>
             <div>
-              <h5 className="text-xl md:text-2xl lg:text-2xl font-bold text-[#ef7841]  mt-3">
-                {todayBooking}
-              </h5>
+              <div className="text-xl md:text-2xl lg:text-2xl font-bold text-[#ef7841]  mt-3">
+                <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                  {({ isVisible }) => (
+                    <div style={{ height: 30 }}>
+                      {isVisible ? <CountUp end={todayBooking} /> : null}
+                    </div>
+                  )}
+                </VisibilitySensor>
+              </div>
               <p className=" font-medium lg:text-xl mt-1 md:mt-2">weekly</p>
             </div>
           </div>
@@ -33,9 +41,15 @@ const Booking = () => {
               <img className="w-28" src={monthBookings} alt="" />
             </div>
             <div>
-              <h5 className="text-xl md:text-2xl lg:text-2xl text-[#ef7841] font-bold  mt-3">
-                {monthBooking}
-              </h5>
+              <div className="text-xl md:text-2xl lg:text-2xl text-[#ef7841] font-bold  mt-3">
+                <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                  {({ isVisible }) => (
+                    <div style={{ height: 30 }}>
+                      {isVisible ? <CountUp end={monthBooking} /> : null}
+                    </div>
+                  )}
+                </VisibilitySensor>
+              </div>
               <p className=" font-medium lg:text-xl mt-1 md:mt-2">monthly</p>
             </div>
           </div>
@@ -45,7 +59,13 @@ const Booking = () => {
             </div>
             <div>
               <h5 className="text-xl md:text-2xl lg:text-2xl  text-[#ef7841] font-bold  mt-3">
-                {allTimeBooking}
+                <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                  {({ isVisible }) => (
+                    <div style={{ height: 30 }}>
+                      {isVisible ? <CountUp end={allTimeBooking} /> : null}
+                    </div>
+                  )}
+                </VisibilitySensor>
               </h5>
               <p className=" font-medium lg:text-xl mt-1 md:mt-2">yearly</p>
             </div>
