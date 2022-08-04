@@ -34,34 +34,10 @@ const SignUp = () => {
     );
   }
 
-<<<<<<< HEAD
-  const onSubmit = (data) => {
-    console.log(data.name);
-    createUserWithEmailAndPassword(data.email, data.password);
-    updateProfile({ displayName: data.name });
-    const name = data.name;
-    const email = data.email;
-    // console.log(name, email);
-    const allData = { name, email };
-    console.log(allData);
-    fetch("http://localhost:5000/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(allData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        alert("user added successfully");
-      });
-=======
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
 
->>>>>>> 90938624b200a211282e9184cbb102abab5ddc91
     reset();
   };
 
