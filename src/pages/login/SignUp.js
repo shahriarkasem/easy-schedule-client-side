@@ -57,7 +57,7 @@ const SignUp = () => {
       });
     reset();
   };
-
+  console.log(user);
   if (user || gUser) {
     navigate("/");
   }
