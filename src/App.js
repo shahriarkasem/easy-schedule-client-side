@@ -38,6 +38,8 @@ import EventTypesName from "./pages/Dashboard/DashboardComponents/DashboardHome/
 import DateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/DateRange";
 import AccountSettings from "./pages/Dashboard/DashboardComponents/AccountSettings";
 import AdminManagement from "./pages/Dashboard/DashboardComponents/AdminManagement";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   useEffect(() => {
@@ -95,6 +97,7 @@ function App() {
         </Route>
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }
