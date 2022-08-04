@@ -24,6 +24,7 @@ import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Comp
 // import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
+import AccountSettings from "./pages/Dashboard/DashboardComponents/AccountSettings";
 import Billing from "./pages/Dashboard/DashboardComponents/billing/Billing";
 import Upcoming from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Upcoming/Upcoming";
 import Pending from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Pending/Pending";
@@ -36,7 +37,7 @@ import OneOnOne from "./pages/Dashboard/DashboardComponents/DashboardHome/Compon
 import Group from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/Group";
 import EventTypesName from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/EventTypesName";
 import DateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/DateRange";
-import AccountSettings from "./pages/Dashboard/DashboardComponents/AccountSettings";
+
 import AdminManagement from "./pages/Dashboard/DashboardComponents/AdminManagement";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

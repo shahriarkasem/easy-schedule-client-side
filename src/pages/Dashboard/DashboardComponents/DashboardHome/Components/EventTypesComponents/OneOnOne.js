@@ -47,8 +47,8 @@ const OneOnOne = () => {
       },
       url: `http://localhost:5000/event/create/OneOnOne`,
       data: fullData,
-    }).then(res=>{
-      if(res.status === 200){
+    }).then(res => {
+      if (res.status === 200) {
         toast.success('Event created successfully')
         navigate('/dashboard/d-home/event-types')
       }
@@ -129,7 +129,7 @@ const OneOnOne = () => {
                 type="date"
                 placeholder=""
                 class="input input-bordered w-full max-w-md"
-                {...register("eventDate", { required: true})}
+                {...register("eventDate", { required: true })}
               />
             </div>
             <div class="form-control w-full max-w-md mt-3 md:mt-5">
@@ -140,7 +140,7 @@ const OneOnOne = () => {
                 type="time"
                 placeholder=""
                 class="input input-bordered w-full max-w-md"
-                {...register("eventTime", { required: true})}
+                {...register("eventTime", { required: true })}
               />
             </div>
             <div class="form-control w-full max-w-md mt-3 md:mt-5">
@@ -151,7 +151,7 @@ const OneOnOne = () => {
                 type="number"
                 placeholder=""
                 class="input input-bordered w-full max-w-md"
-                {...register("eventDuration", { required: true, min: 10, max: 480})}
+                {...register("eventDuration", { required: true, min: 10, max: 480 })}
               />
             </div>
             <div class="form-control w-full max-w-md mt-3 md:mt-5">
@@ -161,7 +161,7 @@ const OneOnOne = () => {
                 </span>
               </label>
               <textarea
-                rows={4}
+                rows="20"
                 type="text"
                 placeholder=""
                 class="input input-bordered w-full max-w-md"
