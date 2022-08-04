@@ -114,7 +114,7 @@ const OneOnOne = () => {
             <div class="form-control w-full max-w-md mt-3 md:mt-5">
               <label class="label">
                 <span class="label-text font-semibold">Event link</span>
-                <span class="label-text">easy-schedule.com/username</span>
+                <span class="label-text">easy-schedule.com/link</span>
               </label>
               <input
                 type="text"

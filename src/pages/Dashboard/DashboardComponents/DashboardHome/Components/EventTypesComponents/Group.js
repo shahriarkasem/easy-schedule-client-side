@@ -113,7 +113,7 @@ const Group = () => {
             <div class="form-control w-full max-w-md mt-3 md:mt-5">
               <label class="label">
                 <span class="label-text font-semibold">Event link</span>
-                <span class="label-text">easy-schedule.com/username</span>
+                <span class="label-text">easy-schedule.com/link</span>
               </label>
               <input
                 type="text"
@@ -129,7 +129,7 @@ const Group = () => {
                 </span>
               </label>
               <input
-                type="text"
+                type="number"
                 placeholder=""
                 class="input input-bordered w-full max-w-md"
                 {...register("maxInvite", { required: true, min: 2, max: 99 })}
