@@ -38,20 +38,20 @@ const Group = () => {
       location,
     };
     console.log(fullData)
-    // axios({
-    //   method: "POST",
-    //   headers: {
-    //     // authorization
-    //   },
-    //   url: `http://localhost:5000/event/create/group`,
-    //   data: fullData,
-    // })
-    //   .then((res) => {
-    //     // console.log(res)
-    //   })
-    //   .catch((error) => {
-    //     // console.log(error);
-    //   });
+    axios({
+      method: "POST",
+      headers: {
+        // authorization
+      },
+      url: `http://localhost:5000/event/create/group`,
+      data: fullData,
+    })
+      .then((res) => {
+        // console.log(res)
+      })
+      .catch((error) => {
+        // console.log(error);
+      });
   };
 
   return (
