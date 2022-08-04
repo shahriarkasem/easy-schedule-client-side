@@ -1,13 +1,64 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import auth from "../../../../../../firebase.init";
+import { toast } from 'react-toastify';
 
 const Group = () => {
   const [eventLocation, setEventLocation] = useState();
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate('');
+
+  const handleLocation = (e) => {
+    const location = e.target.value;
+    setEventLocation(location);
+  };
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
-    // console.log(data);
-    // console.log(event.target);
+    const userEmail = user?.email;
+    const eventType = "Group";
+    const eventName = data.eventName;
+    const eventDate = data.eventDate;
+    const eventTime = data.eventTime;
+    const eventDuration = data.eventDuration;
+    const description = data.description;
+    const eventLink = data.eventLink;
+    const maxInvite = data.maxInvite;
+    const location = event.target.location.value;
+    const fullData = {
+      userEmail,
+      eventType,
+      eventName,
+      eventDate,
+      eventTime,
+      eventDuration,
+      description,
+      eventLink,
+      maxInvite,
+      location,
+    };
+    console.log(fullData)
+    axios({
+      method: "POST",
+      headers: {
+        // authorization
+      },
+      url: `http://localhost:5000/event/create/group`,
+      data: fullData,
+    })
+      .then((res) => {
+        if(res.status === 200){
+          toast.success('Event created successfully')
+          navigate('/dashboard/d-home/event-types')
+        }
+        // console.log(res)
+      })
+      .catch((error) => {
+        // console.log(error);
+      });
   };
 
   return (
@@ -20,7 +71,7 @@ const Group = () => {
           Back
         </button>
         <h4 className="text-center w-full font-semibold text-2xl">
-        Add Group Event Type
+          Add Group Event Type
         </h4>
       </div>
       <div className="border-2 rounded-md border-sky-800">
@@ -47,24 +98,73 @@ const Group = () => {
                 {...register("eventName", { required: true, maxLength: 40 })}
               />
             </div>
-            <div class="form-control w-full max-w-md mt-3 md:mt-5">
+            <div
+              class="form-control w-full max-w-md mt-3 md:mt-5"
+              onChange={handleLocation}
+            >
               <label class="label">
                 <span class="label-text font-semibold">Location</span>
               </label>
-              <select class="select select-bordered">
-                <option disabled selected>
+              <select
+                defaultValue={"DEFAULT"}
+                class="select select-bordered"
+                name="location"
+              >
+                <option disabled value="DEFAULT">
                   Pick one
                 </option>
-                <option>In-person meeting</option>
-                <option>Phone call</option>
-                <option>Google Meet</option>
-                <option>Zoom</option>
-                <option>Microsoft Teams</option>
-                <option>Webex</option>
-                <option>GoTo Meeting</option>
-                <option>Custom</option>
-                <option>Ask invitee</option>
+                <option value="In-person meeting">In-person meeting</option>
+                <option value="Phone call">Phone call</option>
+                <option value="Google Meet">Google Meet</option>
+                <option value="Zoom">Zoom</option>
+                <option value="Microsoft Teams">Microsoft Teams</option>
+                <option value="Webex">Webex</option>
+                <option value="GoTo Meeting">GoTo Meeting</option>
+                <option value="Custom">Custom</option>
+                <option value="Ask invitee">Ask invitee</option>
               </select>
+            </div>
+            <div class="form-control w-full max-w-md mt-3 md:mt-5">
+              <label class="label">
+                <span class="label-text font-semibold">Event date</span>
+              </label>
+              <input
+                type="date"
+                placeholder=""
+                class="input input-bordered w-full max-w-md"
+                {...register("eventDate", { required: true })}
+              />
+            </div>
+            <div class="form-control w-full max-w-md mt-3 md:mt-5">
+              <label class="label">
+                <span class="label-text font-semibold">Event time</span>
+              </label>
+              <input
+                type="time"
+                placeholder=""
+                class="input input-bordered w-full max-w-md"
+                {...register("eventTime", { required: true })}
+              />
+            </div>
+            <div class="form-control w-full max-w-md mt-3 md:mt-5">
+              <label class="label">
+                <span class="label-text font-semibold">
+                  Event duration -{" "}
+                  <span className="font-thin text-xs">
+                    Min 10min and Max 480min
+                  </span>
+                </span>
+              </label>
+              <input
+                type="number"
+                placeholder=""
+                class="input input-bordered w-full max-w-md"
+                {...register("eventDuration", {
+                  required: true,
+                  min: 10,
+                  max: 480,
+                })}
+              />
             </div>
             <div class="form-control w-full max-w-md mt-3 md:mt-5">
               <label class="label">
@@ -83,7 +183,7 @@ const Group = () => {
             <div class="form-control w-full max-w-md mt-3 md:mt-5">
               <label class="label">
                 <span class="label-text font-semibold">Event link</span>
-                <span class="label-text">easy-schedule.com/username</span>
+                <span class="label-text">easy-schedule.com/link</span>
               </label>
               <input
                 type="text"
@@ -94,13 +194,15 @@ const Group = () => {
             </div>
             <div class="form-control w-full max-w-md mt-3 md:mt-5">
               <label class="label">
-                <span class="label-text font-semibold">Max invitees in a spot</span>
+                <span class="label-text font-semibold">
+                  Max invitees in a spot
+                </span>
               </label>
               <input
-                type="text"
+                type="number"
                 placeholder=""
                 class="input input-bordered w-full max-w-md"
-                {...register("maxInvite", { required: true,  min: 2, max: 99 })}
+                {...register("maxInvite", { required: true, min: 2, max: 99 })}
               />
             </div>
             <input
