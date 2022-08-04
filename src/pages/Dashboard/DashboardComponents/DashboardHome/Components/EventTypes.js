@@ -43,7 +43,7 @@ const EventTypes = () => {
                   )}
                 </div>
               </div>
-              <div className="pl-3">
+              <div className="px-3">
                 <h3>{user?.displayName || "Unknown user"}</h3>
                 <p className="text-blue-600">@username</p>
               </div>

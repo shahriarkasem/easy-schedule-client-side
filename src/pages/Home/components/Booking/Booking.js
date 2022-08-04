@@ -13,7 +13,7 @@ const Booking = () => {
   return (
     <div>
       <div className="md:mx-20 lg:mx-36">
-        <h2 className=" font-medium text-3xl text-center ">
+        <h2 className=" font-medium text-3xl text-center">
           We handle 1000's of{" "}
           <span className="font-bold text-4xl text-[#ef7841]">bookings</span>{" "}
           for <br /> our users every single day
