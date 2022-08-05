@@ -41,6 +41,7 @@ import DateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Compo
 import AdminManagement from "./pages/Dashboard/DashboardComponents/AdminManagement";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SingleDateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/SingleDateRange";
 
 function App() {
   useEffect(() => {
@@ -78,7 +79,7 @@ function App() {
               <Route path="upcoming" element={<Upcoming />}></Route>
               <Route path="pending" element={<Pending />}></Route>
               <Route path="past" element={<Past />}></Route>
-              <Route path="date" element={<DateRange />}></Route>
+              <Route path="date" element={<SingleDateRange />}></Route>
             </Route>
             <Route path="workflows" element={<Workflows />} />
             <Route path="routing" element={<RoutingForms />} />

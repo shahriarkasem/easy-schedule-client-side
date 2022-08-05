@@ -31,7 +31,7 @@ const ScheduledEvents = () => {
                   >
                     Date Rang
                   </label>
-                  {<DateRange setDateRange={setDateRange}></DateRange>}
+                  {<DateRange ></DateRange>}
 
                   {/* <Link to="/dashboard/d-home/scheduled/date">Date Range</Link> */}
 
