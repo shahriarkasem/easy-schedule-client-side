@@ -42,6 +42,7 @@ import AdminManagement from "./pages/Dashboard/DashboardComponents/AdminManageme
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SingleDateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/SingleDateRange";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 
 function App() {
   useEffect(() => {
@@ -98,6 +99,7 @@ function App() {
           <Route path="integrations" element={<Integrations />}></Route>
         </Route>
       </Routes>
+      <MessengerCustomerChat pageId={process.env.REACT_APP_PAGE_ID} appId={process.env.REACT_APP_APP_ID} />,
       <Footer />
       <ToastContainer />
     </div>
