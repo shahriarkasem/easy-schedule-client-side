@@ -22,18 +22,39 @@ const VideoContextProvider = ({ children }) => {
 
   useEffect(() => {
     navigator.mediaDevices
-      .getUserMedia({ video: true, audio: true })
+      .getUserMedia({ video: camera, audio: mic })
       .then((currentStream) => {
         setStream(currentStream);
-
         myVideo.current.srcObject = currentStream;
       });
-    socket.on("me", (id) => setMe(id));
 
-    socket.on("calluser", ({ from, name: callerName, signal }) => {
-      setCall({ isReceivedCall: true, from, name: callerName, signal });
+    socket.emit("cm", camera, mic);
+  }, [camera, mic]);
+
+  if (camera === false) {
+    stream.getTracks().forEach((track) => {
+      if (track.kind === "video") {
+        track.enabled = false;
+
+        track.stop();
+      }
     });
-  }, []);
+  }
+
+  if (mic === false) {
+    stream.getTracks().forEach((track) => {
+      if (track.kind === "audio") {
+        track.enabled = false;
+        track.stop();
+      }
+    });
+  }
+
+  socket.on("calluser", ({ from, name: callerName, signal }) => {
+    setCall({ isReceivedCall: true, from, name: callerName, signal });
+  });
+
+  socket.on("me", (id) => setMe(id));
 
   const answerCall = () => {
     setCallAccepted(true);
@@ -76,9 +97,10 @@ const VideoContextProvider = ({ children }) => {
     connectionRef.current = peer;
   };
   const leaveCall = () => {
-    setCallEnded(true);
-
     connectionRef.current.destroy();
+    socket.emit("callended");
+    setCallEnded(true);
+    setCamera(false);
 
     window.location.reload();
   };
@@ -95,6 +117,10 @@ const VideoContextProvider = ({ children }) => {
         setName,
         callEnded,
         me,
+        camera,
+        setCamera,
+        mic,
+        setMic,
         callUser,
         leaveCall,
         answerCall,
