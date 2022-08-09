@@ -106,7 +106,7 @@ function App() {
         appId={process.env.REACT_APP_APP_ID}
       />
 
-      {/* <Footer /> */}
+      <Footer />
       <ToastContainer />
     </div>
   );
