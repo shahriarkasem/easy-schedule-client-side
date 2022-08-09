@@ -39,10 +39,11 @@ import EventTypesName from "./pages/Dashboard/DashboardComponents/DashboardHome/
 import DateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/DateRange";
 
 import AdminManagement from "./pages/Dashboard/DashboardComponents/AdminManagement";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import SingleDateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/SingleDateRange";
 import MessengerCustomerChat from "react-messenger-customer-chat";
+import Call from "./video/call/Call";
 
 function App() {
   useEffect(() => {
@@ -98,9 +99,14 @@ function App() {
           <Route path="admin-management" element={<AdminManagement />}></Route>
           <Route path="integrations" element={<Integrations />}></Route>
         </Route>
+        <Route path="/call" element={<Call />} />
       </Routes>
-      <MessengerCustomerChat pageId={process.env.REACT_APP_PAGE_ID} appId={process.env.REACT_APP_APP_ID} />,
-      <Footer />
+      <MessengerCustomerChat
+        pageId={process.env.REACT_APP_PAGE_ID}
+        appId={process.env.REACT_APP_APP_ID}
+      />
+
+      {/* <Footer /> */}
       <ToastContainer />
     </div>
   );
