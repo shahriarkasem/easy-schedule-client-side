@@ -1,0 +1,35 @@
+.workflowBorder:hover {
+  border-style: solid;
+  border-width: 5px;
+  border-color: aqua;
+}
+.workflowShadow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.button-workflow {
+  box-shadow: none !important;
+  position: relative;
+  overflow: hidden;
+  background: #ff5722;
+  z-index: 10;
+  border: none;
+  color: white;
+}
+
+.button-workflow::before {
+  content: "";
+  background: #3e4066;
+  position: absolute;
+  width: 130%;
+  height: 200%;
+  z-index: -1;
+  left: -15%;
+  border-radius: 100%;
+  transition: 0.2s;
+  bottom: -200%;
+}
+
+.button-workflow:hover::before {
+  bottom: -50%;
+}
