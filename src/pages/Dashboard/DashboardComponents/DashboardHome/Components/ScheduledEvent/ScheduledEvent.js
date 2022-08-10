@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import event from "../../../../../../media/images/dashboard/scheduled events/event.svg";
 import DateRange from "./DateRange/DateRange";
+import Pdf from 'react-to-pdf';
+// const ref = React.createRef();
 const ScheduledEvents = () => {
+  const ref = React.createRef();
   const { dateRange, setDateRange } = useState(null);
   return (
-    <div>
+    <div ref={ref} >
       <h1 className="my-4 flex justify-end">Displaying 0 – 0 of 0 Events</h1>
       <div class="card mb-10 bg-teal-100 shadow-xl">
         <div class="card-body">
@@ -32,26 +35,16 @@ const ScheduledEvents = () => {
                     Date Rang
                   </label>
                   {<DateRange ></DateRange>}
-
-                  {/* <Link to="/dashboard/d-home/scheduled/date">Date Range</Link> */}
-
-                  {/* <Link to='/dashboard/d-home/scheduled/date'> <label for="date-modal" class="btn modal-button btn-sm">Date Rang</label></Link> */}
                 </li>
-                {/* <li className="flex justify-end menu-end" >
-                                    <a href={event} download="Event scheduled export" className="">Export</a>
-                                </li> */}
               </ul>
-              {/* <ul class="menu menu-horizontal p-0">
-                            <li >
-                                    <a href={event} download="Event scheduled export" className="ml-96 pl-20">Export</a>
-                                </li>
-                            </ul> */}
             </div>
             <ul className="navbar-end">
               <li>
-                <a href={event} download="Event scheduled export" className="">
-                  Export
-                </a>
+                <Pdf targetRef={ref} filename="div-blue.pdf">
+                  {({ toPdf }) => (
+                    <button onClick={toPdf}>Export</button>
+                  )}
+                </Pdf>
               </li>
             </ul>
           </div>
