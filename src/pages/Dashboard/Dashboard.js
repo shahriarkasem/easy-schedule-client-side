@@ -91,7 +91,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="lg:px-52 md:px-28 px-10">
+    <div className="lg:px-36 md:px-28 px-10">
       <div class="navbar bg-base-100">
         <div class="w-10 rounded-full">
           <img src="https://i.ibb.co/QnJPG33/easy-Schedule-Icon.jpg" alt="" />
