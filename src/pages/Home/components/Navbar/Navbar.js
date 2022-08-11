@@ -6,7 +6,7 @@ import DarkContext from "../../../DarkMode/DarkContext";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { handleDarkMode, toggle, setToggle } = useContext(DarkContext);
+  const { toggle, setToggle } = useContext(DarkContext);
   const [user] = useAuthState(auth);
 
   const navItem = (
@@ -85,7 +85,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="container mx-auto">
+    <div className="mx-auto">
       <div
         class={"navbar " + (toggle === true ? "bg-base-100" : "bg-slate-800")}
       >
