@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Banner from "./components/Banner/Banner";
 import Navbar from "./components/Navbar/Navbar";
 import Review from "./components/Review/Review";
@@ -13,10 +13,13 @@ import Schedule from "./components/Schedule/Schedule";
 import Meeting from "./components/Meeting/Meeting";
 import EasySchedule from "./components/EasySchedule/EasySchedule";
 import Footer from "./components/Footer/Footer";
+import DarkContext from "../DarkMode/DarkContext";
 
 const Home = () => {
+  const {toggle} = useContext(DarkContext);
+
   return (
-    <div>
+    <div className={toggle === true ? 'bg-white' : 'bg-slate-700'}>
       <Navbar />
       <Banner></Banner>
       <EasySchedule />
