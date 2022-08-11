@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import auth from "../../../../firebase.init";
 import DarkContext from "../../../DarkMode/DarkContext";
 import "./Navbar.css";
-import menubar from '../../../../media/images/navbar/hamburger-button-computer-icons-marmon-keystone-canada-menu-png-favpng-8zH9EzUPy4hMCeW7EKgLENdU6.jpg';
 
 const Navbar = () => {
   const { handleDarkMode, toggle, setToggle } = useContext(DarkContext);
@@ -107,7 +106,6 @@ const Navbar = () => {
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
               </svg>
-              {/* <img className="h-6 w-8 rounded-lg" src={menubar}></img> */}
             </label>
             <ul
               tabindex="0"
@@ -135,6 +133,7 @@ const Navbar = () => {
           <ul class={"menu menu-horizontal p-0"}>{navItem}</ul>
         </div>
         <div class="navbar-end">
+          {/* dark mode toggle */}
             <p
               className={
                 "flex items-center px-2 md:px-4 lg:px-6 hidden md:block" +
