@@ -3,7 +3,7 @@ import integration from "../../../../media/images/integration.png";
 import DarkContext from "../../../DarkMode/DarkContext";
 
 const Integration = () => {
-  const { handleDarkMode, toggle, setToggle} = useContext(DarkContext);
+  const { toggle} = useContext(DarkContext);
 
   return (
     <section className={(toggle === true ? "px-12 mt-6 py-24 bg-[#F5F9FA]" : "px-12 mt-6 py-24 bg-slate-700")}>
