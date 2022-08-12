@@ -28,14 +28,13 @@ const VideoPlayer = () => {
     setMic,
   } = useContext(SocketContext);
 
-  const { users } = useSelector((state) => state.users);
-  console.log(users._id);
+  // const { users } = useSelector((state) => state.users);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchUsers());
+  // }, [dispatch]);
 
   const [user] = useAuthState(auth);
 
@@ -87,11 +86,11 @@ const VideoPlayer = () => {
             )}
           </button>
         </div>
-        {callAccepted && !callEnded && (
-          <div>
-            <h5 className="text-center">{}</h5>
+        {/* {callAccepted && !callEnded && (
+          <div className="">
+            
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
