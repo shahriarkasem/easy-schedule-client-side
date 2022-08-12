@@ -36,7 +36,7 @@ const SideBar = ({ children }) => {
             <div className="flex flex-col p-[20px]">
               <h6 className="text-xl font-bold text-orange-500">You</h6>
               <input
-                className="input input-bordered input-primary mt-5 font-bold text-xl"
+                className="input input-bordered input-primary mt-2 font-bold text-xl"
                 type="text"
                 value={user?.email}
                 fullWidth
@@ -44,7 +44,7 @@ const SideBar = ({ children }) => {
               />
             </div>
             <div className="flex flex-col p-[20px]">
-              <h6 className="text-xl font-bold text-accent">
+              <h6 className="text-xl font-bold text-accent mb-2">
                 Make a call with -
               </h6>
 
