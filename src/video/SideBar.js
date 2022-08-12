@@ -1,8 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { SocketContext } from "../contexts/VideoContext";
 import auth from "../firebase.init";
+
+import { useSelector, useDispatch } from "react-redux";
+import { fetchUsers } from "../redux/slices/userSlice";
 
 const SideBar = ({ children }) => {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } =
@@ -10,7 +13,15 @@ const SideBar = ({ children }) => {
 
   const [idToCall, setIdToCall] = useState("");
 
-  // const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
+
+  const { users } = useSelector((state) => state.users);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
 
   return (
     <div className="w-[90%] lg:w-1/2 my-10 mx-auto">
@@ -23,31 +34,35 @@ const SideBar = ({ children }) => {
         >
           <div className="grid lg:grid-cols-2 md:grid-cols-2">
             <div className="flex flex-col p-[20px]">
-              <h6 className="text-xl ">Account Info</h6>
+              <h6 className="text-xl font-bold text-orange-500">You</h6>
               <input
-                className="input input-bordered input-primary mt-5"
+                className="input input-bordered input-primary mt-5 font-bold text-xl"
                 type="text"
-                value={name}
+                value={user?.email}
                 fullWidth
-                onChange={(e) => setName(e.target.value)}
+                readOnly
               />
-
-              <CopyToClipboard
-                text={me}
-                className="mt-5 button-orange-border-h40"
-              >
-                <button className="">Copy Id</button>
-              </CopyToClipboard>
             </div>
             <div className="flex flex-col p-[20px]">
-              <h6 className="text-xl">Make a call</h6>
+              <h6 className="text-xl font-bold text-accent">
+                Make a call with -
+              </h6>
 
-              <input
-                className="input input-bordered input-primary mt-5"
-                type="text"
-                value={idToCall}
-                onChange={(e) => setIdToCall(e.target.value)}
-              />
+              <select
+                required
+                defaultValue={"DEFAULT"}
+                class="select select-bordered"
+                name="location"
+              >
+                <option disabled value="DEFAULT">
+                  Select user to call
+                </option>
+
+                {users?.map((user) => (
+                  <option value={user.email}>{user.email}</option>
+                ))}
+              </select>
+
               {callAccepted && !callEnded ? (
                 <button
                   className="btn btn-secondary mt-[20px]"
@@ -60,7 +75,7 @@ const SideBar = ({ children }) => {
                 <button
                   className="btn btn-primary mt-[20px]"
                   fullWidth
-                  onClick={() => callUser(idToCall)}
+                  // onClick={() => callUser(idToCall)}
                 >
                   call
                 </button>

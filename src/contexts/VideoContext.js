@@ -73,6 +73,7 @@ const VideoContextProvider = ({ children }) => {
 
     connectionRef.current = peer;
   };
+
   const callUser = (id) => {
     const peer = new Peer({ initiator: true, trickle: false, stream });
 
@@ -97,14 +98,12 @@ const VideoContextProvider = ({ children }) => {
     connectionRef.current = peer;
   };
   const leaveCall = () => {
-    connectionRef.current.destroy();
-    socket.emit("callended");
     setCallEnded(true);
-    setCamera(false);
+
+    connectionRef.current.destroy();
 
     window.location.reload();
   };
-
   return (
     <SocketContext.Provider
       value={{
