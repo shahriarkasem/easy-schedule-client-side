@@ -31,7 +31,9 @@ const Home = () => {
       <Review></Review>
       <Booking></Booking>
       <PowerfulFeatures></PowerfulFeatures>
-      <ReadySignup></ReadySignup>
+     <div className="pb-10">
+     <ReadySignup></ReadySignup>
+     </div>
     </div>
   );
 };
