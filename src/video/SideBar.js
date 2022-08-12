@@ -11,7 +11,12 @@ const SideBar = ({ children }) => {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } =
     useContext(SocketContext);
 
-  const [idToCall, setIdToCall] = useState("");
+  const [onChange, setOnChange] = useState("");
+
+  const [click, setClick] = useState(false);
+  const [end, setEnd] = useState(false);
+
+  // const [idToCall, setIdToCall] = useState("");
 
   const [user] = useAuthState(auth);
 
@@ -23,11 +28,27 @@ const SideBar = ({ children }) => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(onChange);
+  };
+
+  const handleClick = () => {
+    setClick(true);
+    setEnd(false);
+  };
+
+  const handleEnd = () => {
+    setEnd(true);
+    setClick(false);
+  };
+
   return (
     <div className="w-[90%] lg:w-1/2 my-10 mx-auto">
       <div className="py-[10px] px-[20px] border border-stone-900">
         <form
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSubmit}
           className="flex flex-col"
           noValidate
           autoComplete="off"
@@ -36,7 +57,7 @@ const SideBar = ({ children }) => {
             <div className="flex flex-col p-[20px]">
               <h6 className="text-xl font-bold text-orange-500">You</h6>
               <input
-                className="input input-bordered input-primary mt-2 font-bold text-xl"
+                className="input input-bordered input-primary mt-2 font-bold text-lg"
                 type="text"
                 value={user?.email}
                 fullWidth
@@ -44,11 +65,12 @@ const SideBar = ({ children }) => {
               />
             </div>
             <div className="flex flex-col p-[20px]">
-              <h6 className="text-xl font-bold text-accent mb-2">
-                Make a call with -
+              <h6 className="text-xl font-bold text-primary mb-2">
+                Make a call with
               </h6>
 
               <select
+                onChange={(e) => setOnChange(e.target.value)}
                 required
                 defaultValue={"DEFAULT"}
                 class="select select-bordered"
@@ -62,7 +84,7 @@ const SideBar = ({ children }) => {
                 ))}
               </select>
 
-              {callAccepted && !callEnded ? (
+              {/* {callAccepted && !callEnded ? (
                 <button
                   className="btn btn-secondary mt-[20px]"
                   fullWidth
@@ -72,12 +94,36 @@ const SideBar = ({ children }) => {
                 </button>
               ) : (
                 <button
+                  type="submit"
                   className="btn btn-primary mt-[20px]"
                   fullWidth
-                  // onClick={() => callUser(idToCall)}
+                  onClick={() => callUser(idToCall)}
                 >
                   call
                 </button>
+              )} */}
+              {/* <button onClick={handleClick} className="btn btn-accent mt-4">
+                Call
+              </button> */}
+
+              {!click || end ? (
+                <button onClick={handleClick} className="btn btn-accent mt-4">
+                  Call
+                </button>
+              ) : (
+                <div className="flex items-center gap-4 justify-center mt-4">
+                  <h2 className="text-accent ">
+                    {" "}
+                    Please wait for opponent response
+                  </h2>
+
+                  <button
+                    onClick={handleEnd}
+                    className="button-orange-border-h40"
+                  >
+                    End
+                  </button>
+                </div>
               )}
             </div>
           </div>
