@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import bg from "../../../../media/images/slide/bg.jpg";
 import doctor from "../../../../media/images/slide/doctor1.jpg";
 import business from "../../../../media/images/slide/business1.jpg";
@@ -10,8 +10,11 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
+import DarkContext from "../../../DarkMode/DarkContext";
 
 const Carousel = () => {
+  const { toggle, setToggle } = useContext(DarkContext);
+
   return (
     <div>
       {/* <div class="flex flex-col w-full border-opacity-50">
@@ -36,9 +39,9 @@ const Carousel = () => {
         <SwiperSlide>
           <div className="lg:p-10 p-5">
             <div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-items-center lg:px-40 ">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-items-center lg:px-40">
                 <div>
-                  <img className="" src={doctor} alt="" />
+                  <img className="rounded" src={doctor} alt="" />
                 </div>
                 <div className="flex justify-start items-center ">
                   <div>
@@ -46,9 +49,16 @@ const Carousel = () => {
                       Doctors Appointments
                     </h3>
                     <p className="lg:text-left ">
-                      Manage Demand with ease and schedule short appointments.
-                      Keep User Informed about their upcoming meeting with
-                      doctors.
+                      <span
+                        className={
+                          toggle === true ? "text-black" : "text-white"
+                        }
+                      >
+                        {" "}
+                        Manage Demand with ease and schedule short appointments.
+                        Keep User Informed about their upcoming meeting with
+                        doctors.
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -66,7 +76,7 @@ const Carousel = () => {
             <div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-items-center lg:px-40 ">
                 <div>
-                  <img className="" src={business} alt="" />
+                  <img className="rounded" src={business} alt="" />
                 </div>
                 <div className="flex justify-start items-center ">
                   <div>
@@ -74,9 +84,16 @@ const Carousel = () => {
                       Business Meeting
                     </h3>
                     <p className="lg:text-left ">
-                      Manage Demand with ease and schedule short appointments.
-                      Keep User Informed about their upcoming meeting with
-                      another user.
+                      <span
+                        className={
+                          toggle === true ? "text-black" : "text-white"
+                        }
+                      >
+                        {" "}
+                        Manage Demand with ease and schedule short appointments.
+                        Keep User Informed about their upcoming meeting with
+                        another user.
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -94,7 +111,7 @@ const Carousel = () => {
             <div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-items-center lg:px-40 ">
                 <div>
-                  <img className="" src={education} alt="" />
+                  <img className="rounded" src={education} alt="" />
                 </div>
                 <div className="flex justify-start items-center ">
                   <div>
@@ -102,9 +119,16 @@ const Carousel = () => {
                       Educational Meeting
                     </h3>
                     <p className="lg:text-left ">
-                      Manage Demand with ease and schedule short appointments.
-                      Keep User Informed about their upcoming meeting with
-                      another user.
+                      <span
+                        className={
+                          toggle === true ? "text-black" : "text-white"
+                        }
+                      >
+                        {" "}
+                        Manage Demand with ease and schedule short appointments.
+                        Keep User Informed about their upcoming meeting with
+                        another user.
+                      </span>
                     </p>
                   </div>
                 </div>
