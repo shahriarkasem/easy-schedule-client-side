@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { SocketContext } from "../contexts/VideoContext";
 import auth from "../firebase.init";
@@ -10,6 +10,9 @@ import {
   faVideoSlash,
   faVideo,
 } from "@fortawesome/free-solid-svg-icons";
+
+import { useSelector, useDispatch } from "react-redux";
+import { fetchUsers } from "../redux/slices/userSlice";
 
 const VideoPlayer = () => {
   const {
@@ -24,6 +27,15 @@ const VideoPlayer = () => {
     mic,
     setMic,
   } = useContext(SocketContext);
+
+  const { users } = useSelector((state) => state.users);
+  console.log(users._id);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
 
   const [user] = useAuthState(auth);
 
@@ -75,6 +87,11 @@ const VideoPlayer = () => {
             )}
           </button>
         </div>
+        {callAccepted && !callEnded && (
+          <div>
+            <h5 className="text-center">{}</h5>
+          </div>
+        )}
       </div>
     </div>
   );
