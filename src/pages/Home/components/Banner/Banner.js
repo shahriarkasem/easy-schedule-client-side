@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import DarkContext from "../../../DarkMode/DarkContext";
 import "./Banner.css";
 
 const Banner = () => {
+  const { toggle, setToggle } = useContext(DarkContext);
+
   return (
-    <div class="hero ">
+    <div class={"hero " + (toggle === true ? 
+      'bg-white' : 'bg-slate-700')}>
       <div class="hero-content flex-col lg:flex-row-reverse text-black flex">
         <div className="flex-auto w-1/2">
           <img
+          className="rounded"
             data-aos="fade-left"
             data-aos-duration="1000"
             data-aos-delay="300"
@@ -20,7 +25,8 @@ const Banner = () => {
             data-aos="fade-right"
             data-aos-duration="1000"
             data-aos-delay="200"
-            class="lg:text-5xl text-2xl font-bold "
+            class={"lg:text-5xl text-2xl font-bold "  + (toggle === true ? 
+              'text-black'  : 'text-white')}
           >
             APPOINTMENT
           </h1>
@@ -36,7 +42,8 @@ const Banner = () => {
             data-aos="fade-right"
             data-aos-duration="1000"
             data-aos-delay="300"
-            class="py-6 text-start"
+            class={(toggle === true ? 
+              'text-black py-6'  : 'text-white py-6')}
           >
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et

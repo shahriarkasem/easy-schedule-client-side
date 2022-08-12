@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../ReviewCarousel/ReviewCarousel.css";
 import capterra from "../../../../../media/images/review/capterra.png";
 import financesOnline from "../../../../../media/images/review/financesonline.png";
@@ -11,15 +11,18 @@ import google from "../../../../../media/images/review/google-10to8-reviews.png"
 import invision from "../../../../../media/images/review/2.png";
 import fiveStars from "../../../../../media/images/review/5-stars.png";
 import fourHalfStars from "../../../../../media/images/review/4-half-stars.png";
+import DarkContext from "../../../../DarkMode/DarkContext";
 
 const ReviewCarousel = () => {
+  const {toggle} = useContext(DarkContext);
+
   return (
     <div>
       <h2 className="text-center font-semibold my-2 lg:my-8 md:my-6 text-4xl text-[#ef7841]">
         Appointment scheduling software trusted worldwide
       </h2>
       <div className="review-container">
-        <div class="slider bg-white">
+        <div class={toggle === true ? "slider bg-white" : "slider bg-slate-100"}>
           <div class="slide-track">
             <div class="slide flex flex-col justify-center items-center  ml-10">
               <img
