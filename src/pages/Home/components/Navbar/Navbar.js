@@ -6,7 +6,7 @@ import DarkContext from "../../../DarkMode/DarkContext";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { toggle, setToggle } = useContext(DarkContext);
+  const { handleDarkMode, toggle, setToggle } = useContext(DarkContext);
   const [user] = useAuthState(auth);
 
   const navItem = (
@@ -67,20 +67,30 @@ const Navbar = () => {
       </li>
       {/* dark mode toggle */}
       <p
-              className={
-                "flex items-center justify-center my-4 block md:hidden" +
-                (toggle === true
-                  ? ""
-                  : "")
-              }
-            >
-              {
-                toggle === true ? 
-                <p className="flex items-center"><input onClick={() => setToggle(false)} type="checkbox" class="toggle" /></p>
-                :
-                <p className="flex items-center"><input onClick={() => setToggle(true)} type="checkbox" class="toggle toggle-accent" checked /></p>
-              }
-            </p>
+        className={
+          "flex items-center justify-center my-4 block md:hidden" +
+          (toggle === true ? "" : "")
+        }
+      >
+        {toggle === true ? (
+          <p className="flex items-center">
+            <input
+              onClick={handleDarkMode}
+              type="checkbox"
+              class="toggle"
+            />
+          </p>
+        ) : (
+          <p className="flex items-center">
+            <input
+              onClick={handleDarkMode}
+              type="checkbox"
+              class="toggle toggle-accent"
+              checked
+            />
+          </p>
+        )}
+      </p>
     </>
   );
 
@@ -91,7 +101,13 @@ const Navbar = () => {
       >
         <div class="navbar-start">
           <div class="dropdown">
-            <label tabindex="0" class={"btn btn-ghost lg:hidden mr-2 md:mr-5" + (toggle === true ? '' : ' bg-accent btn-outline btn rounded')}>
+            <label
+              tabindex="0"
+              class={
+                "btn btn-ghost lg:hidden mr-2 md:mr-5" +
+                (toggle === true ? "" : " bg-accent btn-outline btn rounded")
+              }
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class={"h-5 w-5"}
@@ -110,7 +126,9 @@ const Navbar = () => {
             <ul
               tabindex="0"
               class={
-                (toggle === true ? 'menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52' : 'menu menu-compact dropdown-content mt-3 p-2 shadow bg-slate-700 rounded-box w-52')
+                toggle === true
+                  ? "menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                  : "menu menu-compact dropdown-content mt-3 p-2 shadow bg-slate-700 rounded-box w-52"
               }
             >
               {navItem}
@@ -134,21 +152,31 @@ const Navbar = () => {
         </div>
         <div class="navbar-end">
           {/* dark mode toggle */}
-            <p
-              className={
-                "flex items-center px-2 md:px-4 lg:px-6 hidden md:block" +
-                (toggle === true
-                  ? ""
-                  : "")
-              }
-            >
-              {
-                toggle === true ? 
-                <p className="flex items-center"><input onClick={() => setToggle(false)} type="checkbox" class="toggle" /></p>
-                :
-                <p className="flex items-center"><input onClick={() => setToggle(true)} type="checkbox" class="toggle toggle-accent" checked /></p>
-              }
-            </p>
+          <p
+            className={
+              "flex items-center px-2 md:px-4 lg:px-6 hidden md:block" +
+              (toggle === true ? "" : "")
+            }
+          >
+            {toggle === true ? (
+              <p className="flex items-center">
+                <input
+                  onClick={handleDarkMode}
+                  type="checkbox"
+                  class="toggle"
+                />
+              </p>
+            ) : (
+              <p className="flex items-center">
+                <input
+                  onClick={handleDarkMode}
+                  type="checkbox"
+                  class="toggle toggle-accent"
+                  checked
+                />
+              </p>
+            )}
+          </p>
           {user ? (
             <Link
               to="/dashboard/d-home/event-types"

@@ -51,16 +51,26 @@ function App() {
     AOS.init();
   }, []);
 
-  const [toggle, setToggle] = useState(localStorage.getItem("toggle") || true);
+  const [toggle, setToggle] = useState(true);
+
   useEffect(() => {
-    localStorage.setItem("toggle", toggle);
-  }, [toggle, setToggle]);
+    const toggleValue = JSON.parse(localStorage.getItem('toggle'));
+    // console.log(toggleValue);
+    if (toggleValue) {
+     setToggle(true);
+    }
+    if(toggleValue === false){
+      setToggle(false);
+    }
+  }, []);
 
   const handleDarkMode = () => {
-    if (toggle === true) {
+    if (toggle) {
+      localStorage.setItem('toggle', JSON.stringify(false));
       setToggle(false);
     }
     if (toggle === false) {
+      localStorage.setItem('toggle', JSON.stringify(true));
       setToggle(true);
     }
   };
