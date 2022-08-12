@@ -25,18 +25,24 @@ const VideoContextProvider = ({ children }) => {
       .getUserMedia({ video: camera, audio: mic })
       .then((currentStream) => {
         setStream(currentStream);
+
         myVideo.current.srcObject = currentStream;
       });
 
-    socket.emit("cm", camera, mic);
+    socket.on("me", (id) => setMe(id));
+
+    socket.on("calluser", ({ from, name: callerName, signal }) => {
+      setCall({ isReceivedCall: true, from, name: callerName, signal });
+    });
+
+    // socket.emit("cm", camera, mic);
   }, [camera, mic]);
 
   if (camera === false) {
     stream.getTracks().forEach((track) => {
       if (track.kind === "video") {
-        track.enabled = false;
-
         track.stop();
+        track.enabled = false;
       }
     });
   }
@@ -49,12 +55,6 @@ const VideoContextProvider = ({ children }) => {
       }
     });
   }
-
-  socket.on("calluser", ({ from, name: callerName, signal }) => {
-    setCall({ isReceivedCall: true, from, name: callerName, signal });
-  });
-
-  socket.on("me", (id) => setMe(id));
 
   const answerCall = () => {
     setCallAccepted(true);
@@ -73,6 +73,7 @@ const VideoContextProvider = ({ children }) => {
 
     connectionRef.current = peer;
   };
+
   const callUser = (id) => {
     const peer = new Peer({ initiator: true, trickle: false, stream });
 
@@ -97,14 +98,12 @@ const VideoContextProvider = ({ children }) => {
     connectionRef.current = peer;
   };
   const leaveCall = () => {
-    connectionRef.current.destroy();
-    socket.emit("callended");
     setCallEnded(true);
-    setCamera(false);
+
+    connectionRef.current.destroy();
 
     window.location.reload();
   };
-
   return (
     <SocketContext.Provider
       value={{
