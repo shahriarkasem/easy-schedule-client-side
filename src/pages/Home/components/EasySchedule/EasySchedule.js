@@ -11,12 +11,16 @@ import {
   faTentArrowTurnLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useContext } from "react";
+import DarkContext from "../../../DarkMode/DarkContext";
 
 const EasySchedule = () => {
+  const { toggle, setToggle } = useContext(DarkContext);
+
   return (
-    <div className=" p-5  lg:px-12 mt-10">
-      <div className="flex justify-center border p-2  ">
+    <div className={(toggle === true ? 'p-5 lg:px-12 mt-10 bg-white' : 
+    'p-5 lg:px-12 mt-10 bg-slate-700')}>
+      <div className={(toggle === true ? 'flex justify-center border p-2 bg-white' : 'flex justify-center border p-2 bg-slate-700')}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10">
           <div
             data-aos="fade-up"
@@ -32,8 +36,8 @@ const EasySchedule = () => {
               />
             </p>
             <div className="text-left px-4">
-              <h3 className=" lg:font-bold uppercase">Easy Scheduling</h3>
-              <p className=" font-sans  ">For any users</p>
+              <h3 className=" lg:font-bold uppercase"><span className={(toggle === true ? 'text-black' : 'text-white')}>Easy Scheduling</span></h3>
+              <p className=" font-sans  "><span className={(toggle === true ? 'text-black' : 'text-white')}>For any users</span></p>
             </div>
           </div>
           <div
@@ -50,8 +54,8 @@ const EasySchedule = () => {
               />
             </p>
             <div className="text-left px-4">
-              <h3 className=" lg:font-bold uppercase">Notify user</h3>
-              <p className=" font-sans  ">Before staring meeting</p>
+              <h3 className=" lg:font-bold uppercase"><span className={(toggle === true ? 'text-black' : 'text-white')}>Notify user</span></h3>
+              <p className=" font-sans  "><span className={(toggle === true ? 'text-black' : 'text-white')}>Before staring meeting</span></p>
             </div>
           </div>
           <div
@@ -65,8 +69,8 @@ const EasySchedule = () => {
               <FontAwesomeIcon style={{ color: "#F88148" }} icon={faHeadset} />
             </p>
             <div className="text-left px-4">
-              <h3 className=" lg:font-bold uppercase">Call us anytime</h3>
-              <p className=" font-sans  ">Call us anytime</p>
+              <h3 className=" lg:font-bold uppercase"><span className={(toggle === true ? 'text-black' : 'text-white')}>Call us anytime</span></h3>
+              <p className=" font-sans  "><span className={(toggle === true ? 'text-black' : 'text-white')}>Call us anytime</span></p>
             </div>
           </div>
           <div
@@ -83,8 +87,8 @@ const EasySchedule = () => {
               />
             </p>
             <div className="text-left px-4">
-              <h3 className=" lg:font-bold uppercase">100% Safety</h3>
-              <p className=" font-sans  ">Only secure payments</p>
+              <h3 className=" lg:font-bold uppercase"><span className={(toggle === true ? 'text-black' : 'text-white')}>100% Safety</span></h3>
+              <p className=" font-sans  "><span className={(toggle === true ? 'text-black' : 'text-white')}>Only secure payments</span></p>
             </div>
           </div>
         </div>

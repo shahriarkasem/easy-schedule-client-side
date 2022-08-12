@@ -52,7 +52,6 @@ const SideBar = ({ children }) => {
                 required
                 defaultValue={"DEFAULT"}
                 class="select select-bordered"
-                name="location"
               >
                 <option disabled value="DEFAULT">
                   Select user to call
