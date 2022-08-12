@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import integration from "../../../../media/images/integration.png";
+import DarkContext from "../../../DarkMode/DarkContext";
 
 const Integration = () => {
+  const { handleDarkMode, toggle, setToggle} = useContext(DarkContext);
+
   return (
-    <section className="bg-[#F5F9FA] px-12 mt-6 py-24">
+    <section className={(toggle === true ? "px-12 mt-6 py-24 bg-[#F5F9FA]" : "px-12 mt-6 py-24 bg-slate-700")}>
       <div className="lg:flex items-center lg:px-36 px-5">
         <div className="lg:ml-12">
           <h2
@@ -19,9 +22,9 @@ const Integration = () => {
             data-aos-duration="1000"
             data-aos-delay="400"
           >
-            Google Calendar, Outlook Calendar, Zoom, Microsoft Teams,
+           <span className={(toggle === true ? "text-black" : "text-white")}>Google Calendar, Outlook Calendar, Zoom, Microsoft Teams,
             Salesforce, Stripe, webhooks, custom Lambda functions, and many
-            more.
+            more.</span>
           </p>
         </div>
         <div>
