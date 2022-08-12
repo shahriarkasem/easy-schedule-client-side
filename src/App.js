@@ -51,7 +51,10 @@ function App() {
     AOS.init();
   }, []);
 
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(localStorage.getItem("toggle") || true);
+  useEffect(() => {
+    localStorage.setItem("toggle", toggle);
+  }, [toggle, setToggle]);
 
   const handleDarkMode = () => {
     if (toggle === true) {
