@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import allTImeBookings from "../../../../media/images/booking/alltimebooking.png";
 import monthBookings from "../../../../media/images/booking/month.png";
 import todayBookings from "../../../../media/images/booking/today.png";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
+import DarkContext from "../../../DarkMode/DarkContext";
 
 const Booking = () => {
+  const { toggle } = useContext(DarkContext);
+
   const [todayBooking, setTodayBooking] = useState(48805);
   const [monthBooking, setMonthBooking] = useState(1040870);
   const [allTimeBooking, setAllTimeBooking] = useState(81166964);
@@ -14,12 +17,28 @@ const Booking = () => {
     <div>
       <div className="md:mx-20 lg:mx-36">
         <h2 className=" font-medium text-3xl text-center">
-          We handle 1000's of{" "}
+          <span className={toggle === true ? "text-black" : "text-white"}>
+            We handle 1000's of
+          </span>{" "}
           <span className="font-bold text-4xl text-[#ef7841]">bookings</span>{" "}
-          for <br /> our users every single day
+          <span className={toggle === true ? "text-black" : "text-white"}>
+            {" "}
+            for{" "}
+          </span>
+          <br />
+          <span className={toggle === true ? "text-black" : "text-white"}>
+            {" "}
+            our users every single day
+          </span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mt-4">
-          <div className="mx-auto text-center">
+          <div
+            className={
+              toggle === true
+                ? "mx-auto text-center"
+                : "mx-auto text-center bg-slate-600 py-2 px-5 rounded-xl"
+            }
+          >
             <div className="flex justify-center mx-auto">
               <img className="w-28" src={todayBookings} alt="" />
             </div>
@@ -33,10 +52,16 @@ const Booking = () => {
                   )}
                 </VisibilitySensor>
               </div>
-              <p className=" font-medium lg:text-xl mt-1 md:mt-2">weekly</p>
+              <p className=" font-medium lg:text-xl mt-1 md:mt-2"><span className={toggle === true ? "text-black" : "text-white"}>weekly</span></p>
             </div>
           </div>
-          <div className="mx-auto text-center">
+          <div
+            className={
+              toggle === true
+                ? "mx-auto text-center"
+                : "mx-auto text-center bg-slate-600 py-2 px-5 rounded-xl"
+            }
+          >
             <div className="flex justify-center mx-auto">
               <img className="w-28" src={monthBookings} alt="" />
             </div>
@@ -50,10 +75,16 @@ const Booking = () => {
                   )}
                 </VisibilitySensor>
               </div>
-              <p className=" font-medium lg:text-xl mt-1 md:mt-2">monthly</p>
+              <p className=" font-medium lg:text-xl mt-1 md:mt-2"><span className={toggle === true ? "text-black" : "text-white"}>monthly</span></p>
             </div>
           </div>
-          <div className="mx-auto text-center">
+          <div
+            className={
+              toggle === true
+                ? "mx-auto text-center"
+                : "mx-auto text-center bg-slate-600 py-2 px-5 rounded-xl"
+            }
+          >
             <div className="flex justify-center mx-auto">
               <img className="w-28" src={allTImeBookings} alt="" />
             </div>
@@ -67,7 +98,7 @@ const Booking = () => {
                   )}
                 </VisibilitySensor>
               </h5>
-              <p className=" font-medium lg:text-xl mt-1 md:mt-2">yearly</p>
+              <p className=" font-medium lg:text-xl mt-1 md:mt-2"><span className={toggle === true ? "text-black" : "text-white"}>yearly</span></p>
             </div>
           </div>
         </div>
