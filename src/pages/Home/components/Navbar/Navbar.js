@@ -97,7 +97,7 @@ const Navbar = () => {
   return (
     <div className="mx-auto">
       <div
-        class={"navbar " + (toggle === true ? "bg-base-100" : "bg-slate-800")}
+        class={"navbar " + (toggle === true ? "bg-base-100 lg:px-28" : "bg-slate-800 lg:px-32")}
       >
         <div class="navbar-start">
           <div class="dropdown">
