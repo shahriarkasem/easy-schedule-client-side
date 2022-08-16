@@ -326,16 +326,11 @@ const ViewBooking = () => {
                     </div>
 
                     <input
-                      className="bg-blue-500 text-white px-4 py-2 rounded-3xl mt-5 md:mt-5 ml-20 cursor-pointer"
+                      className="bg-blue-500 text-white px-4 py-2 rounded-3xl mt-5 md:mt-6 lg:mt-8 cursor-pointer"
                       type="submit"
                       value="Schedule Event"
                     />
                   </form>
-                  <div className="mt-[-32px] ml-3">
-                    <button onClick={() => window.history.back()} className="">
-                      Cancel
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
