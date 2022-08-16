@@ -4,8 +4,12 @@ import React, { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { ReactMultiEmail, isEmail } from "react-multi-email";
+import "react-multi-email/style.css";
 
 const ViewBooking = () => {
+  const [emails, setEmails] = useState([]);
+
   const { id } = useParams(true);
   const navigate = useNavigate("");
   const [next, setNext] = useState(false);
@@ -268,16 +272,52 @@ const ViewBooking = () => {
 
                     <div class="form-control w-full max-w-md mt-3 md:mt-5">
                       <label class="label">
+                        <span class="label-text font-semibold">Email</span>
+                      </label>
+                      <input
+                        type="email"
+                        placeholder=""
+                        class="input input-bordered w-full max-w-md"
+                        {...register("email", {
+                          required: true,
+                          maxLength: 60,
+                        })}
+                      />
+                    </div>
+
+                    {/* guest multi mails */}
+                    <div class="form-control w-full max-w-md mt-3 md:mt-5">
+                      <label class="label">
+                        <span class="label-text font-semibold"> Guest email's</span>
+                      </label>
+                      <input
+                        type="email"
+                        placeholder=""
+                        class="input input-bordered w-full max-w-md"
+                        {...register("emails", {
+                          required: true,
+                          maxLength: 60,
+                        })}
+                      />
+                    </div>
+
+                    {/* react multi mails */}
+                    <div>
+
+                    </div>
+
+                    <div class="form-control w-full max-w-md mt-3 md:mt-5">
+                      <label class="label">
                         <span class="label-text font-semibold">
                           Please share anything that will help prepare for our
                           meeting.
                         </span>
                       </label>
                       <textarea
-                        rows="20"
+                        rows={4}
                         type="text"
                         placeholder=""
-                        class="input input-bordered w-full max-w-md"
+                        class="input input-bordered w-full max-w-md min-h-16"
                         {...register("details", {
                           required: true,
                           maxLength: 400,
