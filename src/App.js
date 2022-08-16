@@ -36,6 +36,7 @@ import Apps from "./pages/Dashboard/DashboardComponents/Apps";
 import OneOnOne from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/OneOnOne";
 import Group from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/Group";
 import EventTypesName from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/EventTypesName";
+import ViewBooking from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBooking";
 import DateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/DateRange";
 
 import AdminManagement from "./pages/Dashboard/DashboardComponents/AdminManagement";
@@ -92,6 +93,7 @@ function App() {
           <Route path="/blog" element={<Blog></Blog>}></Route>
           <Route path="/support" element={<Support></Support>}></Route>
           <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
+          <Route path="/view-booking/:id" element={<ViewBooking />}></Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
 
