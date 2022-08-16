@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const UserEvents = ({ soloEvent }) => {
+  const navigate = useNavigate('');
   const {
     _id,
     userEmail,
@@ -14,7 +15,11 @@ const UserEvents = ({ soloEvent }) => {
     eventTime,
     eventDuration,
   } = soloEvent;
-  console.log(soloEvent);
+  // console.log(soloEvent);
+
+  const openInNewTab = url => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <div class="card bg-base-100 shadow-xl border-t-4 border-red-500">
@@ -28,7 +33,7 @@ const UserEvents = ({ soloEvent }) => {
             {eventDuration}min, {eventType}
           </p>
           <p className="font-thin text-slate-500">Date: {eventDate}</p>
-          <p className="mt-2 mb-1 text-blue-600 hover:cursor-pointer hover:underline">
+          <p className="mt-2 mb-1 text-blue-600 hover:cursor-pointer hover:underline" onClick={() => openInNewTab(`/view-booking/${_id}`)}>
             View booking page
           </p>
         </div>
