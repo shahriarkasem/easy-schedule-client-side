@@ -23,7 +23,7 @@ const ViewBooking = () => {
   );
 
   const [date, setDate] = useState(new Date());
-  const formattedDate = format(date, "PP");
+  const formattedDate = date && format(date, "PP");
 
   const [inviteTime, setInviteTime] = useState("");
   const [finalData, setFinalData] = useState();
@@ -288,7 +288,10 @@ const ViewBooking = () => {
                     {/* guest multi mails */}
                     <div class="form-control w-full max-w-md mt-3 md:mt-5">
                       <label class="label">
-                        <span class="label-text font-semibold"> Guest email's</span>
+                        <span class="label-text font-semibold">
+                          {" "}
+                          Guest email's
+                        </span>
                       </label>
                       <input
                         type="email"
@@ -302,9 +305,7 @@ const ViewBooking = () => {
                     </div>
 
                     {/* react multi mails */}
-                    <div>
-
-                    </div>
+                    <div></div>
 
                     <div class="form-control w-full max-w-md mt-3 md:mt-5">
                       <label class="label">
