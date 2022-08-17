@@ -22,7 +22,7 @@ import Integrations from "./pages/Dashboard/DashboardComponents/Integrations";
 import Help from "./pages/Dashboard/DashboardComponents/Help";
 import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypes";
 // import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
-import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows";
+import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/Workflows";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
 import AccountSettings from "./pages/Dashboard/DashboardComponents/AccountSettings";
 import Billing from "./pages/Dashboard/DashboardComponents/billing/Billing";
@@ -46,6 +46,7 @@ import SingleDateRange from "./pages/Dashboard/DashboardComponents/DashboardHome
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import Call from "./video/call/Call";
 import DarkContext from "./pages/DarkMode/DarkContext";
+import CreateWorkflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/CreateWorkflows";
 
 function App() {
   useEffect(() => {
@@ -55,23 +56,23 @@ function App() {
   const [toggle, setToggle] = useState(true);
 
   useEffect(() => {
-    const toggleValue = JSON.parse(localStorage.getItem('toggle'));
+    const toggleValue = JSON.parse(localStorage.getItem("toggle"));
     // console.log(toggleValue);
     if (toggleValue) {
-     setToggle(true);
+      setToggle(true);
     }
-    if(toggleValue === false){
+    if (toggleValue === false) {
       setToggle(false);
     }
   }, []);
 
   const handleDarkMode = () => {
     if (toggle) {
-      localStorage.setItem('toggle', JSON.stringify(false));
+      localStorage.setItem("toggle", JSON.stringify(false));
       setToggle(false);
     }
     if (toggle === false) {
-      localStorage.setItem('toggle', JSON.stringify(true));
+      localStorage.setItem("toggle", JSON.stringify(true));
       setToggle(true);
     }
   };
@@ -113,6 +114,7 @@ function App() {
                 <Route path="date" element={<SingleDateRange />}></Route>
               </Route>
               <Route path="workflows" element={<Workflows />} />
+              <Route path="CreateWorkflows" element={<CreateWorkflows />} />
               <Route path="routing" element={<RoutingForms />} />
             </Route>
 

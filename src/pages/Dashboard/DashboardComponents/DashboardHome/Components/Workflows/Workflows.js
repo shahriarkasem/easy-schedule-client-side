@@ -2,7 +2,7 @@ import { faEnvelope, faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./Workflows.css";
-import img1 from "../../../../../media/images/workflow/1.jpg";
+import img1 from "../../../../../../media/images/workflow/1.jpg";
 
 const Workflows = () => {
   const workflowData = [
@@ -83,7 +83,7 @@ const Workflows = () => {
       </div>
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 my-10">
         {workflowData.map((flowData) => (
-          <a href="">
+          <a href="/dashboard/d-home/CreateWorkflows">
             <div class="card rounded-none workflowShadow  hover:bg-gray-100 ">
               <div class="card-body">
                 <h2 className="font-bold text-xl font-sans">

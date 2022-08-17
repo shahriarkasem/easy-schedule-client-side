@@ -8,7 +8,12 @@ const DashboardHome = () => {
     <div className="">
       <div className="flex justify-between mt-12 mb-6">
         <h2 className="text-2xl ">My Schedule</h2>
-        <button onClick={() => navigate('/dashboard/event-type')} className="button-orange-border-h40">+ Create</button>
+        <button
+          onClick={() => navigate("/dashboard/event-type")}
+          className="button-orange-border-h40"
+        >
+          + Create
+        </button>
       </div>
 
       <div class="navbar bg-base-100 overflow-x-auto border-b-2 drop-shadow-lg">
@@ -18,11 +23,16 @@ const DashboardHome = () => {
               <Link to="/dashboard/d-home/event-types">Event Types</Link>
             </li>
             <li>
-              <Link to="/dashboard/d-home/scheduled/upcoming">Scheduled Events</Link>
+              <Link to="/dashboard/d-home/scheduled/upcoming">
+                Scheduled Events
+              </Link>
             </li>
             <li>
-              <Link to="/dashboard/d-home/workflows">Workflows</Link>
+              <Link to="/dashboard/d-home/Workflows/">Workflows</Link>
             </li>
+            {/* <li>
+              <Link to="/dashboard/d-home/CreateWorkflows/" />
+            </li> */}
             <li>
               <Link to="/dashboard/d-home/routing">Routing Forms</Link>
             </li>
