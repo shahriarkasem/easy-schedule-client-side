@@ -47,6 +47,7 @@ import MessengerCustomerChat from "react-messenger-customer-chat";
 import Call from "./video/call/Call";
 import DarkContext from "./pages/DarkMode/DarkContext";
 import CreateWorkflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/CreateWorkflows";
+import Privacy from "./pages/Common/Privacy";
 
 function App() {
   useEffect(() => {
@@ -134,6 +135,7 @@ function App() {
             <Route path="integrations" element={<Integrations />}></Route>
           </Route>
           <Route path="/call" element={<Call />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
         <MessengerCustomerChat
           pageId={process.env.REACT_APP_PAGE_ID}
