@@ -20,6 +20,7 @@ const OneOnOne = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
     const userEmail = user?.email;
+    const userName = user?.displayName;
     const eventType = "OneOnOne";
     const eventName = data.eventName;
     const eventDate = data.eventDate;
@@ -30,6 +31,7 @@ const OneOnOne = () => {
     const location = event.target.location.value;
     const fullData = {
       userEmail,
+      userName,
       eventType,
       eventName,
       eventDate,
@@ -120,7 +122,6 @@ const OneOnOne = () => {
 
                 <option value="Google Meet">Google Meet</option>
                 <option value="Zoom">Zoom</option>
-
                 <option value="Custom">Custom</option>
               </select>
             </div>
@@ -180,7 +181,7 @@ const OneOnOne = () => {
                 {...register("description", { required: true, maxLength: 400 })}
               />
             </div>
-            <div class="form-control w-full max-w-md mt-3 md:mt-5">
+            {/* <div class="form-control w-full max-w-md mt-3 md:mt-5">
               <label class="label">
                 <span class="label-text font-semibold">Event link</span>
                 <span class="label-text">easy-schedule.com/link</span>
@@ -191,7 +192,7 @@ const OneOnOne = () => {
                 class="input input-bordered w-full max-w-md"
                 {...register("eventLink", { required: true, maxLength: 40 })}
               />
-            </div>
+            </div> */}
             <input
               className="bg-blue-500 text-white px-4 py-2 rounded-3xl mt-5 md:mt-5 ml-20 cursor-pointer"
               type="submit"

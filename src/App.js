@@ -36,6 +36,7 @@ import Apps from "./pages/Dashboard/DashboardComponents/Apps";
 import OneOnOne from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/OneOnOne";
 import Group from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/Group";
 import EventTypesName from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/EventTypesName";
+import ViewBooking from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBooking";
 import DateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/DateRange";
 
 import AdminManagement from "./pages/Dashboard/DashboardComponents/AdminManagement";
@@ -45,6 +46,8 @@ import SingleDateRange from "./pages/Dashboard/DashboardComponents/DashboardHome
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import Call from "./video/call/Call";
 import DarkContext from "./pages/DarkMode/DarkContext";
+import Privacy from "./pages/Common/Privacy";
+import ConfirmMessage from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBookingComponents/ConfirmMessage";
 
 function App() {
   useEffect(() => {
@@ -54,23 +57,23 @@ function App() {
   const [toggle, setToggle] = useState(true);
 
   useEffect(() => {
-    const toggleValue = JSON.parse(localStorage.getItem('toggle'));
+    const toggleValue = JSON.parse(localStorage.getItem("toggle"));
     // console.log(toggleValue);
     if (toggleValue) {
-     setToggle(true);
+      setToggle(true);
     }
-    if(toggleValue === false){
+    if (toggleValue === false) {
       setToggle(false);
     }
   }, []);
 
   const handleDarkMode = () => {
     if (toggle) {
-      localStorage.setItem('toggle', JSON.stringify(false));
+      localStorage.setItem("toggle", JSON.stringify(false));
       setToggle(false);
     }
     if (toggle === false) {
-      localStorage.setItem('toggle', JSON.stringify(true));
+      localStorage.setItem("toggle", JSON.stringify(true));
       setToggle(true);
     }
   };
@@ -92,6 +95,8 @@ function App() {
           <Route path="/blog" element={<Blog></Blog>}></Route>
           <Route path="/support" element={<Support></Support>}></Route>
           <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
+          <Route path="/view-booking/:id" element={<ViewBooking />}></Route>
+          <Route path="/booking-confirm/:id" element={<ConfirmMessage />}></Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
 
@@ -130,6 +135,7 @@ function App() {
             <Route path="integrations" element={<Integrations />}></Route>
           </Route>
           <Route path="/call" element={<Call />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
         <MessengerCustomerChat
           pageId={process.env.REACT_APP_PAGE_ID}
