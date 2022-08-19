@@ -199,12 +199,12 @@ const ViewBooking = () => {
       .then((res) => {
         if (res.status === 200) {
           toast.success("Event created successfully");
-          // navigate("/dashboard/d-home/event-types");
+          navigate(`/booking-confirm/${res.data.insertedId}`);
         }
-        console.log(res)
+        // console.log(res)
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
 
