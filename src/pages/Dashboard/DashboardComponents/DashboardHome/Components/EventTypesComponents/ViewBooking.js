@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
 import React, { useEffect, useState } from "react";
@@ -6,6 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { ReactMultiEmail, isEmail } from "react-multi-email";
 import "react-multi-email/style.css";
+import { toast } from "react-toastify";
 
 const ViewBooking = () => {
   const [emails, setEmails] = useState([]);
@@ -180,8 +182,30 @@ const ViewBooking = () => {
   );
 
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data, event) => {
-    console.log(data);
+  const onSubmit = (data) => {
+    const name = data.name;
+    const email = data.email;
+    const emails = data.emails;
+    const invitation = {name,email,emails, finalData}
+    console.log(invitation);
+    axios({
+      method: "POST",
+      headers: {
+        // authorization
+      },
+      url: `http://localhost:5000/event/invitation`,
+      data: invitation,
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          toast.success("Event created successfully");
+          // navigate("/dashboard/d-home/event-types");
+        }
+        console.log(res)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
