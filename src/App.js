@@ -47,6 +47,7 @@ import MessengerCustomerChat from "react-messenger-customer-chat";
 import Call from "./video/call/Call";
 import DarkContext from "./pages/DarkMode/DarkContext";
 import Privacy from "./pages/Common/Privacy";
+import ConfirmMessage from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBookingComponents/ConfirmMessage";
 
 function App() {
   useEffect(() => {
@@ -95,6 +96,7 @@ function App() {
           <Route path="/support" element={<Support></Support>}></Route>
           <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
           <Route path="/view-booking/:id" element={<ViewBooking />}></Route>
+          <Route path="/booking-confirm/:id" element={<ConfirmMessage />}></Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
 

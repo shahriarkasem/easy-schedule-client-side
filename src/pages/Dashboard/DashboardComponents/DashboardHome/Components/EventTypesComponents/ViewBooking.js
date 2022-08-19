@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
 import React, { useEffect, useState } from "react";
@@ -6,6 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { ReactMultiEmail, isEmail } from "react-multi-email";
 import "react-multi-email/style.css";
+import { toast } from "react-toastify";
 
 const ViewBooking = () => {
   const [emails, setEmails] = useState([]);
@@ -180,8 +182,30 @@ const ViewBooking = () => {
   );
 
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data, event) => {
-    console.log(data);
+  const onSubmit = (data) => {
+    const name = data.name;
+    const email = data.email;
+    const emails = data.emails;
+    const invitation = {name,email,emails, finalData}
+    console.log(invitation);
+    axios({
+      method: "POST",
+      headers: {
+        // authorization
+      },
+      url: `http://localhost:5000/event/invitation`,
+      data: invitation,
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          toast.success("Event created successfully");
+          navigate(`/booking-confirm/${res.data.insertedId}`);
+        }
+        // console.log(res)
+      })
+      .catch((error) => {
+        // console.log(error);
+      });
   };
 
   return (
@@ -327,16 +351,11 @@ const ViewBooking = () => {
                     </div>
 
                     <input
-                      className="bg-blue-500 text-white px-4 py-2 rounded-3xl mt-5 md:mt-5 ml-20 cursor-pointer"
+                      className="bg-blue-500 text-white px-4 py-2 rounded-3xl mt-5 md:mt-6 lg:mt-8 cursor-pointer"
                       type="submit"
                       value="Schedule Event"
                     />
                   </form>
-                  <div className="mt-[-32px] ml-3">
-                    <button onClick={() => window.history.back()} className="">
-                      Cancel
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
