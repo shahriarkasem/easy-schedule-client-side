@@ -1,5 +1,4 @@
 import React from "react";
-import IntegrationArif from "./IntegrationArif/IntegrationArif";
 
 const Integrations = () => {
   return (
