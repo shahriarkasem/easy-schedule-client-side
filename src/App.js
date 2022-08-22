@@ -48,6 +48,7 @@ import Call from "./video/call/Call";
 import DarkContext from "./pages/DarkMode/DarkContext";
 import Privacy from "./pages/Common/Privacy";
 import ConfirmMessage from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBookingComponents/ConfirmMessage";
+import NotFound from "./pages/Shared/NotFound";
 
 function App() {
   useEffect(() => {
@@ -136,6 +137,7 @@ function App() {
           </Route>
           <Route path="/call" element={<Call />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <MessengerCustomerChat
           pageId={process.env.REACT_APP_PAGE_ID}
