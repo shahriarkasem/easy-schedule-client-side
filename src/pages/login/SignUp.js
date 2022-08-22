@@ -34,16 +34,16 @@ const SignUp = () => {
     );
   }
 
-  const onSubmit = (data) => {
-    console.log(data.name);
-    createUserWithEmailAndPassword(data.email, data.password);
-    updateProfile({ displayName: data.name });
+  const onSubmit = async (data) => {
+    // console.log(data.name);
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
     const name = data.name;
     const email = data.email;
     // console.log(name, email);
     const allData = { name, email };
     console.log(allData);
-    fetch("http://localhost:5000/users", {
+    fetch("https://easyscheduler24.herokuapp.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +57,7 @@ const SignUp = () => {
       });
     reset();
   };
-
+  console.log(user);
   if (user || gUser) {
     navigate("/");
   }

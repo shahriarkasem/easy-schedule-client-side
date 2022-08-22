@@ -85,7 +85,9 @@ const BillingModal = () => {
                 PayPal
               </p>
             </div>
-            <div class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content"></div>
+            <div class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+              Upcoming...
+            </div>
           </div>
           {/* SSl */}
           <div class="collapse rounded-2xl mb-4">
@@ -96,7 +98,9 @@ const BillingModal = () => {
                 SSLCommerz
               </p>
             </div>
-            <div class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content"></div>
+            <div class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+              Upcoming...
+            </div>
           </div>
           <div class="modal-action">
             <label class="btn button-orange rounded-3xl px-10">Upgrade</label>

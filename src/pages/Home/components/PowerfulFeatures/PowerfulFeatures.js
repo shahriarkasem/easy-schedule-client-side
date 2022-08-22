@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import DarkContext from "../../../DarkMode/DarkContext";
 import Feature from "./Feature";
 
 const PowerfulFeatures = () => {
+  const { toggle} = useContext(DarkContext);
+
   const features = [
     {
       icon: "https://i.ibb.co/9wvtnkF/reminder.png",
@@ -47,8 +50,8 @@ const PowerfulFeatures = () => {
         Powerful Feature
       </h1>
       <p className="py-4">
-        Simple,easy to use features to help automate scheduling with yours
-        customers
+      <span className={toggle === true ? "text-black" : "text-white"}>        Simple,easy to use features to help automate scheduling with yours
+        customers</span>
       </p>
       <div
         data-aos="fade-up"
@@ -57,7 +60,7 @@ const PowerfulFeatures = () => {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:px-24 justify-items-center"
       >
         {features.map((feature) => (
-          <Feature feature={feature}></Feature>
+          <Feature feature={feature} toggle={toggle}></Feature>
         ))}
       </div>
     </div>

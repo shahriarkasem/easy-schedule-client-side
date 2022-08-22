@@ -19,6 +19,7 @@ const Group = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
     const userEmail = user?.email;
+    const userName = user?.displayName;
     const eventType = "Group";
     const eventName = data.eventName;
     const eventDate = data.eventDate;
@@ -30,6 +31,7 @@ const Group = () => {
     const location = event.target.location.value;
     const fullData = {
       userEmail,
+      userName,
       eventType,
       eventName,
       eventDate,
@@ -46,7 +48,7 @@ const Group = () => {
       headers: {
         // authorization
       },
-      url: `http://localhost:5000/event/create/group`,
+      url: `https://easyscheduler24.herokuapp.com/event/create/group`,
       data: fullData,
     })
       .then((res) => {
@@ -114,14 +116,9 @@ const Group = () => {
                   Pick one
                 </option>
                 <option value="In-person meeting">In-person meeting</option>
-                <option value="Phone call">Phone call</option>
                 <option value="Google Meet">Google Meet</option>
                 <option value="Zoom">Zoom</option>
-                <option value="Microsoft Teams">Microsoft Teams</option>
-                <option value="Webex">Webex</option>
-                <option value="GoTo Meeting">GoTo Meeting</option>
                 <option value="Custom">Custom</option>
-                <option value="Ask invitee">Ask invitee</option>
               </select>
             </div>
             <div class="form-control w-full max-w-md mt-3 md:mt-5">
@@ -180,7 +177,7 @@ const Group = () => {
                 {...register("description", { required: true, maxLength: 400 })}
               />
             </div>
-            <div class="form-control w-full max-w-md mt-3 md:mt-5">
+            {/* <div class="form-control w-full max-w-md mt-3 md:mt-5">
               <label class="label">
                 <span class="label-text font-semibold">Event link</span>
                 <span class="label-text">easy-schedule.com/link</span>
@@ -191,7 +188,7 @@ const Group = () => {
                 class="input input-bordered w-full max-w-md"
                 {...register("eventLink", { required: true, maxLength: 40 })}
               />
-            </div>
+            </div> */}
             <div class="form-control w-full max-w-md mt-3 md:mt-5">
               <label class="label">
                 <span class="label-text font-semibold">
