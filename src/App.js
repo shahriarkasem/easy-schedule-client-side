@@ -97,6 +97,7 @@ function App() {
           <Route path="integrations" element={<Integrations />}></Route>
         </Route>
       </Routes>
+
       <Footer />
       <ToastContainer />
     </div>
