@@ -48,6 +48,12 @@ import Call from "./video/call/Call";
 import DarkContext from "./pages/DarkMode/DarkContext";
 import Privacy from "./pages/Common/Privacy";
 import ConfirmMessage from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBookingComponents/ConfirmMessage";
+import RequireAuth from "./pages/login/RequireAuth";
+import AdminDashboard from "./pages/Dashboard/AdminDashboard/AdminDashboard";
+import AllUsers from "./pages/Dashboard/AdminDashboard/AllUsers";
+import MySchedule from "./pages/Dashboard/AdminDashboard/MySchedule";
+import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
+import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
 
 function App() {
   useEffect(() => {
@@ -99,7 +105,13 @@ function App() {
           <Route path="/booking-confirm/:id" element={<ConfirmMessage />}></Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-
+          {/* Admin Dashboard */}
+          <Route path="adminDashboard" element={<RequireAuth><AdminDashboard></AdminDashboard></RequireAuth>}>
+            <Route index element={<MySchedule></MySchedule>}></Route>
+            <Route path="/adminDashboard/allUsers" element={<AllUsers></AllUsers>}></Route>
+            <Route path="/adminDashboard/manageUsers" element={<ManageUsers></ManageUsers>}></Route>
+            <Route path="/adminDashboard/manageEvents" element={<ManageEvents></ManageEvents>}></Route>
+          </Route>
           {/* nested */}
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="/dashboard" element={<DashboardHome />}></Route>
@@ -118,7 +130,6 @@ function App() {
               <Route path="workflows" element={<Workflows />} />
               <Route path="routing" element={<RoutingForms />} />
             </Route>
-
             <Route path="event-type" element={<EventTypesName />}></Route>
             <Route path="event-type/one-on-one" element={<OneOnOne />}></Route>
             <Route path="event-type/group" element={<Group />}></Route>
@@ -141,6 +152,7 @@ function App() {
           pageId={process.env.REACT_APP_PAGE_ID}
           appId={process.env.REACT_APP_APP_ID}
         />
+
         <Footer />
       </DarkContext.Provider>
       <ToastContainer />

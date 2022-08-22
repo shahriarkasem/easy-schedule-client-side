@@ -178,17 +178,24 @@ const Navbar = () => {
             )}
           </p>
           {user ? (
+
+
             <Link
               to="/dashboard/d-home/event-types"
               className="button-orange-border-h40"
             >
               <span>My Account</span>
             </Link>
+
+
           ) : (
             <Link to="/login" class="button-orange-border-h40">
               Login
             </Link>
           )}
+
+
+
         </div>
       </div>
     </div>

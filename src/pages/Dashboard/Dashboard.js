@@ -56,9 +56,7 @@ const Dashboard = () => {
           <Link className="p-2" to="admin-management">
             Admin Management
           </Link>
-          <Link className="p-2" to="apps">
-            Apps
-          </Link>
+
 
           {/* <Link className="p-2" to="dashboardHome">
             Dashboard Home
@@ -66,12 +64,17 @@ const Dashboard = () => {
           <Link className="p-2" to="Help">
             Help
           </Link>
+          <Link className="p-2" to="apps">
+            Apps
+          </Link>
           <Link className="p-2" to="integrations">
             Integrations
           </Link>
-          <Link className="p-2" to="/dashboard/d-home/event-types">
-            Dashboard
-          </Link>
+          {user &&
+            <Link className="p-2"
+              to="/adminDashboard">Admin Dashboard
+            </Link>
+          }
           {user ? (
             <Link
               to="/"
