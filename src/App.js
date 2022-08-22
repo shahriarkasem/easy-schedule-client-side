@@ -49,6 +49,7 @@ import DarkContext from "./pages/DarkMode/DarkContext";
 import Privacy from "./pages/Common/Privacy";
 import ConfirmMessage from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBookingComponents/ConfirmMessage";
 import NotFound from "./pages/Shared/NotFound";
+import Loading from "./pages/Shared/Loading";
 
 function App() {
   useEffect(() => {
@@ -137,6 +138,7 @@ function App() {
           </Route>
           <Route path="/call" element={<Call />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/loading" element={<Loading />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <MessengerCustomerChat
