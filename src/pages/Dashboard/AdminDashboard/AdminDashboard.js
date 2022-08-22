@@ -1,50 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import { AiOutlineMenuFold } from 'react-icons/ai';
-import { Button, Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import useAdmin from '../../../hooks/useAdmin';
 
 const AdminDashboard = () => {
+
     const [user] = useAuthState(auth);
-    const [admin] = useAdmin(user)
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const [admin] = useAdmin(user);
     return (
+        <div class="drawer drawer-mobile">
+            <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content">
+                <h2 className='text-2xl font-bold text-center mt-4 pt-4'>
+                    <span className='text-pink-700'>Admin</span><span className='text-yellow-500'> Dashboard</span>
+                </h2>
+                <Outlet></Outlet>
+            </div>
+            <div class="drawer-side">
+                <label for="dashboard-sidebar" class="drawer-overlay"></label>
+                <ul class="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
+                    {/* <!-- Sidebar content here --> */}
 
+                    <li><Link to="/adminDashboard">My Schedule</Link></li>
+                    <li><Link to="/adminDashboard/allUsers">Users</Link></li>
+                    <li><Link to="/adminDashboard/manageUsers">Manage Users</Link></li>
+                    <li><Link to="/adminDashboard/manageEvents">Manage Events</Link></li>
 
-        <div>
-            <Button variant="link" onClick={handleShow}>
-                <ul>
-                    <li><AiOutlineMenuFold /></li>
                 </ul>
 
-            </Button>
-            <Outlet></Outlet>
-            <Offcanvas show={show} onHide={handleClose}>
-
-                <Offcanvas.Header closeButton>
-                    <Offcanvas.Title className='text-center'>DashBoard</Offcanvas.Title>
-                </Offcanvas.Header>
-
-                <Offcanvas.Body>
-
-                    <ul >
-                        {!admin && <li><Link to="/dashboard" className='text-decoration-none text-center text-dark'>My Order</Link></li>}
-                        {!admin && <li><Link to="/dashboard/review" className='text-decoration-none text-dark'>Add Reviews</Link></li>}
-                        <li><Link to="/dashboard/myProfile" className='text-decoration-none text-dark'> My Profile</Link></li>
-                        {admin && <li><Link to="/dashboard/users" className='text-decoration-none text-dark'>Manage All Users</Link></li>}
-                        {admin && <li><Link to="/dashboard/allOrders" className='text-decoration-none text-dark'> All Orders</Link></li>}
-                        {admin && <li><Link to="/dashboard/addProduct" className='text-decoration-none text-dark'> Add Product</Link></li>}
-                        {admin && <li><Link to="/dashboard/makeAdmin" className='text-decoration-none text-dark'> Make Admin</Link></li>}
-                        {admin && <li><Link to="/dashboard/manageProducts" className='text-decoration-none text-dark'> Manage Products</Link></li>}
-                    </ul>
-                </Offcanvas.Body>
-            </Offcanvas>
-
+            </div>
         </div>
     );
 };
