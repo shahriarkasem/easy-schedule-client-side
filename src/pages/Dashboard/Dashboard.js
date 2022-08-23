@@ -25,15 +25,15 @@ const Dashboard = () => {
       <li>
         <Link to="/dashboard/billing">Billing</Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/dashboard/availability">Availability</Link>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <Link to="/dashboard/integration">Integrations</Link>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <Link to="/dashboard/help">Help</Link>
-      </li>
+      </li> */}
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
@@ -56,9 +56,7 @@ const Dashboard = () => {
           <Link className="p-2" to="admin-management">
             Admin Management
           </Link>
-          <Link className="p-2" to="apps">
-            Apps
-          </Link>
+
 
           {/* <Link className="p-2" to="dashboardHome">
             Dashboard Home
@@ -66,12 +64,17 @@ const Dashboard = () => {
           <Link className="p-2" to="Help">
             Help
           </Link>
+          <Link className="p-2" to="apps">
+            Apps
+          </Link>
           <Link className="p-2" to="integrations">
             Integrations
           </Link>
-          <Link className="p-2" to="/dashboard/d-home/event-types">
-            Dashboard
-          </Link>
+          {user &&
+            <Link className="p-2"
+              to="/adminDashboard">Admin Dashboard
+            </Link>
+          }
           {user ? (
             <Link
               to="/"
