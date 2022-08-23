@@ -7,6 +7,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Login from "./pages/login/Login";
 import SignUp from "./pages/login/SignUp";
+import RequireAuth from "./pages/login/RequireAuth";
+import AdminDashboard from "./pages/Dashboard/AdminDashboard/AdminDashboard";
+import AllUsers from "./pages/Dashboard/AdminDashboard/AllUsers";
+import MySchedule from "./pages/Dashboard/AdminDashboard/MySchedule";
+import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
+import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
 // import HowItWorks from "./pages/Common/HowItWorks";
 import Individuals from "./pages/Common/Individuals";
 import Teams from "./pages/Common/Teams";
@@ -48,12 +54,10 @@ import Call from "./video/call/Call";
 import DarkContext from "./pages/DarkMode/DarkContext";
 import Privacy from "./pages/Common/Privacy";
 import ConfirmMessage from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBookingComponents/ConfirmMessage";
-import RequireAuth from "./pages/login/RequireAuth";
-import AdminDashboard from "./pages/Dashboard/AdminDashboard/AdminDashboard";
-import AllUsers from "./pages/Dashboard/AdminDashboard/AllUsers";
-import MySchedule from "./pages/Dashboard/AdminDashboard/MySchedule";
-import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
-import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
+import NotFound from "./pages/Shared/NotFound";
+import Loading from "./pages/Shared/Loading";
+import ChatRoom from "./pages/Shared/Chat/ChatRoom";
+import Chat from "./pages/Shared/Chat/Chat";
 
 function App() {
   useEffect(() => {
@@ -147,6 +151,9 @@ function App() {
           </Route>
           <Route path="/call" element={<Call />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/chat-room/:email/:name" element={<ChatRoom />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <MessengerCustomerChat
           pageId={process.env.REACT_APP_PAGE_ID}
@@ -154,6 +161,9 @@ function App() {
         />
 
         <Footer />
+        <Routes>
+
+        </Routes>
       </DarkContext.Provider>
       <ToastContainer />
     </div>
