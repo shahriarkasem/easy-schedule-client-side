@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import schedule from "../../../../media/images/schedule.jpg";
+import DarkContext from "../../../DarkMode/DarkContext";
 
 const Schedule = () => {
+  const { toggle} = useContext(DarkContext);
+
   return (
     <div className="my-12">
       <div className="md:mx-20 lg:mx-36">
-        <div className="card lg:card-side bg-base-100 shadow-xl p-8">
+        <div className={(toggle === true ? "card lg:card-side bg-base-100 shadow-xl p-8" : "card lg:card-side bg-slate-600 shadow-xl p-8")}>
           <figure>
             {/* "https://placeimg.com/400/400/arch" */}
             <img
@@ -31,10 +34,10 @@ const Schedule = () => {
               data-aos-duration="1000"
               data-aos-delay="400"
             >
-              With sequarespace scheduling, clients can quickly view your
+             <span className={toggle === true ? "text-black" : "text-white"}> With sequarespace scheduling, clients can quickly view your
               availability and book their own classes or appointments. They can
               even pay online and reschedule with a click. Never ask "what time
-              works for you? again.
+              works for you? again.</span>
             </p>
           </div>
         </div>
