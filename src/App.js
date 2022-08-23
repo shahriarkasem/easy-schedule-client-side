@@ -7,7 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Login from "./pages/login/Login";
 import SignUp from "./pages/login/SignUp";
-import HowItWorks from "./pages/Common/HowItWorks";
+// import HowItWorks from "./pages/Common/HowItWorks";
 import Individuals from "./pages/Common/Individuals";
 import Teams from "./pages/Common/Teams";
 import Pricing from "./pages/Common/Pricing";
@@ -89,13 +89,13 @@ function App() {
       <DarkContext.Provider value={{ handleDarkMode, toggle, setToggle }}>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/howitworks" element={<HowItWorks></HowItWorks>}></Route>
+          {/* <Route path="/howitworks" element={<HowItWorks></HowItWorks>}></Route> */}
           <Route path="/features" element={<Features></Features>}></Route>
-          <Route
+          {/* <Route
             path="/individuals"
             element={<Individuals></Individuals>}
-          ></Route>
-          <Route path="/teams" element={<Teams></Teams>}></Route>
+          ></Route> */}
+          {/* <Route path="/teams" element={<Teams></Teams>}></Route> */}
           <Route path="/pricing" element={<Pricing></Pricing>}></Route>
           <Route path="/whatsnew" element={<WhatsNew></WhatsNew>}></Route>
           <Route path="/blog" element={<Blog></Blog>}></Route>
@@ -133,11 +133,11 @@ function App() {
             <Route path="event-type" element={<EventTypesName />}></Route>
             <Route path="event-type/one-on-one" element={<OneOnOne />}></Route>
             <Route path="event-type/group" element={<Group />}></Route>
-            <Route path="availability" element={<Availability />}></Route>
+            {/* <Route path="availability" element={<Availability />}></Route> */}
             <Route path="billing" element={<Billing />}></Route>
-            <Route path="integration" element={<Integrations />}></Route>
+            {/* <Route path="integration" element={<Integrations />}></Route> */}
             <Route path="apps" element={<Apps />}></Route>
-            <Route path="help" element={<Help />}></Route>
+            {/* <Route path="help" element={<Help />}></Route> */}
             <Route path="accountSetting" element={<AccountSettings />}></Route>
             <Route
               path="admin-management"
