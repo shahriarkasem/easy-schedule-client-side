@@ -50,6 +50,8 @@ import Privacy from "./pages/Common/Privacy";
 import ConfirmMessage from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBookingComponents/ConfirmMessage";
 import NotFound from "./pages/Shared/NotFound";
 import Loading from "./pages/Shared/Loading";
+import ChatRoom from "./pages/Shared/Chat/ChatRoom";
+import Chat from "./pages/Shared/Chat/Chat";
 
 function App() {
   useEffect(() => {
@@ -138,7 +140,8 @@ function App() {
           </Route>
           <Route path="/call" element={<Call />} />
           <Route path="/privacy" element={<Privacy />} />
-          <Route path="/loading" element={<Loading />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/chat-room/:email/:name" element={<ChatRoom />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <MessengerCustomerChat
@@ -146,6 +149,9 @@ function App() {
           appId={process.env.REACT_APP_APP_ID}
         />
         <Footer />
+        <Routes>
+
+        </Routes>
       </DarkContext.Provider>
       <ToastContainer />
     </div>
