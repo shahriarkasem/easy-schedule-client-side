@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const navItem = (
     <>
-      <li>
+      {/* <li>
         <Link to="/howitworks">
           <span
             className={"" + (toggle === true ? "text-black" : "text-white")}
@@ -19,7 +19,7 @@ const Navbar = () => {
             How It Works
           </span>
         </Link>
-      </li>
+      </li> */}
       <li>
         <Link to="/features">
           <span
@@ -29,7 +29,7 @@ const Navbar = () => {
           </span>
         </Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/individuals">
           <span
             className={"" + (toggle === true ? "text-black" : "text-white")}
@@ -37,8 +37,8 @@ const Navbar = () => {
             Individuals
           </span>
         </Link>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <Link to="/teams">
           <span
             className={"" + (toggle === true ? "text-black" : "text-white")}
@@ -46,7 +46,7 @@ const Navbar = () => {
             Teams
           </span>
         </Link>
-      </li>
+      </li> */}
       <li>
         <Link to="/pricing">
           <span

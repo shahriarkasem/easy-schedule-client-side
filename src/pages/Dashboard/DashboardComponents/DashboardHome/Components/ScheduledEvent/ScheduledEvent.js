@@ -40,7 +40,7 @@ const ScheduledEvents = () => {
             </div>
             <ul className="navbar-end">
               <li>
-                <Pdf targetRef={ref} filename="div-blue.pdf">
+                <Pdf targetRef={ref} filename="Scheduled.pdf">
                   {({ toPdf }) => (
                     <button onClick={toPdf}>Export</button>
                   )}
