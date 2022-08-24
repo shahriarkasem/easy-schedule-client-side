@@ -30,7 +30,7 @@ import Upcoming from "./pages/Dashboard/DashboardComponents/DashboardHome/Compon
 import Pending from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Pending/Pending";
 import Past from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Past/Past";
 import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/ScheduledEvent";
-import Navbar from "./pages/Home/components/Navbar/Navbar";
+
 import Footer from "./pages/Home/components/Footer/Footer";
 import Apps from "./pages/Dashboard/DashboardComponents/Apps";
 import OneOnOne from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/OneOnOne";
@@ -54,6 +54,7 @@ import AllUsers from "./pages/Dashboard/AdminDashboard/AllUsers";
 import MySchedule from "./pages/Dashboard/AdminDashboard/MySchedule";
 import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
 import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
+import Navbar from "./pages/Home/components/Navbar/Navbar";
 
 function App() {
   useEffect(() => {
@@ -112,6 +113,7 @@ function App() {
             <Route path="/adminDashboard/manageUsers" element={<ManageUsers></ManageUsers>}></Route>
             <Route path="/adminDashboard/manageEvents" element={<ManageEvents></ManageEvents>}></Route>
           </Route>
+
           {/* nested */}
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="/dashboard" element={<DashboardHome />}></Route>
