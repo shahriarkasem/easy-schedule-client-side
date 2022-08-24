@@ -50,10 +50,10 @@ import ConfirmMessage from "./pages/Dashboard/DashboardComponents/DashboardHome/
 import RequireAuth from "./pages/login/RequireAuth";
 import AdminDashboard from "./pages/Dashboard/AdminDashboard/AdminDashboard";
 import AllUsers from "./pages/Dashboard/AdminDashboard/AllUsers";
-import MySchedule from "./pages/Dashboard/AdminDashboard/MySchedule";
 import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
 import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/Workflows";
+import UserSchedule from "./pages/Dashboard/AdminDashboard/UserSchedule";
 
 function App() {
   useEffect(() => {
@@ -107,7 +107,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           {/* Admin Dashboard */}
           <Route path="adminDashboard" element={<RequireAuth><AdminDashboard></AdminDashboard></RequireAuth>}>
-            <Route index element={<MySchedule></MySchedule>}></Route>
+            <Route index element={<UserSchedule></UserSchedule>}></Route>
             <Route path="/adminDashboard/allUsers" element={<AllUsers></AllUsers>}></Route>
             <Route path="/adminDashboard/manageUsers" element={<ManageUsers></ManageUsers>}></Route>
             <Route path="/adminDashboard/manageEvents" element={<ManageEvents></ManageEvents>}></Route>

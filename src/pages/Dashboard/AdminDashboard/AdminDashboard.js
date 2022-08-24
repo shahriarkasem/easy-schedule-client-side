@@ -11,19 +11,19 @@ const AdminDashboard = () => {
     const [admin] = useAdmin(user);
     return (
 
-        <div>
+        <div >
             <Navbar></Navbar>
             <div class="drawer drawer-mobile container">
                 <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
-                <div class="drawer-content">
-                    <h2 className='text-2xl font-bold text-center mt-4 pt-4'>
-                        <span className='text-pink-700'>Admin</span><span className='text-yellow-500'> Dashboard</span>
+                <div class="drawer-content ">
+                    <h2 className='text-2xl font-bold text-center mt-4 pt-4     '>
+                        <span className='text-pink-700 '>Admin</span><span className='text-yellow-500'> Dashboard</span>
                     </h2>
                     <Outlet></Outlet>
                 </div>
                 <div class="drawer-side p-4">
                     <label for="dashboard-sidebar" class="drawer-overlay"></label>
-                    <ul class="menu m-4 p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
+                    <ul class="menu  overflow-y-auto w-48 bg-base-100 text-base-content">
                         {/* <!-- Sidebar content here --> */}
                         <li><Link to="/adminDashboard">User Schedule</Link></li>
                         <li><Link to="/adminDashboard/allUsers">Users</Link></li>
