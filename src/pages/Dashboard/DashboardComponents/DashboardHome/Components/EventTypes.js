@@ -2,17 +2,23 @@ import React, { useEffect, useState } from "react";
 import auth from "../../../../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import useUserEvents from "../../../../../hooks/useUserEvents";
+import UserEvents from "./EventTypesComponents/UserEvents";
 
 const EventTypes = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
-  const [firstLetter, setFirstLetter] = useState('');
+  const { isLoading, error, userEvents, refetch } = useUserEvents();
+  const [firstLetter, setFirstLetter] = useState("");
 
   useEffect(() => {
     const userNameFirstLetter = user?.displayName?.charAt(0);
     setFirstLetter(userNameFirstLetter);
-  },[user])
-  
+  }, [user]);
+
+  if (isLoading) {
+    return <h2 className="font-bold text-red-500">Loading....</h2>;
+  }
 
   return (
     <div className="my-12">
@@ -43,9 +49,9 @@ const EventTypes = () => {
                   )}
                 </div>
               </div>
-              <div className="pl-3">
+              <div className="px-3">
                 <h3>{user?.displayName || "Unknown user"}</h3>
-                <p className="text-blue-600">@username</p>
+                <p className="text-blue-600">{user?.email}</p>
               </div>
             </div>
           </div>
@@ -60,27 +66,13 @@ const EventTypes = () => {
           </div>
         </div>
         {/* events details section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 mt-5 md:mt-8">
-          <div class="card bg-base-100 shadow-xl border-t-4 border-red-500">
-            <div class="pt-2 pr-5 pl-5 pb-5">
-              <div className="flex justify-end">
-                <button className="button-orange-border-h40">Edit</button>
-              </div>
-              <div className="mt-2 md:mt-5">
-                <h4 className="text-2xl">Event Name</h4>
-                <p className="font-thin text-slate-400">
-                  Event duration, Event Type
-                </p>
-                <p className="my-2 md:my-3 text-blue-600 hover:cursor-pointer hover:underline">
-                  View booking page
-                </p>
-              </div>
-              <div className="flex flex-row justify-between items-center">
-                <p className="text-blue-600 hover:cursor-pointer">Copy Link</p>
-                <button className="border-2 py-1 px-2 rounded-xl border-blue-400 hover:bg-blue-100 text-blue-500">
-                  Share
-                </button>
-              </div>
+        <div>
+          <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 mt-5 md:mt-8">
+              {userEvents &&
+                userEvents.map((soloEvent, index) => (
+                  <UserEvents key={index} soloEvent={soloEvent}></UserEvents>
+                ))}
             </div>
           </div>
         </div>
