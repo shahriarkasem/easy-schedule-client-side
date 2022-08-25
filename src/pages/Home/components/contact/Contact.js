@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div className="my-16 lg:px-40">
       <p className="text-center text-primary font-bold ">Contact</p>
-      <h2 className="lg:text-4xl text-3xl text-neutral font-bold text-center lg:px-64 px-16">
+      <h2 className="lg:text-4xl text-3xl text-secondary font-bold text-center lg:px-64 px-16">
         Let us handle your project, professionally.
       </h2>
 
@@ -39,7 +39,7 @@ const Contact = () => {
           placeholder="Your Message"
         ></textarea>
         <input
-          className="btn btn-primary text-white block mx-auto my-3"
+          className="btn button-orange text-white block mx-auto my-3"
           type="submit"
           value="Send Message"
         />
