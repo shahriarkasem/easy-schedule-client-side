@@ -94,6 +94,7 @@ function App() {
       <DarkContext.Provider value={{ handleDarkMode, toggle, setToggle }}>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
+
           {/* <Route path="/howitworks" element={<HowItWorks></HowItWorks>}></Route> */}
           <Route path="/features" element={<Features></Features>}></Route>
           {/* <Route

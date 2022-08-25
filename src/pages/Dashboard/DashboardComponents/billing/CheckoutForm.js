@@ -6,11 +6,34 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
+import { useEffect } from "react";
+import auth from "../../../../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ amount }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [clientSecret, setClientSecret] = useState("");
+
+  const [user] = useAuthState(auth);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/create-payment-intent", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ amount }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.clientSecret) {
+          setClientSecret(data.clientSecret);
+        }
+      });
+  }, [amount]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -21,7 +44,7 @@ const CheckoutForm = () => {
 
     const card = elements.getElement(CardElement);
 
-    if (card == null) {
+    if (card === null) {
       return;
     }
 
@@ -31,11 +54,32 @@ const CheckoutForm = () => {
     });
 
     setCardError(error?.message || "");
+    setSuccess("");
 
     if (error) {
       console.log("[error]", error);
     } else {
       console.log("[PaymentMethod]", paymentMethod);
+    }
+
+    // confirm card payment
+    const { paymentIntent, error: intentError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            name: user.displayName,
+            email: user.email,
+          },
+        },
+      });
+
+    if (intentError) {
+      setCardError(intentError?.message);
+    } else {
+      setCardError("");
+      console.log(paymentIntent);
+      setSuccess("Congrats! Your payment is completed");
     }
   };
 
@@ -67,6 +111,7 @@ const CheckoutForm = () => {
         </button>
       </form>
       {cardError && <p className="text-red-500">{cardError}</p>}
+      {success && <p className="text-green-500">{success}</p>}
     </div>
   );
 };
