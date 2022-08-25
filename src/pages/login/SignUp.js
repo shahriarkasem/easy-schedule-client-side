@@ -8,6 +8,7 @@ import {
   useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
+import OpenSpinner from "../Shared/OpenSpinner";
 
 const SignUp = () => {
   const [updateProfile] = useUpdateProfile(auth);
@@ -27,6 +28,9 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   let signInError;
+  if (gLoading || loading) {
+    return <OpenSpinner />;
+  }
 
   if (error || gError) {
     signInError = (
