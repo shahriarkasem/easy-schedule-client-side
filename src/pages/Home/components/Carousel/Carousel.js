@@ -11,6 +11,7 @@ import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import DarkContext from "../../../DarkMode/DarkContext";
+import { Link } from "react-router-dom";
 
 const Carousel = () => {
   const { toggle, setToggle } = useContext(DarkContext);
@@ -65,9 +66,9 @@ const Carousel = () => {
               </div>
             </div>
             <div className="mt-2 flex justify-center">
-              <button className=" btn btn-primary button-orange  ">
+              <Link to="/coming" className=" btn btn-primary button-orange  ">
                 Get Started
-              </button>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
@@ -100,9 +101,9 @@ const Carousel = () => {
               </div>
             </div>
             <div className="mt-2 flex justify-center">
-              <button className="btn btn-primary button-orange">
+              <Link to="/coming" className="btn btn-primary button-orange">
                 Get Started
-              </button>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
@@ -135,9 +136,9 @@ const Carousel = () => {
               </div>
             </div>
             <div className="mt-2 flex justify-center">
-              <button className="btn btn-primary button-orange">
+              <Link to="/coming" className="btn btn-primary button-orange">
                 Get Started
-              </button>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
