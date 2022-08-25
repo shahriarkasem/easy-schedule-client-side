@@ -89,7 +89,7 @@ function App() {
       <DarkContext.Provider value={{ handleDarkMode, toggle, setToggle }}>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/howitworks" element={<HowItWorks></HowItWorks>}></Route>
+
           <Route path="/features" element={<Features></Features>}></Route>
           <Route
             path="/individuals"
@@ -102,15 +102,34 @@ function App() {
           <Route path="/support" element={<Support></Support>}></Route>
           <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
           <Route path="/view-booking/:id" element={<ViewBooking />}></Route>
-          <Route path="/booking-confirm/:id" element={<ConfirmMessage />}></Route>
+          <Route
+            path="/booking-confirm/:id"
+            element={<ConfirmMessage />}
+          ></Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           {/* Admin Dashboard */}
-          <Route path="adminDashboard" element={<RequireAuth><AdminDashboard></AdminDashboard></RequireAuth>}>
+          <Route
+            path="adminDashboard"
+            element={
+              <RequireAuth>
+                <AdminDashboard></AdminDashboard>
+              </RequireAuth>
+            }
+          >
             <Route index element={<UserSchedule></UserSchedule>}></Route>
-            <Route path="/adminDashboard/allUsers" element={<AllUsers></AllUsers>}></Route>
-            <Route path="/adminDashboard/manageUsers" element={<ManageUsers></ManageUsers>}></Route>
-            <Route path="/adminDashboard/manageEvents" element={<ManageEvents></ManageEvents>}></Route>
+            <Route
+              path="/adminDashboard/allUsers"
+              element={<AllUsers></AllUsers>}
+            ></Route>
+            <Route
+              path="/adminDashboard/manageUsers"
+              element={<ManageUsers></ManageUsers>}
+            ></Route>
+            <Route
+              path="/adminDashboard/manageEvents"
+              element={<ManageEvents></ManageEvents>}
+            ></Route>
           </Route>
           {/* nested */}
           <Route path="/dashboard" element={<Dashboard />}>
