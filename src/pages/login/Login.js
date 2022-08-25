@@ -7,6 +7,7 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import OpenSpinner from "../Shared/OpenSpinner";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -21,6 +22,10 @@ const Login = () => {
   const navigate = useNavigate();
 
   let signInError;
+
+  if (gLoading || loading) {
+    return <OpenSpinner />;
+  }
 
   if (error || gError) {
     signInError = (
