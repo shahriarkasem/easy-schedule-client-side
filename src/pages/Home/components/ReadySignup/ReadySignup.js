@@ -1,5 +1,6 @@
 import React from "react";
 import ready from "../../../../media/images/feature/ready.png";
+import { Link } from "react-router-dom";
 
 const ReadySignup = () => {
   return (
@@ -14,7 +15,9 @@ const ReadySignup = () => {
         <p className="py-2 text-sm">
           7-days trial, no credit card required, no strings attached.
         </p>
-        <button className="btn btn-black btn-sm my-2">SignUp</button>
+        <Link to="/signup" className="btn btn-black btn-sm my-2">
+          SignUp
+        </Link>
       </div>
       <div>
         <img className="lg:-mt-32 -mt-10" src={ready} alt="" />

@@ -8,6 +8,7 @@ import blog4 from "../../../media/images/blog/55.jpg";
 import blog5 from "../../../media/images/blog/66.jpg";
 import blog6 from "../../../media/images/blog/77.jpg";
 import Navbar from "../../Home/components/Navbar/Navbar";
+import Footer from "../../Home/components/Footer/Footer";
 
 const Blog = () => {
   return (
@@ -264,6 +265,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
