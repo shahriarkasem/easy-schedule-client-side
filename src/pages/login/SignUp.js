@@ -9,6 +9,7 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import Loading from "../Shared/Loading";
+import OpenSpinner from "../Shared/OpenSpinner";
 
 const SignUp = () => {
   const [updateProfile] = useUpdateProfile(auth);
@@ -30,7 +31,7 @@ const SignUp = () => {
   let signInError;
 
   if (gLoading || loading) {
-    return;
+    return <OpenSpinner />;
   }
 
   if (error || gError) {
