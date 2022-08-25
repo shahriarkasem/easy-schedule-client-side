@@ -30,8 +30,8 @@ const ChatApi = () => {
 
   const [user, loading] = useAuthState(auth);
 
-  if(loading){
-    return <Loading></Loading>
+  if (loading) {
+    return <Loading></Loading>;
   }
 
   if (!email || !name || !user) {
@@ -160,7 +160,10 @@ function ChatMessage(props) {
           <img
             src={
               photoURL ||
-               (props.message.receiver === email && "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlB7JC2WGqdgPirrJq4iCse78c566bSMgo2Q&usqp=CAU") || (props.message.receiver === user?.email && "https://media.istockphoto.com/vectors/floral-seamless-pattern-flower-background-flourish-stripped-petals-vector-id587212846?k=20&m=587212846&s=612x612&w=0&h=G2wgGEEVY-vLjn6iIiUywY8_c9ROLHhY_K3WdP_Jq8o=")
+              (props.message.receiver === email &&
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlB7JC2WGqdgPirrJq4iCse78c566bSMgo2Q&usqp=CAU") ||
+              (props.message.receiver === user?.email &&
+                "https://media.istockphoto.com/vectors/floral-seamless-pattern-flower-background-flourish-stripped-petals-vector-id587212846?k=20&m=587212846&s=612x612&w=0&h=G2wgGEEVY-vLjn6iIiUywY8_c9ROLHhY_K3WdP_Jq8o=")
             }
           />
           <p>{text}</p>

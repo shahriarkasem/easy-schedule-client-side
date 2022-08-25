@@ -30,7 +30,7 @@ const SignUp = () => {
   let signInError;
 
   if (gLoading || loading) {
-    <Loading></Loading>;
+    return;
   }
 
   if (error || gError) {

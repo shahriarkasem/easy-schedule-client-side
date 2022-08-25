@@ -59,6 +59,8 @@ import NotFound from "./pages/Shared/NotFound";
 import Loading from "./pages/Shared/Loading";
 import ChatRoom from "./pages/Shared/Chat/ChatRoom";
 import Chat from "./pages/Shared/Chat/Chat";
+import LoadingAnimate from "./pages/Shared/LoadingAnimate";
+import OpenSpinner from "./pages/Shared/OpenSpinner";
 
 function App() {
   useEffect(() => {
@@ -99,7 +101,7 @@ function App() {
   return (
     <>
       {loading ? (
-        <Loading />
+        <LoadingAnimate />
       ) : (
         <div>
           <DarkContext.Provider value={{ handleDarkMode, toggle, setToggle }}>

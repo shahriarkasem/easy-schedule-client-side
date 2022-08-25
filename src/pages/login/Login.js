@@ -24,7 +24,7 @@ const Login = () => {
   let signInError;
 
   if (true || gLoading || loading) {
-    <Loading></Loading>;
+    return;
   }
 
   if (error || gError) {
