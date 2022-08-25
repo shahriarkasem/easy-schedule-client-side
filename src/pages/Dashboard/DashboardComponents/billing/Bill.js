@@ -10,7 +10,7 @@ const stripePromise = loadStripe(
   "pk_test_51L1A7TFEhAtE4KXiNYmOinDpEnKlgcnyZHHmSpoFJUjXRhSJMvna9Wo9TGwjjJVIuqlUpDExP5OzMuJDAdTnubzT00EZv5zayw"
 );
 
-const BillingModal = () => {
+const Bill = () => {
   const [amount, setAmount] = useState(10);
   const [currency, setCurrency] = useState("$");
 
@@ -29,9 +29,9 @@ const BillingModal = () => {
 
   return (
     <div>
-      <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
+      <input />
+      <div>
+        <div>
           <h3 class="font-bold text-lg text-center">Upgrade to Premium</h3>
           <p className="text-center text-gray-500">For Individuals</p>
           <p class="py-4">
@@ -102,14 +102,8 @@ const BillingModal = () => {
               Upcoming...
             </div>
           </div>
-          <div class="modal-action">
-            {/* <label class="btn button-orange rounded-3xl px-10">Upgrade</label> */}
-            <label
-              for="my-modal-6"
-              class="btn  btn-outline btn-accent rounded-3xl px-10 "
-            >
-              Ok
-            </label>
+          <div>
+            <label class="btn button-orange rounded-3xl px-10">Upgrade</label>
           </div>
         </div>
       </div>
@@ -117,4 +111,4 @@ const BillingModal = () => {
   );
 };
 
-export default BillingModal;
+export default Bill;
