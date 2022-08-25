@@ -8,6 +8,7 @@ import {
   useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
+import Loading from "../Shared/Loading";
 
 const SignUp = () => {
   const [updateProfile] = useUpdateProfile(auth);
@@ -27,6 +28,10 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   let signInError;
+
+  if (gLoading || loading) {
+    <Loading></Loading>;
+  }
 
   if (error || gError) {
     signInError = (

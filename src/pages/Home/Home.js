@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Banner from "./components/Banner/Banner";
 import Navbar from "./components/Navbar/Navbar";
 import Review from "./components/Review/Review";
@@ -12,14 +12,13 @@ import Support from "./components/support/Support";
 import Schedule from "./components/Schedule/Schedule";
 import Meeting from "./components/Meeting/Meeting";
 import EasySchedule from "./components/EasySchedule/EasySchedule";
-import Footer from "./components/Footer/Footer";
 import DarkContext from "../DarkMode/DarkContext";
 
 const Home = () => {
-  const {toggle} = useContext(DarkContext);
+  const { toggle } = useContext(DarkContext);
 
   return (
-    <div className={toggle === true ? 'bg-white' : 'bg-slate-700'}>
+    <div className={toggle === true ? "bg-white" : "bg-slate-700"}>
       <Navbar />
       <Banner></Banner>
       <EasySchedule />
@@ -31,9 +30,9 @@ const Home = () => {
       <Review></Review>
       <Booking></Booking>
       <PowerfulFeatures></PowerfulFeatures>
-     <div className="pb-10">
-     <ReadySignup></ReadySignup>
-     </div>
+      <div className="pb-10">
+        <ReadySignup></ReadySignup>
+      </div>
     </div>
   );
 };
