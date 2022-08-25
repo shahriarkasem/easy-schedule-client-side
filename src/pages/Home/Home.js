@@ -14,6 +14,7 @@ import Meeting from "./components/Meeting/Meeting";
 import EasySchedule from "./components/EasySchedule/EasySchedule";
 import Footer from "./components/Footer/Footer";
 import DarkContext from "../DarkMode/DarkContext";
+import Contact from "./components/contact/Contact";
 
 const Home = () => {
   const { toggle } = useContext(DarkContext);
@@ -34,6 +35,7 @@ const Home = () => {
       <div className="pb-10">
         <ReadySignup></ReadySignup>
       </div>
+      <Contact />
       <Footer />
     </div>
   );
