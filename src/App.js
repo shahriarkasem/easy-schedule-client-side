@@ -29,8 +29,7 @@ import Upcoming from "./pages/Dashboard/DashboardComponents/DashboardHome/Compon
 import Pending from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Pending/Pending";
 import Past from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Past/Past";
 import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/ScheduledEvent";
-import Navbar from "./pages/Home/components/Navbar/Navbar";
-import Footer from "./pages/Home/components/Footer/Footer";
+
 import Apps from "./pages/Dashboard/DashboardComponents/Apps";
 import OneOnOne from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/OneOnOne";
 import Group from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/Group";
@@ -171,8 +170,6 @@ function App() {
           pageId={process.env.REACT_APP_PAGE_ID}
           appId={process.env.REACT_APP_APP_ID}
         />
-
-        <Footer />
       </DarkContext.Provider>
       <ToastContainer />
     </div>

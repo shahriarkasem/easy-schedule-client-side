@@ -16,7 +16,7 @@ const Call = () => {
   };
 
   return (
-    <div className="text-center my-8">
+    <div className="text-center my-8 bg-[#202124]">
       <button onClick={handleClick} className="btn btn-accent">
         Back
       </button>
