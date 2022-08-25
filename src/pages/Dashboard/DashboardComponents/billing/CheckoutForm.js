@@ -16,6 +16,8 @@ const CheckoutForm = ({ amount }) => {
   const [cardError, setCardError] = useState("");
   const [success, setSuccess] = useState("");
   const [clientSecret, setClientSecret] = useState("");
+  const [processing, setProcessing] = useState(false);
+  const [transactionId, settTransactionId] = useState("");
 
   const [user] = useAuthState(auth);
 
@@ -55,12 +57,13 @@ const CheckoutForm = ({ amount }) => {
 
     setCardError(error?.message || "");
     setSuccess("");
+    setProcessing(true);
 
-    if (error) {
-      console.log("[error]", error);
-    } else {
-      console.log("[PaymentMethod]", paymentMethod);
-    }
+    // if (error) {
+    //   console.log("[error]", error);
+    // } else {
+    //   console.log("[PaymentMethod]", paymentMethod);
+    // }
 
     // confirm card payment
     const { paymentIntent, error: intentError } =
@@ -76,8 +79,11 @@ const CheckoutForm = ({ amount }) => {
 
     if (intentError) {
       setCardError(intentError?.message);
+      setProcessing(false);
+      console.log(intentError);
     } else {
       setCardError("");
+      settTransactionId(paymentIntent.id);
       console.log(paymentIntent);
       setSuccess("Congrats! Your payment is completed");
     }
@@ -105,13 +111,21 @@ const CheckoutForm = ({ amount }) => {
         <button
           className="btn btn-sm mt-4 btn-success"
           type="submit"
-          disabled={!stripe}
+          disabled={!stripe || !clientSecret || success}
         >
           Pay
         </button>
       </form>
       {cardError && <p className="text-red-500">{cardError}</p>}
-      {success && <p className="text-green-500">{success}</p>}
+      {success && (
+        <div className="text-green-500">
+          <p>{success}</p>{" "}
+          <p>
+            Your transaction Id:{" "}
+            <span className="text-orange-500 font-bold">{transactionId}</span>{" "}
+          </p>
+        </div>
+      )}
     </div>
   );
 };
