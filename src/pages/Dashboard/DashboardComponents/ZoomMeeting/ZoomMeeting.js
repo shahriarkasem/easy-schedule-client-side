@@ -11,7 +11,7 @@ const ZoomMeeting = () => {
       <div class="hero min-h-screen bg-teal-100 my-8">
         <div class="hero-content flex-col lg:flex-row-reverse">
           <div>
-            {/* <h3 className="text-3xl font-bold">Want to make a Zoom Meeting?</h3> */}
+            <h3 className="text-3xl font-bold">Want to make a Zoom Meeting?</h3>
             <button class="btn btn-warning text-center">
               Join Zoom Meeting
             </button>
