@@ -6,6 +6,7 @@ import card1 from "../../media/images/features/card1.webp";
 import card2 from "../../media/images/features/card2.webp";
 import Navbar from "../Home/components/Navbar/Navbar";
 import DarkContext from "../DarkMode/DarkContext";
+import Footer from "../Home/components/Footer/Footer";
 
 const Features = () => {
   const { toggle } = useContext(DarkContext);
@@ -316,6 +317,7 @@ const Features = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

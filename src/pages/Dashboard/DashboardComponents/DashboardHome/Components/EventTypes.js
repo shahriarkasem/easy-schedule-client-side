@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import useUserEvents from "../../../../../hooks/useUserEvents";
 import UserEvents from "./EventTypesComponents/UserEvents";
+import LoadingAnimate from "../../../../Shared/LoadingAnimate";
 
 const EventTypes = () => {
   const [user] = useAuthState(auth);
@@ -17,7 +18,7 @@ const EventTypes = () => {
   }, [user]);
 
   if (isLoading) {
-    return <h2 className="font-bold text-red-500">Loading....</h2>;
+    return <LoadingAnimate />;
   }
 
   return (
