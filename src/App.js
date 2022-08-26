@@ -54,6 +54,7 @@ import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
 import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/Workflows";
 import UserSchedule from "./pages/Dashboard/AdminDashboard/UserSchedule";
+import UserProfiledata from "./pages/Dashboard/DashboardComponents/UserProfiledata";
 
 function App() {
   useEffect(() => {
@@ -145,6 +146,7 @@ function App() {
             ></Route>
             <Route path="integrations" element={<Integrations />}></Route>
           </Route>
+          <Route path="/userData" element={<UserProfiledata />}></Route>
           <Route path="/call" element={<Call />} />
           <Route path="/privacy" element={<Privacy />} />
         </Routes>
