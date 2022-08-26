@@ -9,11 +9,11 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import OpenSpinner from "../Shared/OpenSpinner";
 
 const SignUp = () => {
   const [updateProfile] = useUpdateProfile(auth);
   const [user] = useAuthState(auth);
-  console.log(user);
 
   const {
     register,
@@ -22,7 +22,6 @@ const SignUp = () => {
     reset,
   } = useForm();
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-  console.log(gUser, "jabed");
 
   const [createUserWithEmailAndPassword, eUser, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
@@ -30,6 +29,9 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   let signInError;
+  if (gLoading || loading) {
+    return <OpenSpinner />;
+  }
 
   if (error || gError) {
     signInError = (

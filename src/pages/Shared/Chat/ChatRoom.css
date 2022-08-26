@@ -84,14 +84,14 @@
     color: white;
     outline: none;
     border: none;
-    padding: 0 10px;
+    padding: 0 20px;
   }
   
   .chat-main-container button {
     background-color: #282c34; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 0px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

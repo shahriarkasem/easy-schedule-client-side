@@ -29,8 +29,7 @@ import Upcoming from "./pages/Dashboard/DashboardComponents/DashboardHome/Compon
 import Pending from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Pending/Pending";
 import Past from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/Past/Past";
 import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/ScheduledEvent";
-import Navbar from "./pages/Home/components/Navbar/Navbar";
-import Footer from "./pages/Home/components/Footer/Footer";
+
 import Apps from "./pages/Dashboard/DashboardComponents/Apps";
 import OneOnOne from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/OneOnOne";
 import Group from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/Group";
@@ -47,14 +46,22 @@ import Call from "./video/call/Call";
 import DarkContext from "./pages/DarkMode/DarkContext";
 import Privacy from "./pages/Common/Privacy";
 import ConfirmMessage from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBookingComponents/ConfirmMessage";
+
+import NotFound from "./pages/Shared/NotFound";
+import Loading from "./pages/Shared/Loading";
+import ChatRoom from "./pages/Shared/Chat/ChatRoom";
+import Chat from "./pages/Shared/Chat/Chat";
+import OpenSpinner from "./pages/Shared/OpenSpinner";
+import LoadingAnimate from "./pages/Shared/LoadingAnimate";
+
 import RequireAuth from "./pages/login/RequireAuth";
 import AdminDashboard from "./pages/Dashboard/AdminDashboard/AdminDashboard";
 import AllUsers from "./pages/Dashboard/AdminDashboard/AllUsers";
 import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
 import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
-import CreateWorkflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/CreateWorkflows";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/Workflows";
 import UserSchedule from "./pages/Dashboard/AdminDashboard/UserSchedule";
+import Coming from "./pages/Shared/Coming";
 
 function App() {
   useEffect(() => {
@@ -84,99 +91,119 @@ function App() {
       setToggle(true);
     }
   };
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
 
   return (
-    <div>
-      <DarkContext.Provider value={{ handleDarkMode, toggle, setToggle }}>
-        <Routes>
-          <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/howitworks" element={<HowItWorks></HowItWorks>}></Route>
-          <Route path="/features" element={<Features></Features>}></Route>
-          <Route
+    <>
+      {loading ? (
+        <LoadingAnimate />
+      ) : (
+        <div>
+          <DarkContext.Provider value={{ handleDarkMode, toggle, setToggle }}>
+            <Routes>
+              <Route path="/" element={<Home></Home>}></Route>
+              {/* <Route path="/howitworks" element={<HowItWorks></HowItWorks>}></Route> */}
+              <Route path="/features" element={<Features></Features>}></Route>
+              {/* <Route
             path="/individuals"
             element={<Individuals></Individuals>}
-          ></Route>
-          <Route path="/teams" element={<Teams></Teams>}></Route>
-          <Route path="/pricing" element={<Pricing></Pricing>}></Route>
-          <Route path="/whatsnew" element={<WhatsNew></WhatsNew>}></Route>
-          <Route path="/blog" element={<Blog></Blog>}></Route>
-          <Route path="/support" element={<Support></Support>}></Route>
-          <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
-          <Route path="/view-booking/:id" element={<ViewBooking />}></Route>
-          <Route
-            path="/booking-confirm/:id"
-            element={<ConfirmMessage />}
-          ></Route>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          {/* Admin Dashboard */}
-          <Route
-            path="adminDashboard"
-            element={
-              <RequireAuth>
-                <AdminDashboard></AdminDashboard>
-              </RequireAuth>
-            }
-          >
-            <Route index element={<UserSchedule></UserSchedule>}></Route>
-            <Route
-              path="/adminDashboard/allUsers"
-              element={<AllUsers></AllUsers>}
-            ></Route>
-            <Route
-              path="/adminDashboard/manageUsers"
-              element={<ManageUsers></ManageUsers>}
-            ></Route>
-            <Route
-              path="/adminDashboard/manageEvents"
-              element={<ManageEvents></ManageEvents>}
-            ></Route>
-          </Route>
-          {/* nested */}
-          <Route path="/dashboard" element={<Dashboard />}>
-            <Route path="/dashboard" element={<DashboardHome />}></Route>
-            <Route path="d-home" element={<DashboardHome />}>
-              {/* home nested */}
-              <Route path="event-types" element={<EventTypes />} />
-              <Route path="Scheduled" element={<ScheduledEvents />}>
-                {/* Scheduled Event nested */}
-                <Route path="Scheduled" element={<Upcoming />}></Route>
-                <Route path="upcoming" element={<Upcoming />}></Route>
-                <Route path="pending" element={<Pending />}></Route>
-                <Route path="past" element={<Past />}></Route>
-                <Route path="date" element={<SingleDateRange />}></Route>
+          ></Route> */}
+              {/* <Route path="/teams" element={<Teams></Teams>}></Route> */}
+              <Route path="/pricing" element={<Pricing></Pricing>}></Route>
+              <Route path="/whatsnew" element={<WhatsNew></WhatsNew>}></Route>
+              <Route path="/blog" element={<Blog></Blog>}></Route>
+              <Route path="/support" element={<Support></Support>}></Route>
+              <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
+              <Route path="/view-booking/:id" element={<ViewBooking />}></Route>
+              <Route
+                path="/booking-confirm/:id"
+                element={<ConfirmMessage />}
+              ></Route>
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<SignUp />} />
+              {/* Admin Dashboard */}
+              <Route
+                path="adminDashboard"
+                element={
+                  <RequireAuth>
+                    <AdminDashboard></AdminDashboard>
+                  </RequireAuth>
+                }
+              >
+                <Route
+                  path="/adminDashboard/allUsers"
+                  element={<AllUsers></AllUsers>}
+                ></Route>
+                <Route
+                  path="/adminDashboard/manageUsers"
+                  element={<ManageUsers></ManageUsers>}
+                ></Route>
+                <Route
+                  path="/adminDashboard/manageEvents"
+                  element={<ManageEvents></ManageEvents>}
+                ></Route>
               </Route>
-              <Route path="workflows" element={<Workflows />} />
-              <Route path="CreateWorkflows" element={<CreateWorkflows />} />
-              <Route path="routing" element={<RoutingForms />} />
-            </Route>
-            <Route path="event-type" element={<EventTypesName />}></Route>
-            <Route path="event-type/one-on-one" element={<OneOnOne />}></Route>
-            <Route path="event-type/group" element={<Group />}></Route>
-            <Route path="availability" element={<Availability />}></Route>
-            <Route path="billing" element={<Billing />}></Route>
-            <Route path="integration" element={<Integrations />}></Route>
-            <Route path="apps" element={<Apps />}></Route>
-            <Route path="help" element={<Help />}></Route>
-            <Route path="accountSetting" element={<AccountSettings />}></Route>
-            <Route
-              path="admin-management"
-              element={<AdminManagement />}
-            ></Route>
-            <Route path="integrations" element={<Integrations />}></Route>
-          </Route>
-          <Route path="/call" element={<Call />} />
-          <Route path="/privacy" element={<Privacy />} />
-        </Routes>
-        <MessengerCustomerChat
-          pageId={process.env.REACT_APP_PAGE_ID}
-          appId={process.env.REACT_APP_APP_ID}
-        />
+              {/* nested */}
+              <Route path="/dashboard" element={<Dashboard />}>
+                <Route path="/dashboard" element={<DashboardHome />}></Route>
 
-        <Footer />
-      </DarkContext.Provider>
-      <ToastContainer />
-    </div>
+                <Route path="d-home" element={<DashboardHome />}>
+                  {/* home nested */}
+                  <Route path="event-types" element={<EventTypes />} />
+                  <Route path="Scheduled" element={<ScheduledEvents />}>
+                    {/* Scheduled Event nested */}
+                    <Route path="Scheduled" element={<Upcoming />}></Route>
+                    <Route path="upcoming" element={<Upcoming />}></Route>
+                    <Route path="pending" element={<Pending />}></Route>
+                    <Route path="past" element={<Past />}></Route>
+                    <Route path="date" element={<SingleDateRange />}></Route>
+                  </Route>
+                  <Route path="workflows" element={<Workflows />} />
+                  <Route path="routing" element={<RoutingForms />} />
+                </Route>
+                <Route path="event-type" element={<EventTypesName />}></Route>
+                <Route
+                  path="event-type/one-on-one"
+                  element={<OneOnOne />}
+                ></Route>
+                <Route path="event-type/group" element={<Group />}></Route>
+                {/* <Route path="availability" element={<Availability />}></Route> */}
+                <Route path="billing" element={<Billing />}></Route>
+                {/* <Route path="integration" element={<Integrations />}></Route> */}
+                <Route path="apps" element={<Apps />}></Route>
+                {/* <Route path="help" element={<Help />}></Route> */}
+                <Route
+                  path="accountSetting"
+                  element={<AccountSettings />}
+                ></Route>
+                <Route
+                  path="admin-management"
+                  element={<AdminManagement />}
+                ></Route>
+                <Route path="integrations" element={<Integrations />}></Route>
+              </Route>
+              <Route path="/call" element={<Call />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/chat" element={<Chat />} />
+              <Route path="/chat-room/:email/:name" element={<ChatRoom />} />
+              <Route path="*" element={<NotFound />} />
+              <Route path="/coming" element={<Coming />} />
+            </Routes>
+            <MessengerCustomerChat
+              pageId={process.env.REACT_APP_PAGE_ID}
+              appId={process.env.REACT_APP_APP_ID}
+            />
+          </DarkContext.Provider>
+          <ToastContainer />
+        </div>
+      )}
+    </>
   );
 }
 

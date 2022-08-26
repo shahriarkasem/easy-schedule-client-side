@@ -41,7 +41,7 @@ const VideoPlayer = () => {
   return (
     <div className="flex justify-evenly flex-wrap my-5 max-w-[90%] mx-auto">
       <div className="relative">
-        <h2 className="text-xl">{user?.displayName}</h2>
+        <h2 className="text-xl text-white mb-2">{user?.displayName}</h2>
         {camera ? (
           <div>
             <video

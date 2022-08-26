@@ -14,12 +14,13 @@ import Meeting from "./components/Meeting/Meeting";
 import EasySchedule from "./components/EasySchedule/EasySchedule";
 import Footer from "./components/Footer/Footer";
 import DarkContext from "../DarkMode/DarkContext";
+import Contact from "./components/contact/Contact";
 
 const Home = () => {
-  const {toggle} = useContext(DarkContext);
+  const { toggle } = useContext(DarkContext);
 
   return (
-    <div className={toggle === true ? 'bg-white' : 'bg-slate-700'}>
+    <div className={toggle === true ? "bg-white" : "bg-slate-700"}>
       <Navbar />
       <Banner></Banner>
       <EasySchedule />
@@ -31,9 +32,11 @@ const Home = () => {
       <Review></Review>
       <Booking></Booking>
       <PowerfulFeatures></PowerfulFeatures>
-     <div className="pb-10">
-     <ReadySignup></ReadySignup>
-     </div>
+      <div className="pb-10">
+        <ReadySignup></ReadySignup>
+      </div>
+      <Contact />
+      <Footer />
     </div>
   );
 };

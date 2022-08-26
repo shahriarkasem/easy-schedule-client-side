@@ -2,16 +2,17 @@ import React, { useContext, useEffect } from "react";
 import DarkContext from "../../../DarkMode/DarkContext";
 import "./Banner.css";
 
+import { Link } from "react-router-dom";
+
 const Banner = () => {
   const { toggle, setToggle } = useContext(DarkContext);
 
   return (
-    <div class={"hero " + (toggle === true ? 
-      'bg-white' : 'bg-slate-700')}>
+    <div class={"hero " + (toggle === true ? "bg-white" : "bg-slate-700")}>
       <div class="hero-content flex-col lg:flex-row-reverse text-black flex">
         <div className="flex-auto w-1/2">
           <img
-          className="rounded"
+            className="rounded"
             data-aos="fade-left"
             data-aos-duration="1000"
             data-aos-delay="300"
@@ -25,8 +26,10 @@ const Banner = () => {
             data-aos="fade-right"
             data-aos-duration="1000"
             data-aos-delay="200"
-            class={"lg:text-5xl text-2xl font-bold "  + (toggle === true ? 
-              'text-black'  : 'text-white')}
+            class={
+              "lg:text-5xl text-2xl font-bold " +
+              (toggle === true ? "text-black" : "text-white")
+            }
           >
             APPOINTMENT
           </h1>
@@ -42,21 +45,21 @@ const Banner = () => {
             data-aos="fade-right"
             data-aos-duration="1000"
             data-aos-delay="300"
-            class={(toggle === true ? 
-              'text-black py-6'  : 'text-white py-6')}
+            class={toggle === true ? "text-black py-6" : "text-white py-6"}
           >
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button
+          <Link
+            to="/dashboard/d-home/event-types"
             data-aos="fade-right"
             data-aos-duration="1000"
             data-aos-delay="400"
             class="btn btn-primary button-orange"
           >
             Get Started
-          </button>
+          </Link>
         </div>
       </div>
     </div>
