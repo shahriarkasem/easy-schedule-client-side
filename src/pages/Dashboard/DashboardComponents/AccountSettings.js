@@ -1,15 +1,19 @@
 import React, { useRef } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import { useForm } from "react-hook-form";
+import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 
 const AccountSettings = () => {
-    const [user] = useAuthState(auth);
 
+    const [user] = useAuthState(auth);
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const eduRef = useRef();
     const locRef = useRef();
     const contactRef = useRef();
 
-    const handleAdd = (event) => {
+    const onSubmit = (event) => {
         event.preventDefault();
         const profession = eduRef.current.value;
         const location = locRef.current.value;
@@ -17,6 +21,54 @@ const AccountSettings = () => {
         console.log(profession, location, contact);
         event.target.reset();
     };
+    const imageStorageKey = '7fc3b735e6b7fba6fb529bd9ccdd4851'
+    // const onSubmit = async data => {
+    //     const image = data.image[0];
+    //     const formData = new FormData();
+    //     formData.append('image', image);
+    //     const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+    //     fetch(url, {
+    //         method: 'POST',
+    //         body: formData
+    //     })
+    //     .then(res=>res.json())
+    //     .then(result =>{
+    //         if(result.success){
+    //             const img = result.data.url;
+    //             const doctor = {
+    //                 name: data.name,
+    //                 email: data.email,
+    //                 specialty: data.specialty,
+    //                 img: img
+    //             }
+    //             // send to your database 
+    //             fetch('https://secret-dusk-46242.herokuapp.com/doctor', {
+    //                 method: 'POST',
+    //                 headers: {
+    //                     'content-type': 'application/json',
+    //                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
+    //                 },
+    //                 body: JSON.stringify(doctor)
+    //             })
+    //             .then(res =>res.json())
+    //             .then(inserted =>{
+    //                 if(inserted.insertedId){
+    //                     toast.success('Doctor added successfully')
+    //                     reset();
+    //                 }
+    //                 else{
+    //                     toast.error('Failed to add the doctor');
+    //                 }
+    //             })
+
+    //         }
+
+    //     })
+    // }
+
+    // if (isLoading) {
+    //     return <Loading></Loading>
+    // }
 
     return (
 
@@ -33,7 +85,7 @@ const AccountSettings = () => {
                             MY PROFILE
                         </h2>
                         <div className="card-body">
-                            <form onSubmit={handleAdd}>
+                            <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-control ">
                                     <div className="flex items-center space-x-6">
                                         <div class="shrink-0">
@@ -42,32 +94,39 @@ const AccountSettings = () => {
                                         <label class="block">
                                             <span class="sr-only">Choose profile photo</span>
                                             <input type="file" class="block w-full text-sm text-slate-500
-      file:mr-4 file:py-2 file:px-4
-      file:rounded-full file:border-0
-      file:text-sm file:font-semibold
-      file:bg-violet-50 file:text-violet-700
-      hover:file:bg-violet-100
-    "/>
+                                                    file:mr-4 file:py-2 file:px-4
+                                                    file:rounded-full file:border-0
+                                                    file:text-sm file:font-semibold
+                                                    file:bg-violet-50 file:text-violet-700
+                                                    hover:file:bg-violet-100
+                                                    "/>
                                         </label>
                                     </div>
 
-                                    <p className="p-2">
-                                        Name: <span className="font-bold">{user?.displayName}</span>
-                                    </p>
-                                    <p className="p-2">
-                                        Email: <span className="font-bold"> {user?.email}</span>
-                                    </p>
+                                    <label className="label">
+                                        <span className="label-text">Name</span>
+                                    </label>
+                                    <input
+                                        value={user?.displayName}
+                                        disabled
+                                        type="name"
+                                        className="input input-bordered w-full max-w-xs p-2 m-2"
+                                        {...register("name")}
+                                    />
+                                    <label className="label">
+                                        <span className="label-text">Email</span>
+                                    </label>
+                                    <input
+                                        value={user?.email}
+                                        disabled
+                                        type="email"
+                                        className="input input-bordered w-full max-w-xs p-2 m-2"
+                                        {...register("email")}
+                                    />
                                     <label className="label">
                                         <span className="label-text">Profession</span>
                                     </label>
-                                    <textarea
-                                        ref={eduRef}
-                                        type="text"
-                                        placeholder="profession"
-                                        className="input input-bordered border-orange-600"
-                                        required
 
-                                    />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">

@@ -4,7 +4,7 @@ const useAdmin = user => {
     const [admin, setAdmin] = useState(false);
     const [adminLoading, setAdminLoading] = useState(true);
     useEffect(() => {
-        const email = user?.email;
+        const email = user?.userEmail;
         if (email) {
             fetch(`http://localhost:5000/admin/${email}`, {
                 method: 'GET',

@@ -48,11 +48,11 @@ const Group = () => {
       headers: {
         // authorization
       },
-      url: `https://easyscheduler24.herokuapp.com/event/create/group`,
+      url: `http://localhost:5000/event/create/group`,
       data: fullData,
     })
       .then((res) => {
-        if(res.status === 200){
+        if (res.status === 200) {
           toast.success('Event created successfully')
           navigate('/dashboard/d-home/event-types')
         }
