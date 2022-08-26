@@ -6,12 +6,15 @@ import auth from "../firebase.init";
 
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers } from "../redux/slices/userSlice";
+import { useParams } from "react-router-dom";
 
 const SideBar = ({ children }) => {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } =
     useContext(SocketContext);
 
   const [onChange, setOnChange] = useState("");
+
+  const { email } = useParams();
 
   const [click, setClick] = useState(false);
   const [end, setEnd] = useState(false);
@@ -20,23 +23,24 @@ const SideBar = ({ children }) => {
 
   const [user] = useAuthState(auth);
 
-  const { users } = useSelector((state) => state.users);
+  // const { users } = useSelector((state) => state.users);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchUsers());
+  // }, [dispatch]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(onChange);
+    console.log(e);
   };
 
   const handleClick = () => {
     setClick(true);
     setEnd(false);
+    console.log(true);
   };
 
   const handleEnd = () => {
@@ -57,7 +61,7 @@ const SideBar = ({ children }) => {
             <div className="flex flex-col p-[20px]">
               <h6 className="text-xl font-bold text-orange-500">You</h6>
               <input
-                className="input input-bordered input-primary mt-2 font-bold text-lg"
+                className="input input-bordered input-primary mt-2 font-bold "
                 type="text"
                 value={user?.email}
                 fullWidth
@@ -69,7 +73,14 @@ const SideBar = ({ children }) => {
                 Make a call with
               </h6>
 
-              <select
+              <input
+                onChange={(e) => setOnChange(e.target.value)}
+                type="email"
+                value={email}
+                class="input input-bordered font-bold"
+              />
+
+              {/* <select
                 onChange={(e) => setOnChange(e.target.value)}
                 required
                 defaultValue={"DEFAULT"}
@@ -82,7 +93,7 @@ const SideBar = ({ children }) => {
                 {users?.map((user) => (
                   <option value={user.email}>{user.email}</option>
                 ))}
-              </select>
+              </select> */}
 
               {/* {callAccepted && !callEnded ? (
                 <button

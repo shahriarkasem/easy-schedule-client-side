@@ -1,5 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { faVideo, faMessage } from "@fortawesome/free-solid-svg-icons";
 
 const ChatWithUser = ({ user }) => {
   const { _id, email, name } = user;
@@ -10,7 +12,7 @@ const ChatWithUser = ({ user }) => {
     setFirstLetter(userNameFirstLetter);
   }, [user, name]);
 
-  const navigate = useNavigate('');
+  const navigate = useNavigate("");
 
   return (
     <div className="border-2 m-5 rounded-lg">
@@ -31,8 +33,19 @@ const ChatWithUser = ({ user }) => {
               </div>
             </div>
           </div>
-          <div className="flex justify-end items-center w-40">
-            <button onClick={() => navigate(`/chat-room/${email}/${name}`)} className="btn btn-success btn-outline">Send message</button>
+          <div className="flex justify-end items-center gap-2 w-40">
+            <button
+              onClick={() => navigate(`/chat-room/${email}/${name}`)}
+              className=" btn button-orange "
+            >
+              <FontAwesomeIcon icon={faMessage} />
+            </button>
+            <button
+              onClick={() => navigate(`/call/${email}/${name}`)}
+              className="btn button-orange "
+            >
+              <FontAwesomeIcon icon={faVideo} />
+            </button>
           </div>
         </div>
       </div>

@@ -1,17 +1,19 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import auth from "../../firebase.init";
 import google from "../../media/images/google.png";
 import {
+  useAuthState,
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 import OpenSpinner from "../Shared/OpenSpinner";
 
 const SignUp = () => {
   const [updateProfile] = useUpdateProfile(auth);
+  const [user] = useAuthState(auth);
 
   const {
     register,
@@ -19,10 +21,9 @@ const SignUp = () => {
     handleSubmit,
     reset,
   } = useForm();
-
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, eUser, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
   const navigate = useNavigate();
@@ -62,7 +63,7 @@ const SignUp = () => {
     reset();
   };
   console.log(user);
-  if (user || gUser) {
+  if (eUser || gUser) {
     navigate("/");
   }
   return (

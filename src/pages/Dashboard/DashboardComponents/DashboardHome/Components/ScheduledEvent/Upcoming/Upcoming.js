@@ -11,7 +11,7 @@ const Upcoming = () => {
     const [invites, setInvites] = useState([]);
     const [user] = useAuthState(auth);
     useEffect(() => {
-        fetch(`http://localhost:5000/event/invited/${user?.email}`)
+        fetch(`https://easyscheduler24.herokuapp.com/event/invited/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setInvites(data);
@@ -28,26 +28,26 @@ const Upcoming = () => {
                 <div className="text-center">
                     {
                         invites.map(invite => <div>
-                            <p className='text-left'>{invite?.finalData?.date}</p>
+                            <p className='text-left'>{invite?.eventDate}</p>
                             <div class="divider w-full"></div>
                             <div className='flex my-3 justify-around bg-white p-5'>
                                 <div className='pt-5'>
-                                    <p>You are scheduled with {invite?.name}</p>
+                                    <p>You are scheduled Type: {invite?.eventType}</p>
 
                                     <p className=" my-2">
-                                        {invite?.finalData?.inviteTime + ","} {' '}
-
+                                        {/* {invite?.finalData?.inviteTime + ","} {' '} */}
+                                        {invite.eventTime}
                                     </p>
                                 </div>
                                 <div>
                                     <p className="my-2">
-                                        Meeting Host: {invite?.email}
+                                        Meeting Host: {invite?.userEmail}
                                     </p>
                                     <p className="my-2">
                                         Guest's emails: {invite?.emails}
                                     </p>
                                     <h3 className="font-medium text-lg">
-                                        Event Type: {invite?.finalData?.userEvent?.eventName}
+                                        Event Type: {invite.eventName}
                                     </h3>
                                 </div>
                             </div>
