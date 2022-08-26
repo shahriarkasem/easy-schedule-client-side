@@ -11,8 +11,8 @@ const Chat = () => {
   const[data, setData] = useState()
   useEffect(()=>{
 let values = [];
-const copyUsersData = [...usersData];
-const reverse = copyUsersData?.reverse()?.forEach(userData => {
+// const copyUsersData = [...usersData];
+const reverse = usersData?.reverse()?.forEach(userData => {
   const same = user?.email === userData?.email;
   if(!same){
     values.push(userData);
