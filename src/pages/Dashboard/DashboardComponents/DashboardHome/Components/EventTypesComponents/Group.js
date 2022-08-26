@@ -42,7 +42,6 @@ const Group = () => {
       maxInvite,
       location,
     };
-    console.log(fullData)
     axios({
       method: "POST",
       headers: {

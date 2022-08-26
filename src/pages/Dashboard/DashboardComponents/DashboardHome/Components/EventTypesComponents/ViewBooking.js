@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { ReactMultiEmail, isEmail } from "react-multi-email";
 import "react-multi-email/style.css";
 import { toast } from "react-toastify";
+import LoadingAnimate from "../../../../../Shared/LoadingAnimate";
 
 const ViewBooking = () => {
   const [emails, setEmails] = useState([]);
@@ -21,7 +22,7 @@ const ViewBooking = () => {
     data: userEvent,
     refetch,
   } = useQuery(["eventData"], () =>
-    fetch(`http://localhost:5000/event/single/${id}`).then((res) => res.json())
+    fetch(`https://easyscheduler24.herokuapp.com/event/single/${id}`).then((res) => res.json())
   );
 
   const [date, setDate] = useState(new Date());
@@ -36,7 +37,6 @@ const ViewBooking = () => {
       inviteTime,
       userEvent,
     };
-    // console.log(useData);
     setFinalData(useData);
   }, [date, inviteTime, setDate, userEvent]);
 
@@ -183,17 +183,18 @@ const ViewBooking = () => {
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    const name = data.name;
-    const email = data.email;
+    const name = userEvent?.userName;
+    const email = userEvent?.userEmail;
     const emails = data.emails;
-    const invitation = {name,email,emails, finalData}
+
+    const invitation = { name, email, emails, date, inviteTime, userEvent };
     console.log(invitation);
     axios({
       method: "POST",
       headers: {
         // authorization
       },
-      url: `http://localhost:5000/event/invitation`,
+      url: `https://easyscheduler24.herokuapp.com/event/invitation`,
       data: invitation,
     })
       .then((res) => {
@@ -201,12 +202,16 @@ const ViewBooking = () => {
           toast.success("Event created successfully");
           navigate(`/booking-confirm/${res.data.insertedId}`);
         }
-        // console.log(res)
+        console.log(res);
       })
       .catch((error) => {
         // console.log(error);
       });
   };
+
+  if (isLoading) {
+    return <LoadingAnimate></LoadingAnimate>;
+  }
 
   return (
     <div className={"min-h-screen mb-5 md:mb-10 lg:mb-16"}>
@@ -287,10 +292,12 @@ const ViewBooking = () => {
                         <span class="label-text font-semibold">Name</span>
                       </label>
                       <input
+                        disabled
+                        value={userEvent?.userName}
                         type="text"
                         placeholder=""
                         class="input input-bordered w-full max-w-md"
-                        {...register("name", { required: true, maxLength: 40 })}
+                        {...register("name", { maxLength: 40 })}
                       />
                     </div>
 
@@ -299,11 +306,12 @@ const ViewBooking = () => {
                         <span class="label-text font-semibold">Email</span>
                       </label>
                       <input
+                        disabled
+                        value={userEvent?.userEmail}
                         type="email"
                         placeholder=""
                         class="input input-bordered w-full max-w-md"
                         {...register("email", {
-                          required: true,
                           maxLength: 60,
                         })}
                       />
