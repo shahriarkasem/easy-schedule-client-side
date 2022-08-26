@@ -32,7 +32,7 @@ const UserSchedule = () => {
     }, [user])
     return (
         <div>
-            <h2 className='text-center p-4 text-lg font-semibold'>Total Schedule Created: {schedule.length}</h2>
+            <h2 className='text-center p-4 text-lg font-semibold'>Total User Schedule Created: {schedule.length}</h2>
             <div class="overflow-x-auto">
                 <table class="table table-compact w-full">
                     <thead>
@@ -49,11 +49,11 @@ const UserSchedule = () => {
                         {
                             schedule.map((a, index) => <tr key={a._id}>
                                 <th className='bg-orange-300'>{index + 1}</th>
-                                <td className='bg-pink-500'>{a.userEmail}</td>
+                                <td className='bg-teal-400'>{a.userEmail}</td>
                                 <td className='bg-indigo-400'>{a.eventType}</td>
-                                <td className='bg-pink-500'>{a.eventName}</td>
-                                <td className='bg-indigo-400'>{a.eventDate}</td>
-                                <td className='bg-pink-500'>{a.location}</td>
+                                <td className='bg-rose-400'>{a.eventName}</td>
+                                <td className='bg-pink-400'>{a.eventDate}</td>
+                                <td className='bg-purple-400'>{a.location}</td>
                                 {/* <td>
                                 {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
                                 {(a.price && a.paid) && <div>
@@ -66,16 +66,6 @@ const UserSchedule = () => {
 
 
                     </tbody>
-                    <tfoot>
-                        <tr className='bg-orange-300 text-center'>
-                            <th className='bg-orange-300'></th>
-                            <th className='bg-orange-300'>User Email</th>
-                            <th className='bg-orange-300 '>Event Type</th>
-                            <th className='bg-orange-300'>Event Name</th>
-                            <th className='bg-orange-300'>Event Date</th>
-                            <th className='bg-orange-300'>Location</th>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
         </div>
