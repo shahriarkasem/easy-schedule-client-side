@@ -9,9 +9,7 @@ import { useNavigate } from "react-router-dom";
 const OneOnOne = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate("");
-
   const [eventLocation, setEventLocation] = useState();
-
   const handleLocation = (e) => {
     const location = e.target.value;
     setEventLocation(location);
@@ -47,7 +45,7 @@ const OneOnOne = () => {
       headers: {
         // authorization
       },
-      url: `https://easyscheduler24.herokuapp.com/event/create/OneOnOne`,
+      url: `http://localhost:5000/event/create/OneOnOne`,
       data: fullData,
     })
       .then((res) => {
