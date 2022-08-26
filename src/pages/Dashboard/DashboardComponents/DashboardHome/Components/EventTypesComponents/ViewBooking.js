@@ -186,7 +186,8 @@ const ViewBooking = () => {
     const name = userEvent?.userName;
     const email = userEvent?.userEmail;
     const emails = data.emails;
-    const invitation = {name,email,emails, date, inviteTime, userEvent};
+
+    const invitation = { name, email, emails, date, inviteTime, userEvent };
     console.log(invitation);
     axios({
       method: "POST",
@@ -201,15 +202,15 @@ const ViewBooking = () => {
           toast.success("Event created successfully");
           navigate(`/booking-confirm/${res.data.insertedId}`);
         }
-        console.log(res)
+        console.log(res);
       })
       .catch((error) => {
         // console.log(error);
       });
   };
 
-  if(isLoading){
-    return <LoadingAnimate></LoadingAnimate>
+  if (isLoading) {
+    return <LoadingAnimate></LoadingAnimate>;
   }
 
   return (
@@ -291,8 +292,8 @@ const ViewBooking = () => {
                         <span class="label-text font-semibold">Name</span>
                       </label>
                       <input
-                      disabled
-                      value={userEvent?.userName}
+                        disabled
+                        value={userEvent?.userName}
                         type="text"
                         placeholder=""
                         class="input input-bordered w-full max-w-md"
@@ -305,13 +306,12 @@ const ViewBooking = () => {
                         <span class="label-text font-semibold">Email</span>
                       </label>
                       <input
-                      disabled
-                      value={userEvent?.userEmail}
+                        disabled
+                        value={userEvent?.userEmail}
                         type="email"
                         placeholder=""
                         class="input input-bordered w-full max-w-md"
                         {...register("email", {
-                        
                           maxLength: 60,
                         })}
                       />

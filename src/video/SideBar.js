@@ -31,12 +31,13 @@ const SideBar = ({ children }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(onChange);
+    console.log(e);
   };
 
   const handleClick = () => {
     setClick(true);
     setEnd(false);
+    console.log(true);
   };
 
   const handleEnd = () => {
