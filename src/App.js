@@ -60,7 +60,9 @@ import AllUsers from "./pages/Dashboard/AdminDashboard/AllUsers";
 import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
 import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/Workflows";
+import CreateWorkflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/CreateWorkflows";
 import UserSchedule from "./pages/Dashboard/AdminDashboard/UserSchedule";
+import Coming from "./pages/Shared/Coming";
 
 function App() {
   useEffect(() => {
@@ -164,6 +166,7 @@ function App() {
                     <Route path="date" element={<SingleDateRange />}></Route>
                   </Route>
                   <Route path="workflows" element={<Workflows />} />
+                  <Route path="CreateWorkflows" element={<CreateWorkflows />} />
                   <Route path="routing" element={<RoutingForms />} />
                 </Route>
                 <Route path="event-type" element={<EventTypesName />}></Route>
@@ -192,13 +195,12 @@ function App() {
               <Route path="/chat" element={<Chat />} />
               <Route path="/chat-room/:email/:name" element={<ChatRoom />} />
               <Route path="*" element={<NotFound />} />
+              <Route path="/coming" element={<Coming />} />
             </Routes>
             <MessengerCustomerChat
               pageId={process.env.REACT_APP_PAGE_ID}
               appId={process.env.REACT_APP_APP_ID}
             />
-
-            <Routes></Routes>
           </DarkContext.Provider>
           <ToastContainer />
         </div>

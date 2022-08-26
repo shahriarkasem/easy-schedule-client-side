@@ -9,9 +9,7 @@ import { useNavigate } from "react-router-dom";
 const OneOnOne = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate("");
-
   const [eventLocation, setEventLocation] = useState();
-
   const handleLocation = (e) => {
     const location = e.target.value;
     setEventLocation(location);
