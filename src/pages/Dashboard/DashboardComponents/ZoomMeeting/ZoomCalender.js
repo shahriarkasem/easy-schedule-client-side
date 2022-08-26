@@ -11,10 +11,12 @@ const ZoomCalender = () => {
       <div class="hero min-h-screen bg-teal-100 my-8">
         <div class="hero-content flex-col lg:flex-row-reverse">
           <div>
-            <h3 className="text-3xl font-bold">Want to make a Zoom Meeting?</h3>
-            <button class="btn btn-warning text-center">
+            <h3 className="text-3xl font-bold text-orange-500">
+              Want to make a Zoom Meeting?
+            </h3>
+            {/* <button class="btn btn-warning text-center">
               Join Zoom Meeting
-            </button>
+            </button> */}
           </div>
           <div>
             <DayPicker mode="single" selected={date} onSelect={setDate} />

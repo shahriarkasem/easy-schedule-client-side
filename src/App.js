@@ -103,7 +103,7 @@ function App() {
   return (
     <>
       {loading ? (
-        <LoadingAnimate />
+        <OpenSpinner />
       ) : (
         <div>
           <DarkContext.Provider value={{ handleDarkMode, toggle, setToggle }}>
