@@ -61,10 +61,21 @@ const Navbar = () => {
           <span
             className={"" + (toggle === true ? "text-black" : "text-white")}
           >
-            Resources
+            Blog
           </span>
         </Link>
       </li>
+      {
+        user && <li>
+        <Link to="/chat">
+          <span
+            className={"" + (toggle === true ? "text-black" : "text-white")}
+          >
+            Messages
+          </span>
+        </Link>
+      </li>
+      }
       {/* dark mode toggle */}
       <p
         className={
