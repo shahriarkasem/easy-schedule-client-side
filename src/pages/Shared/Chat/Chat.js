@@ -13,12 +13,12 @@ const Chat = () => {
 let values = [];
 const copyUsersData = [...usersData];
 const reverse = copyUsersData?.reverse()?.forEach(userData => {
-  const same = user?.email === userData.email;
+  const same = user?.email === userData?.email;
   if(!same){
     values.push(userData);
   }
-  setData(values)
 });
+setData(values)
   },[usersData])
   
   return (
