@@ -10,7 +10,7 @@ import "firebase/compat/analytics";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import NotFound from "../NotFound";
-import Loading from "../Loading";
+import LoadingAnimate from "../LoadingAnimate";
 
 firebase.initializeApp({
   apiKey: process.env.REACT_APP_API_KEY,
@@ -30,8 +30,16 @@ const ChatApi = () => {
 
   const [user, loading] = useAuthState(auth);
 
-  if(loading){
-    return <Loading></Loading>
+  const [loading1, setLoading1] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading1(false);
+    }, 500);
+  }, []);
+
+  if(loading || loading1){
+    return <LoadingAnimate></LoadingAnimate>
   }
 
   if (!email || !name || !user) {
@@ -109,6 +117,7 @@ function ChatRoom() {
 
   return (
     <>
+      <div className="">
       <div className="max-w-lg flex justify-center flex-col chat-main-container-form">
         <div id="main-part">
           {/* {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)} */}
@@ -120,17 +129,22 @@ function ChatRoom() {
           <span ref={dummy}></span>
         </div>
 
-        <form onSubmit={sendMessage} className="w-full">
+       <div >
+      <div>
+         <form onSubmit={sendMessage} className="w-full">
           <input
             value={formValue}
             onChange={(e) => setFormValue(e.target.value)}
             placeholder="Write your message..."
           />
 
-          <button type="submit" disabled={!formValue}>
+          <button className="" type="submit" disabled={!formValue}>
             Send
           </button>
         </form>
+      </div>
+       </div>
+      </div>
       </div>
     </>
   );

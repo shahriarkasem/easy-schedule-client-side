@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const UserEvents = ({ soloEvent, handleEditEvent }) => {
   const navigate = useNavigate('');
@@ -20,6 +21,10 @@ const UserEvents = ({ soloEvent, handleEditEvent }) => {
   const openInNewTab = url => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(`https://easy-schedule-77cce.web.app/view-booking/${_id}`);
+    toast.success('Link copied successfully!')
+  }
 
   return (
     <div class="card bg-base-100 shadow-xl border-t-4 border-red-500">
@@ -41,8 +46,8 @@ const UserEvents = ({ soloEvent, handleEditEvent }) => {
         <div className="flex flex-row justify-between items-center">
           <p className="text-red-400 hover:cursor-pointer">{location}</p>
          <div>
-         <button className="border-2 py-1 px-2 rounded-xl border-blue-400 hover:bg-blue-100 text-blue-500 mr-2">
-            Share
+         <button className="border-2 py-1 px-2 rounded-xl border-blue-400 hover:bg-blue-100 text-blue-500 mr-2" onClick={() => handleCopyLink()}>
+            Copy
           </button>
           <Link
             to="/call"
