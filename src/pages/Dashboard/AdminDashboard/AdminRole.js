@@ -31,7 +31,7 @@ const AdminRole = ({ user }) => {
             <td className='bg-pink-500'>{name}</td>
             <td className='bg-orange-400'>{email}</td>
             <td className='bg-pink-700'>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-xs">Make Admin</button>}</td>
-            <td className='bg-orange-400'><button class="btn btn-xs">Remove User</button></td>
+
             {/* <td>
                                 {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
                                 {(a.price && a.paid) && <div>

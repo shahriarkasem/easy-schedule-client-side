@@ -62,6 +62,7 @@ import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/Workflows";
 import CreateWorkflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/CreateWorkflows";
 import UserSchedule from "./pages/Dashboard/AdminDashboard/UserSchedule";
+import UserProfiledata from "./pages/Dashboard/DashboardComponents/UserProfiledata";
 
 function App() {
   useEffect(() => {
@@ -178,6 +179,7 @@ function App() {
               <Route path="*" element={<NotFound />} />
               <Route path="/coming" element={<Coming />} />
             </Routes>
+            <Route path="/userData" element={<UserProfiledata></UserProfiledata>}></Route>
             <MessengerCustomerChat
               pageId={process.env.REACT_APP_PAGE_ID}
               appId={process.env.REACT_APP_APP_ID}
