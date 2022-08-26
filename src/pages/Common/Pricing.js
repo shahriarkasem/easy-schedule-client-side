@@ -11,9 +11,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../Home/components/Navbar/Navbar";
 import DarkContext from "../DarkMode/DarkContext";
+import Footer from "../Home/components/Footer/Footer";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Pricing = () => {
   const { toggle } = useContext(DarkContext);
+  const navigate = useNavigate();
+
+  const handleFree = () => {
+    toast("You are now free user for 14 days");
+    navigate("/");
+  };
 
   return (
     <div className="">
@@ -129,9 +138,9 @@ const Pricing = () => {
             </div>
             <div className="flex justify-center w-full py-7">
               {" "}
-              <button className="btn  button-orange ">
-                Get started from free
-              </button>
+              <Link to="/dashboard/billing" className="btn  button-orange ">
+                Get started
+              </Link>
             </div>
 
             <h3 className="text-center text-gray-400">
@@ -195,7 +204,7 @@ const Pricing = () => {
             </div>
             <div className="flex justify-center w-full py-7">
               {" "}
-              <button className="btn  button-orange ">
+              <button onClick={handleFree} className="btn  button-orange ">
                 Get started from free
               </button>
             </div>
@@ -358,9 +367,9 @@ const Pricing = () => {
               </span>
             </p>
             <div className="flex justify-center py-5">
-              <button className="btn button-orange ">
-                Get started for FREE
-              </button>
+              <Link to="/dashboard/billing" className="btn  button-orange ">
+                Get started
+              </Link>
             </div>
             <p className="text-center text-gray-500">
               No credit card required. Cancel anytime.
@@ -368,6 +377,7 @@ const Pricing = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

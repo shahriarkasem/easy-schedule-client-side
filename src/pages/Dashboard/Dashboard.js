@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
 import auth from "../../firebase.init";
+import RealTimeNotification from "./DashboardComponents/RealTimeNotification";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
@@ -24,6 +25,12 @@ const Dashboard = () => {
       </li>
       <li>
         <Link to="/dashboard/billing">Billing</Link>
+      </li>
+      <li>
+        <Link to="/chat">Messages</Link>
+      </li>
+      <li>
+        <RealTimeNotification />
       </li>
       {/* <li>
         <Link to="/dashboard/availability">Availability</Link>
@@ -53,28 +60,27 @@ const Dashboard = () => {
           <Link className="p-2" to="accountSetting">
             Account Settings
           </Link>
-          <Link className="p-2" to="admin-management">
+          {/* <Link className="p-2" to="admin-management">
             Admin Management
-          </Link>
-
+          </Link> */}
 
           {/* <Link className="p-2" to="dashboardHome">
             Dashboard Home
           </Link> */}
-          <Link className="p-2" to="Help">
+          {/* <Link className="p-2" to="Help">
             Help
-          </Link>
-          <Link className="p-2" to="apps">
+          </Link> */}
+          {/* <Link className="p-2" to="apps">
             Apps
-          </Link>
+          </Link> */}
           <Link className="p-2" to="integrations">
             Integrations
           </Link>
-          {user &&
-            <Link className="p-2"
-              to="/adminDashboard">Admin Dashboard
+          {user && (
+            <Link className="p-2" to="/adminDashboard">
+              Admin Dashboard
             </Link>
-          }
+          )}
           {user ? (
             <Link
               to="/"

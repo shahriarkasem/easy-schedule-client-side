@@ -1,14 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import LoadingAnimate from "../../../../../../Shared/LoadingAnimate";
 
 const ConfirmMessage = () => {
   const { id } = useParams();
-  const { data: invitationData } = useQuery(["invitationData"], () =>
-    fetch(`http://localhost:5000/event/invitation/single/${id}`).then((res) =>
+  const { data: invitationData, isLoading } = useQuery(["invitationData"], () =>
+    fetch(`https://easyscheduler24.herokuapp.com/event/invitation/single/${id}`).then((res) =>
       res.json()
     )
   );
+  console.log(invitationData)
+
+  if(isLoading) {
+    return <LoadingAnimate></LoadingAnimate>
+  }
 
   return (
     <div className="min-h-screen">
@@ -22,12 +28,12 @@ const ConfirmMessage = () => {
             <div class="divider"></div>
             <div>
               <h3 className="font-semibold text-lg my-3">
-                {invitationData.finalData.userEvent.eventName}
+                {invitationData.userEvent.eventName}
               </h3>
               <p className="text-gray-500 my-2">
                 <span>🗓️</span>{' '}
-                {invitationData.finalData.inviteTime + ","} {' '}
-                {invitationData.finalData.date}
+                {invitationData.inviteTime + ","} {' '}
+                {invitationData.date}
               </p>
               <p className="text-gray-500 my-2">
                 <span>🎥</span> Web conferencing details to follow.
@@ -39,7 +45,7 @@ const ConfirmMessage = () => {
                 Guest's emails: {invitationData.emails}
               </p>
               <p className="font-semibold my-2">
-                A calendar invitation has been sent to your email address.
+                A email invitation has been sent to your email address.
               </p>
             </div>
           </div>

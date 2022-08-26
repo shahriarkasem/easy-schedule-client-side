@@ -72,7 +72,7 @@ const BillingModal = () => {
             </div>
             <div class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
               <Elements stripe={stripePromise}>
-                <CheckoutForm />
+                <CheckoutForm amount={amount} />
               </Elements>
             </div>
           </div>
@@ -103,12 +103,12 @@ const BillingModal = () => {
             </div>
           </div>
           <div class="modal-action">
-            <label class="btn button-orange rounded-3xl px-10">Upgrade</label>
+            {/* <label class="btn button-orange rounded-3xl px-10">Upgrade</label> */}
             <label
               for="my-modal-6"
               class="btn  btn-outline btn-accent rounded-3xl px-10 "
             >
-              Cancel
+              Ok
             </label>
           </div>
         </div>

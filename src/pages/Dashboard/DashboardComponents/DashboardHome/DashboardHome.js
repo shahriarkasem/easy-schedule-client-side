@@ -23,9 +23,9 @@ const DashboardHome = () => {
             <li>
               <Link to="/dashboard/d-home/workflows">Workflows</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/dashboard/d-home/routing">Routing Forms</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
