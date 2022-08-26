@@ -63,7 +63,7 @@ const UpdateEvent = ({eventLocation, setEventLocation, description, setDescripti
       // console.log(eventId)
       // console.log(fullData)
 
-    axios.patch(`http://localhost:5000/update/event/${eventId}`,
+    axios.patch(`https://easyscheduler24.herokuapp.com/update/event/${eventId}`,
     {  eventName,
       eventDate,
       eventTime,
