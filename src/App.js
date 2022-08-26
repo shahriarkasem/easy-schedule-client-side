@@ -97,7 +97,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1500);
   }, []);
 
   return (
@@ -191,8 +191,6 @@ function App() {
                 <Route path="integrations" element={<Integrations />}></Route>
               </Route>
               <Route path="/call" element={<Call />} />
-
-              <Route path="/call/:email/:name" element={<Call />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/chat" element={<Chat />} />
               <Route path="/chat-room/:email/:name" element={<ChatRoom />} />
