@@ -52,6 +52,7 @@ import AdminDashboard from "./pages/Dashboard/AdminDashboard/AdminDashboard";
 import AllUsers from "./pages/Dashboard/AdminDashboard/AllUsers";
 import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
 import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
+import CreateWorkflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/CreateWorkflows";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/Workflows";
 import UserSchedule from "./pages/Dashboard/AdminDashboard/UserSchedule";
 
@@ -102,20 +103,38 @@ function App() {
           <Route path="/support" element={<Support></Support>}></Route>
           <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
           <Route path="/view-booking/:id" element={<ViewBooking />}></Route>
-          <Route path="/booking-confirm/:id" element={<ConfirmMessage />}></Route>
+          <Route
+            path="/booking-confirm/:id"
+            element={<ConfirmMessage />}
+          ></Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           {/* Admin Dashboard */}
-          <Route path="adminDashboard" element={<RequireAuth><AdminDashboard></AdminDashboard></RequireAuth>}>
+          <Route
+            path="adminDashboard"
+            element={
+              <RequireAuth>
+                <AdminDashboard></AdminDashboard>
+              </RequireAuth>
+            }
+          >
             <Route index element={<UserSchedule></UserSchedule>}></Route>
-            <Route path="/adminDashboard/allUsers" element={<AllUsers></AllUsers>}></Route>
-            <Route path="/adminDashboard/manageUsers" element={<ManageUsers></ManageUsers>}></Route>
-            <Route path="/adminDashboard/manageEvents" element={<ManageEvents></ManageEvents>}></Route>
+            <Route
+              path="/adminDashboard/allUsers"
+              element={<AllUsers></AllUsers>}
+            ></Route>
+            <Route
+              path="/adminDashboard/manageUsers"
+              element={<ManageUsers></ManageUsers>}
+            ></Route>
+            <Route
+              path="/adminDashboard/manageEvents"
+              element={<ManageEvents></ManageEvents>}
+            ></Route>
           </Route>
           {/* nested */}
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="/dashboard" element={<DashboardHome />}></Route>
-
             <Route path="d-home" element={<DashboardHome />}>
               {/* home nested */}
               <Route path="event-types" element={<EventTypes />} />
@@ -128,6 +147,7 @@ function App() {
                 <Route path="date" element={<SingleDateRange />}></Route>
               </Route>
               <Route path="workflows" element={<Workflows />} />
+              <Route path="CreateWorkflows" element={<CreateWorkflows />} />
               <Route path="routing" element={<RoutingForms />} />
             </Route>
             <Route path="event-type" element={<EventTypesName />}></Route>

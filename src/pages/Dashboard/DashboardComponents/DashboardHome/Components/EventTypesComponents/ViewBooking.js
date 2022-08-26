@@ -186,7 +186,7 @@ const ViewBooking = () => {
     const name = data.name;
     const email = data.email;
     const emails = data.emails;
-    const invitation = {name,email,emails, finalData}
+    const invitation = { name, email, emails, finalData };
     console.log(invitation);
     axios({
       method: "POST",

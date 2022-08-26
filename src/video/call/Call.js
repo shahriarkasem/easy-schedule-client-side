@@ -11,7 +11,6 @@ const Call = () => {
 
   const handleClick = () => {
     navigate("/dashboard/d-home/event-types");
-
     window.location.reload();
   };
 
@@ -20,7 +19,6 @@ const Call = () => {
       <button onClick={handleClick} className="btn btn-accent">
         Back
       </button>
-
       <VideoContextProvider>
         <VideoPlayer />
         <SideBar>
