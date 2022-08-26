@@ -39,7 +39,7 @@ const ZoomSchedules = () => {
   ];
 
   useEffect(() => {
-    fetch("schedule.json")
+    fetch("/schedule.json")
       .then((res) => res.json())
       .then((data) => setSchedules(data));
   }, []);
@@ -47,7 +47,7 @@ const ZoomSchedules = () => {
     <div>
       <h4 className="text-xl text-center">Available Schedules</h4>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {mySchedule.map((schedule) => (
+        {schedules.map((schedule) => (
           <ZoomSchedule key={schedule._id} schedule={schedule}></ZoomSchedule>
         ))}
       </div>
