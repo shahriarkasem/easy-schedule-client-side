@@ -7,13 +7,15 @@ const ZoomSchedules = () => {
   const [schedules, setSchedules] = useState([]);
 
   useEffect(() => {
-    fetch("/schedule.json")
+    fetch("https://easyscheduler247.herokuapp.com/schedule")
       .then((res) => res.json())
       .then((data) => setSchedules(data));
   }, []);
   return (
     <div>
-      <h4 className="text-xl text-center">Available Schedules</h4>
+      <h4 className="text-2xl font-bold text-orange-500 text-center">
+        Available Schedules
+      </h4>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {schedules.map((schedule) => (
           <ZoomSchedule key={schedule._id} schedule={schedule}></ZoomSchedule>

@@ -7,9 +7,9 @@ const ZoomSchedule = ({ schedule }) => {
       <div className="card-body text-center">
         <h2 className="text-center text-1xl font-bold">{title}</h2>
         <p>{time}</p>
-        <h3>{host}</h3>
+        <h3>Host: {host}</h3>
         <div className="card-actions justify-center">
-          <button className="btn btn-primary">
+          <button className="btn btn-primary text-white">
             <a target="_blank" href={zoom}>
               Join Zoom Meeting
             </a>{" "}
