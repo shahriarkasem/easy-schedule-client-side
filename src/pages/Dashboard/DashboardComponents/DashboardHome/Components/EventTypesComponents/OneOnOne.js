@@ -113,9 +113,7 @@ const OneOnOne = () => {
                 <option disabled value="DEFAULT">
                   Pick one
                 </option>
-                <option value="Video Call using this site">
-                  Video Call using this site
-                </option>
+                <option value="Video Call">Video Call</option>
                 <option value="In-person meeting">In-person meeting</option>
 
                 <option value="Google Meet">Google Meet</option>
