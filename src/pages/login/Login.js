@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import google from "../../media/images/google.png";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import OpenSpinner from "../Shared/OpenSpinner";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -23,10 +22,6 @@ const Login = () => {
 
   let signInError;
 
-  if (gLoading || loading) {
-    return <OpenSpinner />;
-  }
-
   if (error || gError) {
     signInError = (
       <p className="text-red-500"> {error?.message || gError?.message} </p>
@@ -35,7 +30,7 @@ const Login = () => {
 
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
-  };
+  }
 
   if (user || gUser) {
     navigate("/");

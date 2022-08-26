@@ -46,7 +46,7 @@ import Call from "./video/call/Call";
 import DarkContext from "./pages/DarkMode/DarkContext";
 import Privacy from "./pages/Common/Privacy";
 import ConfirmMessage from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBookingComponents/ConfirmMessage";
-
+import Coming from "./pages/Shared/Coming";
 import NotFound from "./pages/Shared/NotFound";
 import Loading from "./pages/Shared/Loading";
 import ChatRoom from "./pages/Shared/Chat/ChatRoom";
@@ -62,7 +62,6 @@ import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/Workflows";
 import CreateWorkflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/CreateWorkflows";
 import UserSchedule from "./pages/Dashboard/AdminDashboard/UserSchedule";
-import Coming from "./pages/Shared/Coming";
 
 function App() {
   useEffect(() => {
@@ -114,41 +113,23 @@ function App() {
               {/* <Route
             path="/individuals"
             element={<Individuals></Individuals>}
-          ></Route> */}
-              {/* <Route path="/teams" element={<Teams></Teams>}></Route> */}
-              <Route path="/pricing" element={<Pricing></Pricing>}></Route>
-              <Route path="/whatsnew" element={<WhatsNew></WhatsNew>}></Route>
-              <Route path="/blog" element={<Blog></Blog>}></Route>
-              <Route path="/support" element={<Support></Support>}></Route>
-              <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
-              <Route path="/view-booking/:id" element={<ViewBooking />}></Route>
-              <Route
-                path="/booking-confirm/:id"
-                element={<ConfirmMessage />}
-              ></Route>
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<SignUp />} />
-              {/* Admin Dashboard */}
-              <Route
-                path="adminDashboard"
-                element={
-                  <RequireAuth>
-                    <AdminDashboard></AdminDashboard>
-                  </RequireAuth>
-                }
-              >
-                <Route
-                  path="/adminDashboard/allUsers"
-                  element={<AllUsers></AllUsers>}
-                ></Route>
-                <Route
-                  path="/adminDashboard/manageUsers"
-                  element={<ManageUsers></ManageUsers>}
-                ></Route>
-                <Route
-                  path="/adminDashboard/manageEvents"
-                  element={<ManageEvents></ManageEvents>}
-                ></Route>
+          ></Route>
+          <Route path="/teams" element={<Teams></Teams>}></Route>
+          <Route path="/pricing" element={<Pricing></Pricing>}></Route>
+          <Route path="/whatsnew" element={<WhatsNew></WhatsNew>}></Route>
+          <Route path="/blog" element={<Blog></Blog>}></Route>
+          <Route path="/support" element={<Support></Support>}></Route>
+          <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
+          <Route path="/view-booking/:id" element={<ViewBooking />}></Route>
+          <Route path="/booking-confirm/:id" element={<ConfirmMessage />}></Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          {/* Admin Dashboard */}
+              <Route path="adminDashboard" element={<RequireAuth><AdminDashboard></AdminDashboard></RequireAuth>}>
+                <Route index element={<UserSchedule></UserSchedule>}></Route>
+                <Route path="/adminDashboard/allUsers" element={<AllUsers></AllUsers>}></Route>
+                <Route path="/adminDashboard/manageUsers" element={<ManageUsers></ManageUsers>}></Route>
+                <Route path="/adminDashboard/manageEvents" element={<ManageEvents></ManageEvents>}></Route>
               </Route>
               {/* nested */}
               <Route path="/dashboard" element={<Dashboard />}>

@@ -4,7 +4,7 @@ const useAdmin = user => {
     const [admin, setAdmin] = useState(false);
     const [adminLoading, setAdminLoading] = useState(true);
     useEffect(() => {
-        const email = user?.email;
+        const email = user?.userEmail;
         if (email) {
             fetch(`https://easyscheduler24.herokuapp.com/admin/${email}`, {
                 method: 'GET',
