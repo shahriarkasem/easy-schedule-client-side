@@ -66,12 +66,13 @@ const RealTimeNotification = ({ res }) => {
               class="dropdown-content card card-compact w-52 p-2 shadow bg-white h-[200px] overflow-auto"
             >
               {notifications?.map((notification) => (
+                // console.log(notification)
                 <div className="my-2  text-sm">
                   {notification?.emails === user?.email
                     ? `You have meeting with ${
                         notification?.name
-                      } on ${notification?.finalData?.date?.slice(0, 10)} at ${
-                        notification?.finalData?.inviteTime
+                      } on ${notification?.date?.slice(0, 10)} at ${
+                        notification?.inviteTime
                       } `
                     : "Latest updates! "}
                 </div>
