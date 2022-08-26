@@ -45,7 +45,7 @@ const OneOnOne = () => {
       headers: {
         // authorization
       },
-      url: `http://localhost:5000/event/create/OneOnOne`,
+      url: `https://easyscheduler24.herokuapp.com/event/create/OneOnOne`,
       data: fullData,
     })
       .then((res) => {
