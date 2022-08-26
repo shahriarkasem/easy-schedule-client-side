@@ -9,7 +9,6 @@ const Chat = () => {
   const { isLoading, error, usersData, refetch } = useUserCollection();
 
   const[data, setData] = useState()
-  console.log(data)
   useEffect(()=>{
 let values = [];
 const reverse = usersData?.reverse()?.forEach(userData => {
