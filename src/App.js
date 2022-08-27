@@ -46,7 +46,7 @@ import Call from "./video/call/Call";
 import DarkContext from "./pages/DarkMode/DarkContext";
 import Privacy from "./pages/Common/Privacy";
 import ConfirmMessage from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBookingComponents/ConfirmMessage";
-import Coming from "./pages/Shared/Coming";
+
 import NotFound from "./pages/Shared/NotFound";
 import Loading from "./pages/Shared/Loading";
 import ChatRoom from "./pages/Shared/Chat/ChatRoom";
@@ -62,6 +62,7 @@ import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/Workflows";
 import CreateWorkflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/CreateWorkflows";
 import UserSchedule from "./pages/Dashboard/AdminDashboard/UserSchedule";
+import Coming from "./pages/Shared/Coming";
 
 function App() {
   useEffect(() => {
@@ -110,11 +111,11 @@ function App() {
               <Route path="/" element={<Home></Home>}></Route>
               {/* <Route path="/howitworks" element={<HowItWorks></HowItWorks>}></Route> */}
               <Route path="/features" element={<Features></Features>}></Route>
-              <Route
-                path="/individuals"
-                element={<Individuals></Individuals>}
-              ></Route>
-              <Route path="/teams" element={<Teams></Teams>}></Route>
+              {/* <Route
+            path="/individuals"
+            element={<Individuals></Individuals>}
+          ></Route> */}
+              {/* <Route path="/teams" element={<Teams></Teams>}></Route> */}
               <Route path="/pricing" element={<Pricing></Pricing>}></Route>
               <Route path="/whatsnew" element={<WhatsNew></WhatsNew>}></Route>
               <Route path="/blog" element={<Blog></Blog>}></Route>
@@ -127,7 +128,7 @@ function App() {
               ></Route>
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />
-
+              {/* Admin Dashboard */}
               <Route
                 path="adminDashboard"
                 element={
@@ -136,7 +137,6 @@ function App() {
                   </RequireAuth>
                 }
               >
-                <Route index element={<UserSchedule></UserSchedule>}></Route>
                 <Route
                   path="/adminDashboard/allUsers"
                   element={<AllUsers></AllUsers>}
@@ -150,7 +150,6 @@ function App() {
                   element={<ManageEvents></ManageEvents>}
                 ></Route>
               </Route>
-              {/* Admin Dashboard
               {/* nested */}
               <Route path="/dashboard" element={<Dashboard />}>
                 <Route path="/dashboard" element={<DashboardHome />}></Route>

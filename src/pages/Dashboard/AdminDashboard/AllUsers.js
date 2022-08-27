@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { useQuery } from 'react-query';
 // import Loading from '../../Shared/Loading'
 // import AdminRole from './AdminRole';
@@ -114,6 +115,16 @@ const AllUsers = () => {
       </div>
     </div>
   );
+=======
+import React from 'react';
+
+const AllUsers = () => {
+    return (
+        <div>
+            <h2>All Users</h2>
+        </div>
+    );
+>>>>>>> 4694d8007913b2671e3ce70e30d325481f586bbc
 };
 
 export default AllUsers;
