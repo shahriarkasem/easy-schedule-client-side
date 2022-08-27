@@ -110,27 +110,47 @@ function App() {
               <Route path="/" element={<Home></Home>}></Route>
               {/* <Route path="/howitworks" element={<HowItWorks></HowItWorks>}></Route> */}
               <Route path="/features" element={<Features></Features>}></Route>
-              {/* <Route
-            path="/individuals"
-            element={<Individuals></Individuals>}
-          ></Route>
-          <Route path="/teams" element={<Teams></Teams>}></Route>
-          <Route path="/pricing" element={<Pricing></Pricing>}></Route>
-          <Route path="/whatsnew" element={<WhatsNew></WhatsNew>}></Route>
-          <Route path="/blog" element={<Blog></Blog>}></Route>
-          <Route path="/support" element={<Support></Support>}></Route>
-          <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
-          <Route path="/view-booking/:id" element={<ViewBooking />}></Route>
-          <Route path="/booking-confirm/:id" element={<ConfirmMessage />}></Route>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          {/* Admin Dashboard */}
-              <Route path="adminDashboard" element={<RequireAuth><AdminDashboard></AdminDashboard></RequireAuth>}>
+              <Route
+                path="/individuals"
+                element={<Individuals></Individuals>}
+              ></Route>
+              <Route path="/teams" element={<Teams></Teams>}></Route>
+              <Route path="/pricing" element={<Pricing></Pricing>}></Route>
+              <Route path="/whatsnew" element={<WhatsNew></WhatsNew>}></Route>
+              <Route path="/blog" element={<Blog></Blog>}></Route>
+              <Route path="/support" element={<Support></Support>}></Route>
+              <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
+              <Route path="/view-booking/:id" element={<ViewBooking />}></Route>
+              <Route
+                path="/booking-confirm/:id"
+                element={<ConfirmMessage />}
+              ></Route>
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<SignUp />} />
+
+              <Route
+                path="adminDashboard"
+                element={
+                  <RequireAuth>
+                    <AdminDashboard></AdminDashboard>
+                  </RequireAuth>
+                }
+              >
                 <Route index element={<UserSchedule></UserSchedule>}></Route>
-                <Route path="/adminDashboard/allUsers" element={<AllUsers></AllUsers>}></Route>
-                <Route path="/adminDashboard/manageUsers" element={<ManageUsers></ManageUsers>}></Route>
-                <Route path="/adminDashboard/manageEvents" element={<ManageEvents></ManageEvents>}></Route>
+                <Route
+                  path="/adminDashboard/allUsers"
+                  element={<AllUsers></AllUsers>}
+                ></Route>
+                <Route
+                  path="/adminDashboard/manageUsers"
+                  element={<ManageUsers></ManageUsers>}
+                ></Route>
+                <Route
+                  path="/adminDashboard/manageEvents"
+                  element={<ManageEvents></ManageEvents>}
+                ></Route>
               </Route>
+              {/* Admin Dashboard
               {/* nested */}
               <Route path="/dashboard" element={<Dashboard />}>
                 <Route path="/dashboard" element={<DashboardHome />}></Route>
