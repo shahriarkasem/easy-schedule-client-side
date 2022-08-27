@@ -4,12 +4,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import auth from "../../../../../../firebase.init";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const Group = () => {
   const [eventLocation, setEventLocation] = useState();
   const [user] = useAuthState(auth);
-  const navigate = useNavigate('');
+  const navigate = useNavigate("");
 
   const handleLocation = (e) => {
     const location = e.target.value;
@@ -51,9 +51,9 @@ const Group = () => {
       data: fullData,
     })
       .then((res) => {
-        if(res.status === 200){
-          toast.success('Event created successfully')
-          navigate('/dashboard/d-home/event-types')
+        if (res.status === 200) {
+          toast.success("Event created successfully");
+          navigate("/dashboard/d-home/event-types");
         }
         // console.log(res)
       })
