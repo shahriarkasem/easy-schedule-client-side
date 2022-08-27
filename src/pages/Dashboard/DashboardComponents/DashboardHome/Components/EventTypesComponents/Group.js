@@ -51,15 +51,9 @@ const Group = () => {
       data: fullData,
     })
       .then((res) => {
-<<<<<<< HEAD
         if (res.status === 200) {
           toast.success("Event created successfully");
           navigate("/dashboard/d-home/event-types");
-=======
-        if(res.status === 200){
-          toast.success('Event created successfully')
-          navigate('/dashboard/d-home/event-types')
->>>>>>> 4694d8007913b2671e3ce70e30d325481f586bbc
         }
         // console.log(res)
       })

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -96,16 +95,6 @@ const ManageUsers = () => {
       </div>
     </div>
   );
-=======
-import React from 'react';
-
-const ManageUsers = () => {
-    return (
-        <div>
-            <h2>Manage Users</h2>
-        </div>
-    );
->>>>>>> 4694d8007913b2671e3ce70e30d325481f586bbc
 };
 
 export default ManageUsers;
