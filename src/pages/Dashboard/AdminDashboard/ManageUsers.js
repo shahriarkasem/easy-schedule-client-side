@@ -14,7 +14,7 @@ const ManageUsers = () => {
 
   const { name, email, role, isLoading } = adminRole;
   useEffect(() => {
-    fetch(`https://easyscheduler24.herokuapp.com/users`, {
+    fetch(`http://localhost:5000/users`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -32,7 +32,7 @@ const ManageUsers = () => {
       });
   }, [user]);
   const makeAdmin = () => {
-    fetch(`https://easyscheduler24.herokuapp.com/users/admin/${email}`, {
+    fetch(`http://localhost:5000/users/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

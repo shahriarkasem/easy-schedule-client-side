@@ -19,7 +19,7 @@ const RealTimeNotification = ({ res }) => {
 
   useEffect(() => {
     fetch(
-      `https://easyscheduler24.herokuapp.com/event/invitation/${user?.email}`
+      `http://localhost:5000/event/invitation/${user?.email}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -34,7 +34,7 @@ const RealTimeNotification = ({ res }) => {
     refetch,
   } = useQuery(["notifications"], () =>
     fetch(
-      `https://easyscheduler24.herokuapp.com/event/invitation/${user?.email}`
+      `http://localhost:5000/event/invitation/${user?.email}`
     ).then((res) => res.json())
   );
   const handleRead = () => {
@@ -71,11 +71,9 @@ const RealTimeNotification = ({ res }) => {
                 // console.log(notification)
                 <div className="my-2  text-sm">
                   {notification?.emails === user?.email
-                    ? `You have meeting with ${
-                        notification?.name
-                      } on ${notification?.date?.slice(0, 10)} at ${
-                        notification?.inviteTime
-                      } `
+                    ? `You have meeting with ${notification?.name
+                    } on ${notification?.date?.slice(0, 10)} at ${notification?.inviteTime
+                    } `
                     : "Latest updates! "}
                 </div>
               ))}

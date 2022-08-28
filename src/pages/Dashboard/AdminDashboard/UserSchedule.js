@@ -10,7 +10,7 @@ const UserSchedule = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`https://easyscheduler24.herokuapp.com/userSchedule`, {
+    fetch(`http://localhost:5000/userSchedule`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
