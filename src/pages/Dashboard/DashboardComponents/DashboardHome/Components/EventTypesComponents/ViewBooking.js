@@ -22,7 +22,9 @@ const ViewBooking = () => {
     data: userEvent,
     refetch,
   } = useQuery(["eventData"], () =>
-    fetch(`https://easyscheduler24.herokuapp.com/event/single/${id}`).then((res) => res.json())
+    fetch(`https://easyscheduler24.herokuapp.com/event/single/${id}`).then(
+      (res) => res.json()
+    )
   );
 
   const [date, setDate] = useState(new Date());

@@ -1,17 +1,16 @@
-
 // import { useQuery } from 'react-query';
 // import Loading from '../../Shared/Loading'
 // import AdminRole from './AdminRole';
-import { signOut } from 'firebase/auth';
-import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
-import auth from '../../../firebase.init';
-import { toast } from 'react-toastify';
-import Loading from '../../Shared/Loading';
+import { signOut } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
+import auth from "../../../firebase.init";
+import { toast } from "react-toastify";
+import Loading from "../../Shared/Loading";
 
 const AllUsers = () => {
-    // const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    // const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://easyscheduler24.herokuapp.com/users', {
     //     method: 'GET',
     //     headers: {
     //         authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -24,7 +23,7 @@ const AllUsers = () => {
     const [adminRole, setadminRole] = useState([]);
 
     const [user] = useAuthState(auth);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const { name, email, role, isLoading } = adminRole;
     useEffect(() => {
@@ -96,17 +95,14 @@ const AllUsers = () => {
                             </td> */}
                             </tr>)
                         }
-
-
                     </tbody>
                     <tfoot>
-                        <tr className='bg-orange-300 text-center'>
-                            <th className='bg-orange-300'></th>
-                            <th className='bg-orange-300'>User Name</th>
-                            <th className='bg-orange-300'>User Email</th>
-                            <th className='bg-orange-300'></th>
-                            <th className='bg-orange-300'></th>
-
+                        <tr className="bg-orange-300 text-center">
+                            <th className="bg-orange-300"></th>
+                            <th className="bg-orange-300">User Name</th>
+                            <th className="bg-orange-300">User Email</th>
+                            <th className="bg-orange-300"></th>
+                            <th className="bg-orange-300"></th>
                         </tr>
                     </tfoot>
                 </table>

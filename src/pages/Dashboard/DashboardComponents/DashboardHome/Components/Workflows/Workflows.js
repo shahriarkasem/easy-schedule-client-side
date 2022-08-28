@@ -12,7 +12,9 @@ const Workflows = () => {
     data: workflowData,
     refetch,
   } = useQuery(["workflowData"], () =>
-    fetch(`https://easyscheduler24.herokuapp.com/workflow`).then((res) => res.json())
+    fetch(`https://easyscheduler24.herokuapp.com/workflow`).then((res) =>
+      res.json()
+    )
   );
   refetch();
   return (
