@@ -21,7 +21,6 @@ import Availability from "./pages/Dashboard/DashboardComponents/Availability";
 import Integrations from "./pages/Dashboard/DashboardComponents/Integrations";
 import Help from "./pages/Dashboard/DashboardComponents/Help";
 import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypes";
-// import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
 import AccountSettings from "./pages/Dashboard/DashboardComponents/AccountSettings";
 import Billing from "./pages/Dashboard/DashboardComponents/billing/Billing";
@@ -46,7 +45,7 @@ import Call from "./video/call/Call";
 import DarkContext from "./pages/DarkMode/DarkContext";
 import Privacy from "./pages/Common/Privacy";
 import ConfirmMessage from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBookingComponents/ConfirmMessage";
-
+import Coming from "./pages/Shared/Coming";
 import NotFound from "./pages/Shared/NotFound";
 import Loading from "./pages/Shared/Loading";
 import ChatRoom from "./pages/Shared/Chat/ChatRoom";
@@ -60,8 +59,9 @@ import AllUsers from "./pages/Dashboard/AdminDashboard/AllUsers";
 import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
 import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/Workflows";
+import CreateWorkflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/CreateWorkflows";
 import UserSchedule from "./pages/Dashboard/AdminDashboard/UserSchedule";
-import Coming from "./pages/Shared/Coming";
+import UserProfiledata from "./pages/Dashboard/DashboardComponents/UserProfiledata";
 
 function App() {
   useEffect(() => {
@@ -96,13 +96,13 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1500);
   }, []);
 
   return (
     <>
       {loading ? (
-        <LoadingAnimate />
+        <OpenSpinner />
       ) : (
         <div>
           <DarkContext.Provider value={{ handleDarkMode, toggle, setToggle }}>
@@ -110,46 +110,28 @@ function App() {
               <Route path="/" element={<Home></Home>}></Route>
               {/* <Route path="/howitworks" element={<HowItWorks></HowItWorks>}></Route> */}
               <Route path="/features" element={<Features></Features>}></Route>
-              {/* <Route
-            path="/individuals"
-            element={<Individuals></Individuals>}
-          ></Route> */}
-              {/* <Route path="/teams" element={<Teams></Teams>}></Route> */}
+              <Route
+                path="/individuals"
+                element={<Individuals></Individuals>}
+              ></Route>
+              <Route path="/teams" element={<Teams></Teams>}></Route>
               <Route path="/pricing" element={<Pricing></Pricing>}></Route>
               <Route path="/whatsnew" element={<WhatsNew></WhatsNew>}></Route>
               <Route path="/blog" element={<Blog></Blog>}></Route>
               <Route path="/support" element={<Support></Support>}></Route>
               <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
               <Route path="/view-booking/:id" element={<ViewBooking />}></Route>
-              <Route
-                path="/booking-confirm/:id"
-                element={<ConfirmMessage />}
-              ></Route>
+              <Route path="/booking-confirm/:id" element={<ConfirmMessage />}></Route>
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />
               {/* Admin Dashboard */}
-              <Route
-                path="adminDashboard"
-                element={
-                  <RequireAuth>
-                    <AdminDashboard></AdminDashboard>
-                  </RequireAuth>
-                }
-              >
-                <Route
-                  path="/adminDashboard/allUsers"
-                  element={<AllUsers></AllUsers>}
-                ></Route>
-                <Route
-                  path="/adminDashboard/manageUsers"
-                  element={<ManageUsers></ManageUsers>}
-                ></Route>
-                <Route
-                  path="/adminDashboard/manageEvents"
-                  element={<ManageEvents></ManageEvents>}
-                ></Route>
+              <Route path="adminDashboard" element={<RequireAuth><AdminDashboard></AdminDashboard></RequireAuth>}>
+                <Route index element={<UserSchedule></UserSchedule>}></Route>
+                <Route path="/adminDashboard/allUsers" element={<AllUsers></AllUsers>}></Route>
+                <Route path="/adminDashboard/manageUsers" element={<ManageUsers></ManageUsers>}></Route>
+                <Route path="/adminDashboard/manageEvents" element={<ManageEvents></ManageEvents>}></Route>
               </Route>
-              {/* nested */}
+              {/* nested*/}
               <Route path="/dashboard" element={<Dashboard />}>
                 <Route path="/dashboard" element={<DashboardHome />}></Route>
 
@@ -165,6 +147,7 @@ function App() {
                     <Route path="date" element={<SingleDateRange />}></Route>
                   </Route>
                   <Route path="workflows" element={<Workflows />} />
+                  <Route path="CreateWorkflows" element={<CreateWorkflows />} />
                   <Route path="routing" element={<RoutingForms />} />
                 </Route>
                 <Route path="event-type" element={<EventTypesName />}></Route>
@@ -187,14 +170,17 @@ function App() {
                   element={<AdminManagement />}
                 ></Route>
                 <Route path="integrations" element={<Integrations />}></Route>
+
               </Route>
-              <Route path="/call" element={<Call />} />
+              <Route path="/call/:email/:name" element={<Call />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/chat" element={<Chat />} />
               <Route path="/chat-room/:email/:name" element={<ChatRoom />} />
               <Route path="*" element={<NotFound />} />
               <Route path="/coming" element={<Coming />} />
+              <Route path="/userData" element={<UserProfiledata></UserProfiledata>}></Route>
             </Routes>
+
             <MessengerCustomerChat
               pageId={process.env.REACT_APP_PAGE_ID}
               appId={process.env.REACT_APP_APP_ID}

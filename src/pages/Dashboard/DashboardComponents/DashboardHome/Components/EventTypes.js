@@ -15,35 +15,45 @@ const EventTypes = () => {
   const [editEvent, setEditEvent] = useState(null);
 
   const handleEditEvent = (id) => {
-  fetch(`https://easyscheduler24.herokuapp.com/event/single/${id}`)
-  .then(res=>res.json())
-  .then(data => setEditEvent(data));
-  }
+    fetch(`http://localhost:5000/event/single/${id}`)
+      .then((res) => res.json())
+      .then((data) => setEditEvent(data));
+  };
 
   const [eventId, setEventId] = useState();
   const [eventLocation, setEventLocation] = useState();
-    const [description, setDescription] = useState();
-    const [eventDate, setEventDate] = useState();
-    const [eventDuration, setEventDuration] = useState();
-    const [eventName, setEventName] = useState();
-    const [eventTime, setEventTime] = useState();
-    const [eventType, setEventType] = useState();
-    const [maxInvite, setMaxInvite] = useState();
+  const [description, setDescription] = useState();
+  const [eventDate, setEventDate] = useState();
+  const [eventDuration, setEventDuration] = useState();
+  const [eventName, setEventName] = useState();
+  const [eventTime, setEventTime] = useState();
+  const [eventType, setEventType] = useState();
+  const [maxInvite, setMaxInvite] = useState();
 
-    useEffect(()=>{
-       if(editEvent){
-        const {location,description,eventDate,eventDuration,eventName,eventTime,eventType,maxInvite, _id} = editEvent;
-        setEventLocation(location);
-        setDescription(description);
-        setEventDate(eventDate);
-        setEventDuration(eventDuration);
-        setEventName(eventName);
-        setEventTime(eventTime);
-        setEventType(eventType);
-        setMaxInvite(maxInvite);
-        setEventId(_id)
-       }
-    },[editEvent])
+  useEffect(() => {
+    if (editEvent) {
+      const {
+        location,
+        description,
+        eventDate,
+        eventDuration,
+        eventName,
+        eventTime,
+        eventType,
+        maxInvite,
+        _id,
+      } = editEvent;
+      setEventLocation(location);
+      setDescription(description);
+      setEventDate(eventDate);
+      setEventDuration(eventDuration);
+      setEventName(eventName);
+      setEventTime(eventTime);
+      setEventType(eventType);
+      setMaxInvite(maxInvite);
+      setEventId(_id);
+    }
+  }, [editEvent]);
 
   useEffect(() => {
     const userNameFirstLetter = user?.displayName?.charAt(0);
@@ -51,7 +61,7 @@ const EventTypes = () => {
   }, [user]);
 
   if (isLoading) {
-    return <LoadingAnimate></LoadingAnimate>
+    return <LoadingAnimate></LoadingAnimate>;
   }
 
   return (
@@ -105,13 +115,38 @@ const EventTypes = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 mt-5 md:mt-8">
               {userEvents &&
                 userEvents.map((soloEvent, index) => (
-                  <UserEvents key={index} soloEvent={soloEvent} handleEditEvent={handleEditEvent}></UserEvents>
+                  <UserEvents
+                    key={index}
+                    soloEvent={soloEvent}
+                    handleEditEvent={handleEditEvent}
+                  ></UserEvents>
                 ))}
             </div>
           </div>
         </div>
       </div>
-      <UpdateEvent eventLocation={eventLocation} setEventLocation={setEventLocation} description={description} setDescription={setDescription} eventDate={eventDate} setEventDate={setEventDate} eventDuration={eventDuration} setEventDuration={setEventDuration} eventName={eventName} setEventName={setEventName} eventTime={eventTime} setEventTime={setEventTime} eventType={eventType} setEventType={setEventType} maxInvite={maxInvite} setMaxInvite={setMaxInvite} setEditEvent={setEditEvent} editEvent={editEvent} eventId={eventId} refetch={refetch} ></UpdateEvent>
+      <UpdateEvent
+        eventLocation={eventLocation}
+        setEventLocation={setEventLocation}
+        description={description}
+        setDescription={setDescription}
+        eventDate={eventDate}
+        setEventDate={setEventDate}
+        eventDuration={eventDuration}
+        setEventDuration={setEventDuration}
+        eventName={eventName}
+        setEventName={setEventName}
+        eventTime={eventTime}
+        setEventTime={setEventTime}
+        eventType={eventType}
+        setEventType={setEventType}
+        maxInvite={maxInvite}
+        setMaxInvite={setMaxInvite}
+        setEditEvent={setEditEvent}
+        editEvent={editEvent}
+        eventId={eventId}
+        refetch={refetch}
+      ></UpdateEvent>
     </div>
   );
 };

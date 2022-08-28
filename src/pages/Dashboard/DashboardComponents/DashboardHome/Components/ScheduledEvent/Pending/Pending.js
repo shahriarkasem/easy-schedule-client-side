@@ -5,7 +5,7 @@ import UserEvents from '../../EventTypesComponents/UserEvents';
 
 const Pending = () => {
     const ref = React.createRef();
-    const { isLoading, error, userEvents, refetch } = useUserEvents();
+    const { isLoading, error, userEvents } = useUserEvents();
 
     return (
         <div className='mt-16 text-center'>

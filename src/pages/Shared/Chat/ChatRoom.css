@@ -39,7 +39,7 @@
   
   #main-part {
     padding: 10px;
-    height: 80vh;
+    height: 50vh;
     margin: 10vh 0 10vh;
     overflow-y: scroll;
     display: flex;

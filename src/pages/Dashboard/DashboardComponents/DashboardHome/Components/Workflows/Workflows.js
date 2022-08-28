@@ -3,58 +3,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./Workflows.css";
 import img1 from "../../../../../../media/images/workflow/1.jpg";
+import { useQuery } from "@tanstack/react-query";
 
 const Workflows = () => {
-  const workflowData = [
-    {
-      title: "Email reminder to host",
-      info: "Never miss an event - get automated email reminders",
-    },
-    {
-      title: "Email reminder to Invitee",
-      info: "Reduce no-shows - send automated email reminders to invitees",
-    },
-    {
-      title: "Send thank you email",
-      info: "Build relationships with a quick thanks",
-    },
-    {
-      title: "Email additional resources",
-      info: "Send Links for additional resources to your invitees",
-    },
-    {
-      title: "Request follow-up meeting",
-      info: "Don't wait to meet again",
-    },
-    {
-      title: "Email your own feedback survey",
-      info: "Email a survey link from a third party like Typeform or Google Forms to get feedback from invitees after your event",
-    },
-    {
-      title: " Text booking confirmation to host",
-      info: "Keep hosts up-to-date with schedule events",
-    },
-    {
-      title: "Text reminder to invitee",
-      info: "Reduce no-shows - send automated text reminders to invitees",
-    },
-    {
-      title: "Text cancellation notification to invitee",
-      info: "Let invitees known as soon as an event is cancelled",
-    },
-    {
-      title: "Text follow-up to invitee",
-      info: "Finish up by texting your invitees after an event",
-    },
-    {
-      title: "Email invitees to confirm",
-      info: "Reduce no-shows by asking your invitees to reconfirm they will attend your event.",
-    },
-    {
-      title: "Text invitee to confirm",
-      info: "Reduce no-shows by asking your invites to reconfirm they will attend your event",
-    },
-  ];
+  const {
+    isLoading,
+    error,
+    data: workflowData,
+    refetch,
+  } = useQuery(["workflowData"], () =>
+    fetch(`http://localhost:5000/workflow`).then((res) =>
+      res.json()
+    )
+  );
+  refetch();
   return (
     <div>
       <div className="grid lg:grid-cols-2 grid-cols-1  justify-items-center content-center items-center gap-6 my-10">
@@ -82,7 +44,7 @@ const Workflows = () => {
         </button>
       </div>
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 my-10">
-        {workflowData.map((flowData) => (
+        {workflowData?.map((flowData) => (
           <a href="/dashboard/d-home/CreateWorkflows">
             <div class="card rounded-none workflowShadow  hover:bg-gray-100 ">
               <div class="card-body">

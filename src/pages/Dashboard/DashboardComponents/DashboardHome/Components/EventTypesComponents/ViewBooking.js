@@ -22,7 +22,9 @@ const ViewBooking = () => {
     data: userEvent,
     refetch,
   } = useQuery(["eventData"], () =>
-    fetch(`http://localhost:5000/event/single/${id}`).then((res) => res.json())
+    fetch(`http://localhost:5000/event/single/${id}`).then(
+      (res) => res.json()
+    )
   );
 
   const [date, setDate] = useState(new Date());
@@ -44,137 +46,120 @@ const ViewBooking = () => {
     <>
       <li
         onClick={() => setInviteTime("09:00am")}
-        className={`${
-          inviteTime === "09:00am" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "09:00am" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         09:00am
       </li>
       <li
         onClick={() => setInviteTime("09:30am")}
-        className={`${
-          inviteTime === "09:30am" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "09:30am" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         09:30am
       </li>
       <li
         onClick={() => setInviteTime("10:00am")}
-        className={`${
-          inviteTime === "10:00am" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "10:00am" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         10:00am
       </li>
       <li
         onClick={() => setInviteTime("10:30am")}
-        className={`${
-          inviteTime === "10:30am" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "10:30am" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         10:30am
       </li>
       <li
         onClick={() => setInviteTime("11:00am")}
-        className={`${
-          inviteTime === "11:00am" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "11:00am" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         11:00am
       </li>
       <li
         onClick={() => setInviteTime("11:30am")}
-        className={`${
-          inviteTime === "11:30am" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "11:30am" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         11:30am
       </li>
       <li
         onClick={() => setInviteTime("12:00pm")}
-        className={`${
-          inviteTime === "12:00pm" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "12:00pm" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         12:00pm
       </li>
       <li
         onClick={() => setInviteTime("12:30pm")}
-        className={`${
-          inviteTime === "12:30pm" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "12:30pm" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         12:30pm
       </li>
       <li
         onClick={() => setInviteTime("01:00pm")}
-        className={`${
-          inviteTime === "01:00pm" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "01:00pm" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         01:00pm
       </li>
       <li
         onClick={() => setInviteTime("01:30pm")}
-        className={`${
-          inviteTime === "01:30pm" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "01:30pm" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         01:30pm
       </li>
       <li
         onClick={() => setInviteTime("02:00pm")}
-        className={`${
-          inviteTime === "02:00pm" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "02:00pm" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         02:00pm
       </li>
       <li
         onClick={() => setInviteTime("02:30pm")}
-        className={`${
-          inviteTime === "02:30pm" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "02:30pm" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         02:30pm
       </li>
       <li
         onClick={() => setInviteTime("03:00pm")}
-        className={`${
-          inviteTime === "03:00pm" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "03:00pm" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         03:00pm
       </li>
       <li
         onClick={() => setInviteTime("03:30pm")}
-        className={`${
-          inviteTime === "03:30pm" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "03:30pm" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         03:30pm
       </li>
       <li
         onClick={() => setInviteTime("04:00pm")}
-        className={`${
-          inviteTime === "04:00pm" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "04:00pm" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         04:00pm
       </li>
       <li
         onClick={() => setInviteTime("04:30pm")}
-        className={`${
-          inviteTime === "04:30pm" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "04:30pm" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         04:30pm
       </li>
       <li
         onClick={() => setInviteTime("05:00pm")}
-        className={`${
-          inviteTime === "05:00pm" && "bg-gray-500 text-white"
-        } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
+        className={`${inviteTime === "05:00pm" && "bg-gray-500 text-white"
+          } cursor-pointer border px-4 py-1 my-2 rounded-lg`}
       >
         05:00pm
       </li>
@@ -186,7 +171,8 @@ const ViewBooking = () => {
     const name = userEvent?.userName;
     const email = userEvent?.userEmail;
     const emails = data.emails;
-    const invitation = {name,email,emails, date, inviteTime, userEvent};
+
+    const invitation = { name, email, emails, date, inviteTime, userEvent };
     console.log(invitation);
     axios({
       method: "POST",
@@ -201,15 +187,15 @@ const ViewBooking = () => {
           toast.success("Event created successfully");
           navigate(`/booking-confirm/${res.data.insertedId}`);
         }
-        console.log(res)
+        console.log(res);
       })
       .catch((error) => {
         // console.log(error);
       });
   };
 
-  if(isLoading){
-    return <LoadingAnimate></LoadingAnimate>
+  if (isLoading) {
+    return <LoadingAnimate></LoadingAnimate>;
   }
 
   return (
@@ -291,8 +277,8 @@ const ViewBooking = () => {
                         <span class="label-text font-semibold">Name</span>
                       </label>
                       <input
-                      disabled
-                      value={userEvent?.userName}
+                        disabled
+                        value={userEvent?.userName}
                         type="text"
                         placeholder=""
                         class="input input-bordered w-full max-w-md"
@@ -305,13 +291,12 @@ const ViewBooking = () => {
                         <span class="label-text font-semibold">Email</span>
                       </label>
                       <input
-                      disabled
-                      value={userEvent?.userEmail}
+                        disabled
+                        value={userEvent?.userEmail}
                         type="email"
                         placeholder=""
                         class="input input-bordered w-full max-w-md"
                         {...register("email", {
-                        
                           maxLength: 60,
                         })}
                       />
