@@ -21,7 +21,6 @@ import Availability from "./pages/Dashboard/DashboardComponents/Availability";
 import Integrations from "./pages/Dashboard/DashboardComponents/Integrations";
 import Help from "./pages/Dashboard/DashboardComponents/Help";
 import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypes";
-// import ScheduledEvents from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvents";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
 import AccountSettings from "./pages/Dashboard/DashboardComponents/AccountSettings";
 import Billing from "./pages/Dashboard/DashboardComponents/billing/Billing";

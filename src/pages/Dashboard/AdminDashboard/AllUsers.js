@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 import Loading from "../../Shared/Loading";
 
 const AllUsers = () => {
-    // const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://easyscheduler24.herokuapp.com/users', {
+    // const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
     //     method: 'GET',
     //     headers: {
     //         authorization: `Bearer ${localStorage.getItem('accessToken')}`

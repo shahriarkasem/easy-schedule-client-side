@@ -10,13 +10,13 @@ const Upcoming = () => {
   const [invites, setInvites] = useState([]);
   const [user] = useAuthState(auth);
   useEffect(() => {
-    fetch(`https://easyscheduler24.herokuapp.com/event/invited/${user?.email}`)
+    fetch(`http://localhost:5000/event/invited/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setInvites(data);
       });
   }, [user?.email]);
-  console.log(invites);
+  // console.log(invites);
   return (
     // <div className="mt-12 md:mt-16 mb-5 md:mb-16">
     //     <div className=" p-5 md:p-16 lg:p-20 ">
