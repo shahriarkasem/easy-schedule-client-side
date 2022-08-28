@@ -83,10 +83,10 @@ const AllUsers = () => {
                         {
                             adminRole.map((a, index) => <tr key={a._id}>
                                 <th className='bg-orange-300'>{index + 1}</th>
-                                <td className='bg-pink-500'>{a.name}</td>
+                                <td className='bg-pink-600'>{a.name}</td>
                                 <td className='bg-orange-400'>{a.email}</td>
-                                <td className='bg-pink-700'>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-xs">Make Admin</button>}</td>
-                                <td className='bg-orange-400'><button class="btn btn-xs">Remove User</button></td>
+                                <td className='bg-pink-600'>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-xs">Make Admin</button>}</td>
+
                                 {/* <td>
                                 {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
                                 {(a.price && a.paid) && <div>

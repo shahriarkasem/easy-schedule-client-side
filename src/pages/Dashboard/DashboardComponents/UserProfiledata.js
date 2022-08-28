@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import Navbar from '../../Home/components/Navbar/Navbar';
 import LoadingAnimate from '../../Shared/LoadingAnimate';
 const UserProfiledata = () => {
     const [user, isLoading] = useAuthState(auth);
@@ -60,84 +61,88 @@ const UserProfiledata = () => {
         return <LoadingAnimate></LoadingAnimate>
     }
     return (
-        <div className='flex justify-center items-center'>
 
-            <form onSubmit={handleSubmit(onSubmit)} >
-                <h2 className="text-2xl fw-bold text-center p-2 font-bold">Edit User Profile</h2>
-                <div className="form-control w-full max-w-xs">
-                    <label>
-                        <span className="label-text">Name</span>
-                    </label>
-                    <input
-                        value={user?.displayName}
+        <div>
+            <Navbar></Navbar>
+            <div className='flex justify-center items-center'>
 
-                        type="name"
-                        className="input input-bordered w-full max-w-xs p-2 m-2"
-                        {...register("name")}
-                    />
-                </div>
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Email</span>
-                    </label>
-                    <input
-                        value={user?.email}
+                <form onSubmit={handleSubmit(onSubmit)} >
+                    <h2 className="text-2xl fw-bold text-center p-2 font-bold">Edit User Profile</h2>
+                    <div className="form-control w-full max-w-xs">
+                        <label>
+                            <span className="label-text">Name</span>
+                        </label>
+                        <input
+                            value={user?.displayName}
 
-                        type="email"
-                        className="input input-bordered w-full max-w-xs p-2 m-2"
-                        {...register("email")}
-                    />
-                </div>
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Contact Number</span>
-                    </label>
-                    <input
+                            type="name"
+                            className="input input-bordered w-full max-w-xs p-2 m-2"
+                            {...register("name")}
+                        />
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <input
+                            value={user?.email}
 
-                        type="number"
-                        className="input input-bordered w-full max-w-xs p-2 m-2"
-                        {...register("number")}
-                    />
-                </div>
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Address</span>
-                    </label>
-                    <input
+                            type="email"
+                            className="input input-bordered w-full max-w-xs p-2 m-2"
+                            {...register("email")}
+                        />
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Contact Number</span>
+                        </label>
+                        <input
 
-                        type="address"
-                        className="input input-bordered p-2 m-2"
-                        {...register("address")}
-                    />
-                </div>
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Description</span>
-                    </label>
-                    <textarea className='mb-2 input input-bordered w-full max-w-xs p-2 m-2' placeholder='Description' {...register("description")} />
-                </div>
+                            type="number"
+                            className="input input-bordered w-full max-w-xs p-2 m-2"
+                            {...register("number")}
+                        />
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Address</span>
+                        </label>
+                        <input
 
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Photo</span>
-                    </label>
-                    <input
-                        type="file"
-                        className="input input-bordered w-full max-w-xs"
-                        {...register("image", {
-                            required: {
-                                value: true,
-                                message: 'Image is Required'
-                            }
-                        })}
-                    />
-                    <label className="label">
-                        {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-                    </label>
-                </div>
+                            type="address"
+                            className="input input-bordered p-2 m-2"
+                            {...register("address")}
+                        />
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Description</span>
+                        </label>
+                        <textarea className='mb-2 input input-bordered w-full max-w-xs p-2 m-2' placeholder='Description' {...register("description")} />
+                    </div>
 
-                <input className='btn w-full max-w-xs text-white' type="submit" value="Edit" />
-            </form>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Photo</span>
+                        </label>
+                        <input
+                            type="file"
+                            className="input input-bordered w-full max-w-xs"
+                            {...register("image", {
+                                required: {
+                                    value: true,
+                                    message: 'Image is Required'
+                                }
+                            })}
+                        />
+                        <label className="label">
+                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                        </label>
+                    </div>
+
+                    <input className='btn w-full max-w-xs text-white' type="submit" value="Edit" />
+                </form>
+            </div>
         </div>
     );
 };
