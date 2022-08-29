@@ -5,9 +5,9 @@ import ZoomSchedule from "./ZoomSchedule";
 
 const ZoomSchedules = () => {
   const [schedules, setSchedules] = useState([]);
-  /* arif */
+  /* arif  https://easyscheduler24.herokuapp.com*/
   useEffect(() => {
-    fetch("https://easyscheduler24.herokuapp.com/schedule")
+    fetch("http://localhost:5000/schedule")
       .then((res) => res.json())
       .then((data) => setSchedules(data));
   }, []);
