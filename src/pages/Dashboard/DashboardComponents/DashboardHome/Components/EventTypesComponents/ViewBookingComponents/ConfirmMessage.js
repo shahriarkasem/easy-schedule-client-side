@@ -6,14 +6,14 @@ import LoadingAnimate from "../../../../../../Shared/LoadingAnimate";
 const ConfirmMessage = () => {
   const { id } = useParams();
   const { data: invitationData, isLoading } = useQuery(["invitationData"], () =>
-    fetch(`https://easyscheduler24.herokuapp.com/event/invitation/single/${id}`).then((res) =>
-      res.json()
-    )
+    fetch(
+      `http://localhost:5000/event/invitation/single/${id}`
+    ).then((res) => res.json())
   );
-  console.log(invitationData)
+  console.log(invitationData);
 
-  if(isLoading) {
-    return <LoadingAnimate></LoadingAnimate>
+  if (isLoading) {
+    return <LoadingAnimate></LoadingAnimate>;
   }
 
   return (
@@ -31,8 +31,7 @@ const ConfirmMessage = () => {
                 {invitationData.userEvent.eventName}
               </h3>
               <p className="text-gray-500 my-2">
-                <span>🗓️</span>{' '}
-                {invitationData.inviteTime + ","} {' '}
+                <span>🗓️</span> {invitationData.inviteTime + ","}{" "}
                 {invitationData.date}
               </p>
               <p className="text-gray-500 my-2">
