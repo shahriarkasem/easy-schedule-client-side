@@ -16,19 +16,36 @@ const AdminDashboard = () => {
             <div class="drawer drawer-mobile container">
                 <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content ">
-                    <h2 className='text-2xl font-bold text-center mt-4 pt-4     '>
-                        <span className='text-pink-700 '>Admin</span><span className='text-yellow-500'> Dashboard</span>
-                    </h2>
+
                     <Outlet></Outlet>
                 </div>
-                <div class="drawer-side p-4">
+                <div class="drawer-side p-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-tr-lg">
                     <label for="dashboard-sidebar" class="drawer-overlay"></label>
-                    <ul class="menu  overflow-y-auto w-48 bg-base-100 text-base-content">
+                    <ul class="menu  overflow-y-auto w-48  text-base-content bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                         {/* <!-- Sidebar content here --> */}
-                        <li><Link to="/adminDashboard">User Schedule</Link></li>
-                        <li><Link to="/adminDashboard/allUsers">Users</Link></li>
-                        <li><Link to="/adminDashboard/manageUsers">Manage Users</Link></li>
-                        <li><Link to="/adminDashboard/manageEvents">Manage Events</Link></li>
+                        <div className='flex items-center'>
+
+                            <div class={"w-10"}>
+                                <span><img
+                                    className=""
+                                    src="https://i.ibb.co/XyrXVjt/easy-Schedule-Icon.png"
+                                    alt=""
+                                />
+                                </span>
+                            </div>
+                            <div>
+                                <h2>{user.displayName}</h2>
+                            </div>
+                        </div>
+
+                        <h2 className='text-xl font-bold text-center mt-4 pt-4     '>
+
+                            <span className='text-indigo-700 '>Admin</span><span className='text-yellow-500'> Dashboard</span>
+                        </h2>
+                        <li><Link to="/adminDashboard" className='text-white p-4 m-4  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-lg'>User Schedule</Link></li>
+                        <li><Link to="/adminDashboard/allUsers" className='text-white p-4 m-4  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-lg'>Make Admin</Link></li>
+                        <li><Link to="/adminDashboard/manageUsers" className='text-white p-4 m-4  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-lg'>Delete Users</Link></li>
+                        <li><Link to="/adminDashboard/manageEvents" className='text-white p-4 m-4  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-lg'>Manage Events</Link></li>
                     </ul>
                 </div>
             </div>
