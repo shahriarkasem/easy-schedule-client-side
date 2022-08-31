@@ -165,10 +165,10 @@ function App() {
                   path="accountSetting"
                   element={<AccountSettings />}
                 ></Route>
-                <Route
+                {/* <Route
                   path="admin-management"
                   element={<AdminManagement />}
-                ></Route>
+                ></Route> */}
                 <Route path="integrations" element={<Integrations />}></Route>
 
               </Route>

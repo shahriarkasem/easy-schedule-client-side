@@ -8,6 +8,7 @@ import Navbar from '../../Home/components/Navbar/Navbar';
 import LoadingAnimate from '../../Shared/LoadingAnimate';
 const UserProfiledata = () => {
     const [user, isLoading] = useAuthState(auth);
+    const { email } = user;
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const imageStorageKey = '7fc3b735e6b7fba6fb529bd9ccdd4851';
 
@@ -33,7 +34,7 @@ const UserProfiledata = () => {
                         img: img
                     }
                     // send to your database 
-                    fetch('http://localhost:5000/userData', {
+                    fetch(`http://localhost:5000/users/${email}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json',

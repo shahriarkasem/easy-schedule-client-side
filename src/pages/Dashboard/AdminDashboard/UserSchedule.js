@@ -1,8 +1,10 @@
 import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import fetchUsers from "../../../redux/slices/userSlice"
 
 const UserSchedule = () => {
   const [schedule, setSchedule] = useState([]);
@@ -29,6 +31,13 @@ const UserSchedule = () => {
         setSchedule(data);
       });
   }, [user]);
+  // const { users } = useSelector((state) => state.users);
+  // console.log(users);
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(fetchUsers());
+  // }, [dispatch]);
   return (
     <div>
       <h2 className="text-center p-4 text-lg font-semibold">

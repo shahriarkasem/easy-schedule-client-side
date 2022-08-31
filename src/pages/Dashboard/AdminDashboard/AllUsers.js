@@ -1,24 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
-// import Loading from '../../Shared/Loading'
-// import AdminRole from './AdminRole';
-import { signOut } from "firebase/auth";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-
 import Loading from "../../Shared/Loading";
 import AllUsersRows from './AllUsersRows';
 
 const AllUsers = () => {
-    // const [adminRole, setadminRole] = useState([]);
-
-    const [user] = useAuthState(auth);
-    const { email } = user;
-    // console.log(user)
-    const navigate = useNavigate();
-
-    // const { role } = adminRole;
     const { data: users, isLoading, refetch } = useQuery(['users'], () => fetch('http://localhost:5000/users', {
         method: 'GET',
         headers: {
@@ -28,28 +15,6 @@ const AllUsers = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
-
-
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/users`, {
-    //         method: 'GET',
-    //         headers: {
-    //             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-    //         }
-    //     })
-    //         .then(res => {
-    //             console.log('res', res);
-    //             if (isLoading) {
-    //                 return <Loading></Loading>
-    //             }
-    //             return res.json()
-    //         })
-    //         .then(data => {
-
-    //             setadminRole(data);
-    //         });
-    // }, [user, isLoading])
-
 
     return (
         <div>

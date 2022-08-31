@@ -1,39 +1,42 @@
 import React from 'react';
 import { toast } from "react-toastify";
-
-const AllUsersRows = ({ user, refetch, index }) => {
-    const { name, email, role } = user;
-    console.log(email, role);
-    const makeAdmin = () => {
-        fetch(`http://localhost:5000/users/admin/${email}`, {
-            method: 'PUT',
+const ManageUsersRow = ({ user, refetch, index }) => {
+    const { name, email, setUser } = user;
+    const removeAdmin = (id) => {
+        fetch(`http://localhost:5000/users/${id}`, {
+            method: 'DELETE',
             headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                authorization: `${localStorage.getItem('accessToken')}`,
             }
         })
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 if (res.status === 403) {
                     toast.error('Failed to Make an admin');
                 }
                 return res.json()
             })
             .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
+                // console.log(data);
+                if (data.deletedCount > 0) {
                     refetch()
-                    toast.success(`Successfully made an admin`);
+                    const remaining = user.filter(us => us._id !== id)
+                    setUser(remaining);
+                    toast.success(`Successfully removed an admin`);
+
                 }
+
             })
     }
-
     return (
         <tr>
             <th className='bg-orange-300'>{index + 1}</th>
             <td className='bg-pink-600'>{name}</td>
             <td className='bg-orange-400'>{email}</td>
-            <td className='bg-pink-600'>{role !== 'admin' &&
-                <button onClick={makeAdmin} class="btn btn-xs">Make Admin</button>}</td>
+            <td className='bg-pink-600'>{
+                <button onClick={() => removeAdmin(user._id)} class="btn btn-xs">Remove Admin</button>
+
+            }</td>
 
             {/* <td>
                                 {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
@@ -46,4 +49,4 @@ const AllUsersRows = ({ user, refetch, index }) => {
     );
 };
 
-export default AllUsersRows;
+export default ManageUsersRow;
