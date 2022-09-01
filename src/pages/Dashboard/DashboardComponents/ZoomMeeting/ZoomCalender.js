@@ -10,7 +10,7 @@ import meetingImg from "../../../../media/images/Individuals/meetingImg.gif";
 
 const ZoomCalender = () => {
   const [date, setDate] = useState(new Date());
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, reload } = useForm();
   const onSubmit = (data) => {
     console.log(data);
     /*  axios({
@@ -26,6 +26,7 @@ const ZoomCalender = () => {
       console.log(res);
       if (res.data.insertedId) {
         alert("added successfully");
+        reload();
         reset();
       }
     });
@@ -55,9 +56,9 @@ const ZoomCalender = () => {
                 placeholder="title"
               />
               <input
-                {...register("title", { required: true })}
+                {...register("time", { required: true })}
                 type="time"
-                placeholder="title"
+                placeholder=""
               />
               <input
                 {...register("host", { required: true })}
