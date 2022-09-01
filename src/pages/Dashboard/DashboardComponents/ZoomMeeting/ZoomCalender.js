@@ -22,14 +22,16 @@ const ZoomCalender = () => {
       data: data,
     }) */
 
-    axios.post("http://localhost:5000/addSchedule", data).then((res) => {
-      console.log(res);
-      if (res.data.insertedId) {
-        alert("added successfully");
-        reload();
-        reset();
-      }
-    });
+    axios
+      .post("https://easyscheduler24.herokuapp.com/addSchedule", data)
+      .then((res) => {
+        console.log(res);
+        if (res.data.insertedId) {
+          alert("added successfully");
+          reload();
+          reset();
+        }
+      });
   };
   /* 
   min-h-screen bg-teal-100 my-8
