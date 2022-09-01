@@ -4,44 +4,45 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-import fetchUsers from "../../../redux/slices/userSlice"
+import { fetchSchedules } from "../../../redux/slices/scheduleSlice";
+
 
 const UserSchedule = () => {
   const [schedule, setSchedule] = useState([]);
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/userSchedule`, {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
-      .then((res) => {
-        console.log("res", res);
-        if (res.status === 401 || res.status === 403) {
-          signOut(auth);
-          localStorage.removeItem("accessToken");
-          navigate("/");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setSchedule(data);
-      });
-  }, [user]);
-  // const { users } = useSelector((state) => state.users);
-  // console.log(users);
-  // const dispatch = useDispatch();
-
   // useEffect(() => {
-  //   dispatch(fetchUsers());
-  // }, [dispatch]);
+  //   fetch(`http://localhost:5000/userSchedule`, {
+  //     method: "GET",
+  //     headers: {
+  //       authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+  //     },
+  //   })
+  //     .then((res) => {
+  //       console.log("res", res);
+  //       if (res.status === 401 || res.status === 403) {
+  //         signOut(auth);
+  //         localStorage.removeItem("accessToken");
+  //         navigate("/");
+  //       }
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       setSchedule(data);
+  //     });
+  // }, [user]);
+  const { schedules } = useSelector((state) => state.schedules);
+  console.log(schedules);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchSchedules());
+  }, [dispatch]);
   return (
     <div>
       <h2 className="text-center p-4 text-lg font-semibold">
-        Total User Schedule Created: {schedule.length}
+        Total User Schedule Created: {schedules?.length}
       </h2>
       <div class="overflow-x-auto">
         <table class="table table-compact w-full">
@@ -56,7 +57,7 @@ const UserSchedule = () => {
             </tr>
           </thead>
           <tbody className="text-center">
-            {schedule.map((a, index) => (
+            {schedules?.map((a, index) => (
               <tr key={a._id}>
                 <th className="bg-orange-300">{index + 1}</th>
                 <td className="bg-teal-400">{a.userEmail}</td>
