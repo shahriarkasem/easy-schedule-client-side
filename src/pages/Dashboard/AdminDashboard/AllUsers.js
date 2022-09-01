@@ -6,7 +6,7 @@ import Loading from "../../Shared/Loading";
 import AllUsersRows from './AllUsersRows';
 
 const AllUsers = () => {
-    const { data: users, isLoading, refetch } = useQuery(['users'], () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading, refetch } = useQuery(['users'], () => fetch('https://easyscheduler24.herokuapp.com/users', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

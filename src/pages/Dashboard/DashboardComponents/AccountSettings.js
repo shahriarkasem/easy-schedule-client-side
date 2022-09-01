@@ -10,7 +10,7 @@ const AccountSettings = () => {
     console.log(user)
     const [userProfile, setUserProfile] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${email}`, {
+        fetch(`https://easyscheduler24.herokuapp.com/users/${email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
