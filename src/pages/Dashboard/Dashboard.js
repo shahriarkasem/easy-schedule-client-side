@@ -29,7 +29,7 @@ const Dashboard = () => {
         <Link to="/dashboard/billing">Billing</Link>
       </li>
       <li>
-        <Link to="/chat">Messages</Link>
+        <Link to="/chat">Meetings</Link>
       </li>
       <li>
         <RealTimeNotification />

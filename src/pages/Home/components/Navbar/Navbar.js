@@ -46,7 +46,7 @@ const Navbar = () => {
             <span
               className={"" + (toggle === true ? "text-black" : "text-white")}
             >
-              Messages
+              Meetings
             </span>
           </Link>
         </li>
