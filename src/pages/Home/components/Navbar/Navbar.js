@@ -2,24 +2,17 @@ import React, { useContext } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../../firebase.init";
+import useAdmin from "../../../../hooks/useAdmin";
 import DarkContext from "../../../DarkMode/DarkContext";
 import "./Navbar.css";
 
 const Navbar = () => {
   const { handleDarkMode, toggle, setToggle } = useContext(DarkContext);
   const [user] = useAuthState(auth);
-
+  const [admin] = useAdmin(user);
+  console.log(admin)
   const navItem = (
     <>
-      {/* <li>
-        <Link to="/howitworks">
-          <span
-            className={"" + (toggle === true ? "text-black" : "text-white")}
-          >
-            How It Works
-          </span>
-        </Link>
-      </li> */}
       <li>
         <Link to="/features">
           <span
@@ -29,24 +22,6 @@ const Navbar = () => {
           </span>
         </Link>
       </li>
-      {/* <li>
-        <Link to="/individuals">
-          <span
-            className={"" + (toggle === true ? "text-black" : "text-white")}
-          >
-            Individuals
-          </span>
-        </Link>
-      </li> */}
-      {/* <li>
-        <Link to="/teams">
-          <span
-            className={"" + (toggle === true ? "text-black" : "text-white")}
-          >
-            Teams
-          </span>
-        </Link>
-      </li> */}
       <li>
         <Link to="/pricing">
           <span
@@ -67,15 +42,27 @@ const Navbar = () => {
       </li>
       {
         user && <li>
-        <Link to="/chat">
-          <span
-            className={"" + (toggle === true ? "text-black" : "text-white")}
-          >
-            Messages
-          </span>
-        </Link>
-      </li>
+          <Link to="/chat">
+            <span
+              className={"" + (toggle === true ? "text-black" : "text-white")}
+            >
+              Messages
+            </span>
+          </Link>
+        </li>
       }
+      {
+        admin && <li>
+          <Link to="/adminDashboard">
+            <span
+              className={"" + (toggle === true ? "text-black" : "text-white")}
+            >
+              Admin Dashboard
+            </span>
+          </Link>
+        </li>
+      }
+
       {/* dark mode toggle */}
       <p
         className={
@@ -189,16 +176,12 @@ const Navbar = () => {
             )}
           </p>
           {user ? (
-
-
             <Link
               to="/dashboard/d-home/event-types"
               className="button-orange-border-h40"
             >
               <span>My Account</span>
             </Link>
-
-
           ) : (
             <Link to="/login" class="button-orange-border-h40">
               Login
@@ -208,7 +191,6 @@ const Navbar = () => {
           <label tabIndex="1" for="dashboard-sidebar" className="btn btn-ghost lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
           </label>
-
         </div>
       </div>
     </div>

@@ -6,9 +6,11 @@ import LoadingAnimate from "../../Shared/LoadingAnimate";
 
 const AccountSettings = () => {
     const [user, isLoading] = useAuthState(auth);
+    const { email, displayName } = user;
+    console.log(user)
     const [userProfile, setUserProfile] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/userData`, {
+        fetch(`http://localhost:5000/users/${email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -22,10 +24,10 @@ const AccountSettings = () => {
                 return res.json()
             })
             .then(data => {
-
+                console.log(data);
                 setUserProfile(data);
             });
-    }, [user])
+    }, [user, isLoading])
 
 
     return (
@@ -54,7 +56,7 @@ const AccountSettings = () => {
                                         </div>
 
                                         <p className="p-2">
-                                            Name: <span className="font-bold">{a?.name}</span>
+                                            Name: <span className="font-bold">{a?.displayName}</span>
                                         </p>
                                         <p className="p-2">
                                             Email: <span className="font-bold"> {a?.email}</span>
