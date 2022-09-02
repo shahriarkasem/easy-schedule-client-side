@@ -37,16 +37,16 @@ const SideBar = ({ children }) => {
     console.log(e);
   };
 
-  const handleClick = () => {
-    setClick(true);
-    setEnd(false);
-    console.log(true);
-  };
+  // const handleClick = () => {
+  //   setClick(true);
+  //   setEnd(false);
+  //   console.log(true);
+  // };
 
-  const handleEnd = () => {
-    setEnd(true);
-    setClick(false);
-  };
+  // const handleEnd = () => {
+  //   setEnd(true);
+  //   setClick(false);
+  // };
 
   return (
     <div className="w-[90%] lg:w-1/2 my-10 mx-auto">
@@ -57,9 +57,9 @@ const SideBar = ({ children }) => {
           noValidate
           autoComplete="off"
         >
-          <div className="grid lg:grid-cols-2 md:grid-cols-2">
-            <div className="flex flex-col p-[20px]">
-              <h6 className="text-xl font-bold text-orange-500">You</h6>
+          <div className="flex gap-4 items-center justify-center">
+            {/* <h6 className="text-xl font-bold text-orange-500">You</h6> */}
+            <div className="">
               <input
                 className="input input-bordered input-primary mt-2 font-bold "
                 type="text"
@@ -68,8 +68,8 @@ const SideBar = ({ children }) => {
                 readOnly
               />
             </div>
-            <div className="flex flex-col p-[20px]">
-              <h6 className="text-xl font-bold text-primary mb-2">
+            <div className=" ">
+              {/* <h6 className="text-xl font-bold text-primary mb-2">
                 Make a call with
               </h6>
 
@@ -80,42 +80,8 @@ const SideBar = ({ children }) => {
                 class="input input-bordered font-bold"
               />
 
-              {/* <select
-                onChange={(e) => setOnChange(e.target.value)}
-                required
-                defaultValue={"DEFAULT"}
-                class="select select-bordered"
-              >
-                <option disabled value="DEFAULT">
-                  Select user to call
-                </option>
-
-                {users?.map((user) => (
-                  <option value={user.email}>{user.email}</option>
-                ))}
-              </select> */}
-
-              {/* {callAccepted && !callEnded ? (
-                <button
-                  className="btn btn-secondary mt-[20px]"
-                  fullWidth
-                  onClick={leaveCall}
-                >
-                  Hang Up
-                </button>
-              ) : (
-                <button
-                  type="submit"
-                  className="btn btn-primary mt-[20px]"
-                  fullWidth
-                  onClick={() => callUser(idToCall)}
-                >
-                  call
-                </button>
-              )} */}
-              {/* <button onClick={handleClick} className="btn btn-accent mt-4">
-                Call
-              </button> */}
+              
+             
 
               {!click || end ? (
                 <button onClick={handleClick} className="btn btn-accent mt-4">
@@ -135,7 +101,13 @@ const SideBar = ({ children }) => {
                     End
                   </button>
                 </div>
-              )}
+              )} */}
+              <button
+                onClick={() => window.open()}
+                className="button-orange-border-h40"
+              >
+                Create Meeting Room
+              </button>
             </div>
           </div>
         </form>

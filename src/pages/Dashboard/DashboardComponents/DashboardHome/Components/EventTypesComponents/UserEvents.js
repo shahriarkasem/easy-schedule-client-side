@@ -68,7 +68,7 @@ const UserEvents = ({ soloEvent, handleEditEvent }) => {
             to="/chat"
             className="border-2 py-1 px-2 rounded-xl border-blue-400 hover:bg-blue-100 text-blue-500"
           >
-            Contact
+            Create Meeting
           </Link>
         </div>
       </div>
