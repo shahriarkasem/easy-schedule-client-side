@@ -102,12 +102,13 @@ const SideBar = ({ children }) => {
                   </button>
                 </div>
               )} */}
-              <button
-                onClick={() => window.open()}
+              <a
                 className="button-orange-border-h40"
+                target="blank"
+                href="https://meet.google.com/bvb-ghxm-gpx"
               >
                 Create Meeting Room
-              </button>
+              </a>
             </div>
           </div>
         </form>
