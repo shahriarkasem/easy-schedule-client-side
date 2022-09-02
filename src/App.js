@@ -72,7 +72,6 @@ function App() {
 
   useEffect(() => {
     const toggleValue = JSON.parse(localStorage.getItem("toggle"));
-    // console.log(toggleValue);
     if (toggleValue) {
       setToggle(true);
     }
@@ -165,10 +164,10 @@ function App() {
                   path="accountSetting"
                   element={<AccountSettings />}
                 ></Route>
-                <Route
+                {/* <Route
                   path="admin-management"
                   element={<AdminManagement />}
-                ></Route>
+                ></Route> */}
                 <Route path="integrations" element={<Integrations />}></Route>
 
               </Route>

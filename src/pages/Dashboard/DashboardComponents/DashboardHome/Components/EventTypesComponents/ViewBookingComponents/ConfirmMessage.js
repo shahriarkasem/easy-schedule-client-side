@@ -7,7 +7,7 @@ const ConfirmMessage = () => {
   const { id } = useParams();
   const { data: invitationData, isLoading } = useQuery(["invitationData"], () =>
     fetch(
-      `http://localhost:5000/event/invitation/single/${id}`
+      `https://easyscheduler24.herokuapp.com/event/invitation/single/${id}`
     ).then((res) => res.json())
   );
   console.log(invitationData);

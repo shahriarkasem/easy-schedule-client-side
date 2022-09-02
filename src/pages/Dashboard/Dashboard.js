@@ -3,10 +3,12 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
 import auth from "../../firebase.init";
+import useAdmin from "../../hooks/useAdmin";
 import RealTimeNotification from "./DashboardComponents/RealTimeNotification";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user)
   const [firstLetter, setFirstLetter] = useState("");
   const handleSignOut = () => {
     signOut(auth);
@@ -27,7 +29,7 @@ const Dashboard = () => {
         <Link to="/dashboard/billing">Billing</Link>
       </li>
       <li>
-        <Link to="/chat">Messages</Link>
+        <Link to="/chat">Meetings</Link>
       </li>
       <li>
         <RealTimeNotification />

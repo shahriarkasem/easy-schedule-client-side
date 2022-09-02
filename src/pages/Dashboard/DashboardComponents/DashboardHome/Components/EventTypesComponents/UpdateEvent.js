@@ -64,12 +64,6 @@ const UpdateEvent = ({
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
-    //   const eventName = data.eventName;
-    //   const eventDate = data.eventDate;
-    //   const eventTime = data.eventTime;
-    //   const eventDuration = data.eventDuration;
-    //   const description = data.description;
-    //   const maxInvite = data.maxInvite;
     const location = eventLocation;
     const fullData = {
       eventName,
@@ -80,12 +74,10 @@ const UpdateEvent = ({
       maxInvite,
       location,
     };
-    // console.log(eventId)
-    // console.log(fullData)
 
     axios
       .patch(
-        `http://localhost:5000/update/event/${eventId}`,
+        `https://easyscheduler24.herokuapp.com/update/event/${eventId}`,
         {
           eventName,
           eventDate,
@@ -102,7 +94,6 @@ const UpdateEvent = ({
         // },
       )
       .then((res) => {
-        // console.log(res)
         if (res.status === 200) {
           toast("Successfully updated event!");
           navigate("/dashboard/d-home/event-types");
@@ -112,7 +103,6 @@ const UpdateEvent = ({
         }
       })
       .catch((error) => {
-        // console.error(error)
         toast.error("Something went wrong! Please try again later");
         refetch();
       });
@@ -123,11 +113,6 @@ const UpdateEvent = ({
       <input type="checkbox" id="edit-event-modal" class="modal-toggle" />
       <div class="modal modal-bottom sm:modal-middle">
         <div class="modal-box min-h-screen">
-          {/* <h3 class="font-bold text-lg">Congratulations random Internet user! {'Event Name'+ eventName}</h3> */}
-          {/* <p class="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p> */}
           <div>
             <div className="my-20">
               <div className="flex flex-col md:flex-row justify-start my-10 items-center pb-3 md:pb-5 border-b-2 drop-shadow-xl">
@@ -303,11 +288,6 @@ const UpdateEvent = ({
               </div>
             </div>
           </div>
-          {/* <div class="modal-action">
-            <label onClick={()=>setEditEvent(null)} for="edit-event-modal" class="btn">
-              Cancel
-            </label>
-          </div> */}
         </div>
       </div>
     </div>
