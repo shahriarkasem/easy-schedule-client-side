@@ -16,7 +16,7 @@ const Upcoming = () => {
         setInvites(data);
       });
   }, [user?.email]);
-  console.log(invites);
+  // console.log(invites);
   return (
     // <div className="mt-12 md:mt-16 mb-5 md:mb-16">
     //     <div className=" p-5 md:p-16 lg:p-20 ">

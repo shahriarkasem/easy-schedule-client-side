@@ -47,9 +47,9 @@ const Banner = () => {
             data-aos-delay="300"
             class={toggle === true ? "text-black py-6" : "text-white py-6"}
           >
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+            Easy Schedule is your hub for scheduling meetings professionally and
+            efficiently, eliminating the hassle of back-and-forth emails so you
+            can get back to work.
           </p>
           <Link
             to="/dashboard/d-home/event-types"

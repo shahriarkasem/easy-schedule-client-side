@@ -71,11 +71,9 @@ const RealTimeNotification = ({ res }) => {
                 // console.log(notification)
                 <div className="my-2  text-sm">
                   {notification?.emails === user?.email
-                    ? `You have meeting with ${
-                        notification?.name
-                      } on ${notification?.date?.slice(0, 10)} at ${
-                        notification?.inviteTime
-                      } `
+                    ? `You have meeting with ${notification?.name
+                    } on ${notification?.date?.slice(0, 10)} at ${notification?.inviteTime
+                    } `
                     : "Latest updates! "}
                 </div>
               ))}
