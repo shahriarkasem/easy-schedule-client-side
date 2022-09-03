@@ -72,7 +72,6 @@ function App() {
 
   useEffect(() => {
     const toggleValue = JSON.parse(localStorage.getItem("toggle"));
-    // console.log(toggleValue);
     if (toggleValue) {
       setToggle(true);
     }
