@@ -33,8 +33,8 @@ const Schedule = () => {
               data-aos-delay="300"
               className={
                 toggle === true
-                  ? "text-black text-4xl font-bold mb-5"
-                  : "text-white text-4xl font-bold mb-5"
+                  ? "text-black text-4xl font-semibold mb-5"
+                  : "text-white text-4xl font-semibold mb-5"
               }
             >
               Working 24/7 to fill <br /> your schedule!

@@ -67,7 +67,7 @@ const Support = () => {
             <div
               class={toggle === true ? "card-body" : "card-body bg-slate-600"}
             >
-              <h2 class="text-xl font-bold text-center">
+              <h2 class="text-xl font-semibold text-center">
                 <span className={toggle === true ? "text-black" : "text-white"}>
                   24/7 Customer Support
                 </span>
@@ -92,7 +92,7 @@ const Support = () => {
             <div
               class={toggle === true ? "card-body" : "card-body bg-slate-600"}
             >
-              <h2 class="text-2xl font-bold text-center">
+              <h2 class="text-2xl font-semibold  text-center">
                 <span className={toggle === true ? "text-black" : "text-white"}>
                   {" "}
                   Services
@@ -119,7 +119,7 @@ const Support = () => {
             <div
               class={toggle === true ? "card-body" : "card-body bg-slate-600"}
             >
-              <h2 class="text-2xl font-bold text-center">
+              <h2 class="text-2xl font-semibold  text-center">
                 <span className={toggle === true ? "text-black" : "text-white"}>
                   Education
                 </span>

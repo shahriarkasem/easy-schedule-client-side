@@ -43,7 +43,7 @@ const ReviewCarousel = () => {
               : "text-white my-2 lg:my-20 md:my-6  mb-5 text-center"
           }
         >
-          <h2 className=" mb-5 font-bold lg:text-4xl text-2xl">
+          <h2 className=" mb-5 font-semibold lg:text-4xl text-2xl">
             Easy Schedule
           </h2>
           <h2 className=" lg:text-3xl text-2xl">trusted worldwide</h2>

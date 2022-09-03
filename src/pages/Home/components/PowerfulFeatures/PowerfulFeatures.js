@@ -55,8 +55,8 @@ const PowerfulFeatures = () => {
         <h1
           className={
             toggle === true
-              ? "text-4xl font-bold "
-              : "text-4xl font-bold text-white"
+              ? "text-4xl font-semibold "
+              : "text-4xl font-semibold text-white"
           }
         >
           Powerful Feature

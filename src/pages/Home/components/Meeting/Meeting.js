@@ -13,8 +13,8 @@ const Meeting = () => {
         <h1
           className={
             toggle === true
-              ? "text-black text-4xl font-bold"
-              : "text-white text-4xl font-bold"
+              ? "text-black text-4xl font-semibold"
+              : "text-white text-4xl font-semibold"
           }
         >
           Simplicity Meets Power

@@ -33,7 +33,7 @@ const EasySchedule = () => {
               : "flex justify-center  bg-slate-700"
           }
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10">
             <div
               data-aos="fade-up"
               data-aos-duration="1000"
