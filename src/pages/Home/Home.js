@@ -29,9 +29,10 @@ const Home = () => {
       <Support />
       <Schedule></Schedule>
       <Meeting></Meeting>
+      <PowerfulFeatures></PowerfulFeatures>
       <Review></Review>
       <Booking></Booking>
-      <PowerfulFeatures></PowerfulFeatures>
+
       <div className="pb-10">
         <ReadySignup></ReadySignup>
       </div>

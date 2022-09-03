@@ -4,7 +4,9 @@ import axios from "axios";
 export const fetchWorkflows = createAsyncThunk(
   "workflows/fetchWorkflows",
   async () => {
-    const res = await axios.get("http://localhost:5000/workflow");
+    const res = await axios.get(
+      "https://easyscheduler24.herokuapp.com/workflow"
+    );
     return res.data;
   }
 );

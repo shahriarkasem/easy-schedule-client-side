@@ -14,13 +14,16 @@ const Booking = () => {
   const [allTimeBooking, setAllTimeBooking] = useState(81166964);
 
   return (
-    <div>
-      <div className="md:mx-20 lg:mx-36">
-        <h2 className=" font-medium text-3xl text-center">
+    <div className="lg:mt-24">
+      <div class="divider"></div>
+      <div className="md:mx-20 lg:mx-36  lg:mb-20">
+        <h2 className=" font-medium lg:text-3xl text-center lg:my-20 my-5">
           <span className={toggle === true ? "text-black" : "text-white"}>
             We handle 1000's of
           </span>{" "}
-          <span className="font-bold text-4xl text-[#ef7841]">bookings</span>{" "}
+          <span className="font-bold lg:text-4xl text-2xl text-[#ef7841]">
+            bookings
+          </span>{" "}
           <span className={toggle === true ? "text-black" : "text-white"}>
             {" "}
             for{" "}
@@ -31,7 +34,7 @@ const Booking = () => {
             our users every single day
           </span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mt-4">
+        <div className="grid  grid-cols-3 lg:grid-cols-3 mt-4 lg:mx-40">
           <div
             className={
               toggle === true
@@ -40,10 +43,12 @@ const Booking = () => {
             }
           >
             <div className="flex justify-center mx-auto">
-              <img className="w-28" src={todayBookings} alt="" />
+              <img className=" w-20" src={todayBookings} alt="" />
             </div>
             <div>
-              <div className="text-xl md:text-2xl lg:text-2xl font-bold text-[#ef7841]  mt-3">
+              <div
+                className="text-xl md:text-2xl lg:text-2xl text-[#ef7841] font-bold  mt-3"
+              >
                 <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                   {({ isVisible }) => (
                     <div style={{ height: 30 }}>
@@ -52,7 +57,13 @@ const Booking = () => {
                   )}
                 </VisibilitySensor>
               </div>
-              <p className=" font-medium lg:text-xl mt-1 md:mt-2"><span className={toggle === true ? "text-black" : "text-white"}>weekly</span></p>
+              <p className=" font-medium lg:text-xl mt-1 md:mt-2">
+                <span
+                  className={toggle === true ? "text-[#ef7841]" : "text-white"}
+                >
+                  weekly
+                </span>
+              </p>
             </div>
           </div>
           <div
@@ -63,7 +74,7 @@ const Booking = () => {
             }
           >
             <div className="flex justify-center mx-auto">
-              <img className="w-28" src={monthBookings} alt="" />
+              <img className="w-20" src={monthBookings} alt="" />
             </div>
             <div>
               <div className="text-xl md:text-2xl lg:text-2xl text-[#ef7841] font-bold  mt-3">
@@ -75,7 +86,11 @@ const Booking = () => {
                   )}
                 </VisibilitySensor>
               </div>
-              <p className=" font-medium lg:text-xl mt-1 md:mt-2"><span className={toggle === true ? "text-black" : "text-white"}>monthly</span></p>
+              <p className=" font-medium lg:text-xl mt-1 md:mt-2">
+                <span className={toggle === true ? "text-black" : "text-white"}>
+                  monthly
+                </span>
+              </p>
             </div>
           </div>
           <div
@@ -86,7 +101,7 @@ const Booking = () => {
             }
           >
             <div className="flex justify-center mx-auto">
-              <img className="w-28" src={allTImeBookings} alt="" />
+              <img className="w-20" src={allTImeBookings} alt="" />
             </div>
             <div>
               <h5 className="text-xl md:text-2xl lg:text-2xl  text-[#ef7841] font-bold  mt-3">
@@ -98,7 +113,11 @@ const Booking = () => {
                   )}
                 </VisibilitySensor>
               </h5>
-              <p className=" font-medium lg:text-xl mt-1 md:mt-2"><span className={toggle === true ? "text-black" : "text-white"}>yearly</span></p>
+              <p className=" font-medium lg:text-xl mt-1 md:mt-2">
+                <span className={toggle === true ? "text-black" : "text-white"}>
+                  yearly
+                </span>
+              </p>
             </div>
           </div>
         </div>
