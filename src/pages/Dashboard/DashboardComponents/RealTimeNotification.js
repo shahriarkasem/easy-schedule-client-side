@@ -40,6 +40,7 @@ const RealTimeNotification = ({ res }) => {
   const handleRead = () => {
     setNotiData([]);
   };
+  
   refetch();
   return (
     <div>

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import bg from "../../../../media/images/slide/bg.jpg";
-import doctor from "../../../../media/images/slide/doctor1.jpg";
+import personal from "../../../../media/images/slide/personal.jpg";
 import business from "../../../../media/images/slide/business1.jpg";
 import education from "../../../../media/images/slide/education1.jpg";
 // -----
@@ -24,7 +24,7 @@ const Carousel = () => {
       <Swiper
         // install Swiper modules
         modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
-        // slidesPerView={"auto"}
+        slidesPerView={"auto"}
         centeredSlides={true}
         // spaceBetween={0}
         // navigation
@@ -32,46 +32,11 @@ const Carousel = () => {
           delay: 4000,
           disableOnInteraction: false,
         }}
-        pagination={{ clickable: true }}
+        // pagination={{ clickable: true }}
         // scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
-        <SwiperSlide>
-          <div className="lg:p-10 p-5">
-            <div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-items-center lg:px-40">
-                <div>
-                  <img className="rounded" src={doctor} alt="" />
-                </div>
-                <div className="flex justify-start items-center ">
-                  <div>
-                    <h3 className="lg:text-left font-bold  lg:text-2xl  text-my-blue text-[#6099d0]">
-                      Doctors Appointments
-                    </h3>
-                    <p className="lg:text-left ">
-                      <span
-                        className={
-                          toggle === true ? "text-black" : "text-white"
-                        }
-                      >
-                        {" "}
-                        Manage Demand with ease and schedule short appointments.
-                        Keep User Informed about their upcoming meeting with
-                        doctors.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mt-2 flex justify-center">
-              <Link to="/coming" className=" btn btn-primary button-orange  ">
-                Get Started
-              </Link>
-            </div>
-          </div>
-        </SwiperSlide>
         <SwiperSlide>
           <div className="p-5">
             <div>
@@ -81,13 +46,18 @@ const Carousel = () => {
                 </div>
                 <div className="flex justify-start items-center ">
                   <div>
-                    <h3 className="lg:text-left font-bold  lg:text-2xl  text-my-orange text-[#FF5722]">
+                    <h3
+                      className={
+                        "lg:text-left mb-2  lg:text-2xl  " +
+                        (toggle === true ? "text-black" : "text-white")
+                      }
+                    >
                       Business Meeting
                     </h3>
                     <p className="lg:text-left ">
                       <span
                         className={
-                          toggle === true ? "text-black" : "text-white"
+                          toggle === true ? " text-gray-700 " : "text-white"
                         }
                       >
                         {" "}
@@ -99,11 +69,6 @@ const Carousel = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="mt-2 flex justify-center">
-              <Link to="/coming" className="btn btn-primary button-orange">
-                Get Started
-              </Link>
             </div>
           </div>
         </SwiperSlide>
@@ -116,13 +81,18 @@ const Carousel = () => {
                 </div>
                 <div className="flex justify-start items-center ">
                   <div>
-                    <h3 className="lg:text-left font-bold  lg:text-2xl  text-my-green text-[#13d58b]">
+                    <h3
+                      className={
+                        "lg:text-left mb-2  lg:text-2xl  " +
+                        (toggle === true ? "text-black" : "text-white")
+                      }
+                    >
                       Educational Meeting
                     </h3>
                     <p className="lg:text-left ">
                       <span
                         className={
-                          toggle === true ? "text-black" : "text-white"
+                          toggle === true ? " text-gray-700 " : "text-white"
                         }
                       >
                         {" "}
@@ -135,10 +105,40 @@ const Carousel = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-2 flex justify-center">
-              <Link to="/coming" className="btn btn-primary button-orange">
-                Get Started
-              </Link>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="lg:p-10 p-5">
+            <div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-items-center lg:px-40">
+                <div>
+                  <img className="rounded" src={personal} alt="" />
+                </div>
+                <div className="flex justify-start items-center ">
+                  <div>
+                    <h3
+                      className={
+                        "lg:text-left mb-2  lg:text-2xl  " +
+                        (toggle === true ? "text-black" : "text-white")
+                      }
+                    >
+                      Personal Meeting
+                    </h3>
+                    <p className="lg:text-left ">
+                      <span
+                        className={
+                          toggle === true ? "text-gray-700 " : "text-white"
+                        }
+                      >
+                        {" "}
+                        Manage Demand with ease and schedule short appointments.
+                        Keep User Informed about their upcoming meeting with
+                        guest .
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </SwiperSlide>

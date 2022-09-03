@@ -6,8 +6,8 @@ const Feature = ({ feature, toggle }) => {
     <div
       className={
         toggle === true
-          ? "card w-80 lg:w-96 md:w-96 bg-base-100 shadow-xl"
-          : "card w-80 lg:w-96 md:w-96 bg-slate-600 shadow-xl"
+          ? "card  bg-base-100 shadow-xl"
+          : "card  bg-slate-600 shadow-xl"
       }
     >
       <figure className="px-8 pt-10 flex justify-center">

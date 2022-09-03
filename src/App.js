@@ -120,15 +120,34 @@ function App() {
               <Route path="/support" element={<Support></Support>}></Route>
               <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
               <Route path="/view-booking/:id" element={<ViewBooking />}></Route>
-              <Route path="/booking-confirm/:id" element={<ConfirmMessage />}></Route>
+              <Route
+                path="/booking-confirm/:id"
+                element={<ConfirmMessage />}
+              ></Route>
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />
               {/* Admin Dashboard */}
-              <Route path="adminDashboard" element={<RequireAuth><AdminDashboard></AdminDashboard></RequireAuth>}>
+              <Route
+                path="adminDashboard"
+                element={
+                  <RequireAuth>
+                    <AdminDashboard></AdminDashboard>
+                  </RequireAuth>
+                }
+              >
                 <Route index element={<UserSchedule></UserSchedule>}></Route>
-                <Route path="/adminDashboard/allUsers" element={<AllUsers></AllUsers>}></Route>
-                <Route path="/adminDashboard/manageUsers" element={<ManageUsers></ManageUsers>}></Route>
-                <Route path="/adminDashboard/manageEvents" element={<ManageEvents></ManageEvents>}></Route>
+                <Route
+                  path="/adminDashboard/allUsers"
+                  element={<AllUsers></AllUsers>}
+                ></Route>
+                <Route
+                  path="/adminDashboard/manageUsers"
+                  element={<ManageUsers></ManageUsers>}
+                ></Route>
+                <Route
+                  path="/adminDashboard/manageEvents"
+                  element={<ManageEvents></ManageEvents>}
+                ></Route>
               </Route>
               {/* nested*/}
               <Route path="/dashboard" element={<Dashboard />}>
@@ -169,7 +188,6 @@ function App() {
                   element={<AdminManagement />}
                 ></Route> */}
                 <Route path="integrations" element={<Integrations />}></Route>
-
               </Route>
               <Route path="/call/:email/:name" element={<Call />} />
               <Route path="/privacy" element={<Privacy />} />
@@ -177,7 +195,10 @@ function App() {
               <Route path="/chat-room/:email/:name" element={<ChatRoom />} />
               <Route path="*" element={<NotFound />} />
               <Route path="/coming" element={<Coming />} />
-              <Route path="/userData" element={<UserProfiledata></UserProfiledata>}></Route>
+              <Route
+                path="/userData"
+                element={<UserProfiledata></UserProfiledata>}
+              ></Route>
             </Routes>
 
             <MessengerCustomerChat
