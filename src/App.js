@@ -129,7 +129,7 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               {/* Admin Dashboard */}
               <Route
-                path="adminDashboard"
+                path="/adminDashboard"
                 element={
                   <RequireAdmin>
                     <AdminDashboard></AdminDashboard>

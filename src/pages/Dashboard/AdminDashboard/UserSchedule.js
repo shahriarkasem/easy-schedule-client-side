@@ -33,7 +33,7 @@ const UserSchedule = () => {
   //     });
   // }, [user]);
   const { schedules } = useSelector((state) => state.schedules);
-  console.log(schedules);
+  // console.log(schedules);
   const dispatch = useDispatch();
 
   useEffect(() => {

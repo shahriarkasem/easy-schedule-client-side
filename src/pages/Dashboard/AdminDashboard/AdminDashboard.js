@@ -45,7 +45,6 @@ const AdminDashboard = () => {
                         <li><Link to="/adminDashboard" className='text-white p-4 m-4  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-lg'>User Schedule</Link></li>
                         <li><Link to="/adminDashboard/allUsers" className='text-white p-4 m-4  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-lg'>Make Admin</Link></li>
                         <li><Link to="/adminDashboard/manageUsers" className='text-white p-4 m-4  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-lg'>Delete Users</Link></li>
-                        <li><Link to="/adminDashboard/manageEvents" className='text-white p-4 m-4  bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-lg'>Manage Events</Link></li>
                     </ul>
                 </div>
             </div>

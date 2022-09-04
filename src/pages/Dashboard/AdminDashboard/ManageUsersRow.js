@@ -34,7 +34,7 @@ const ManageUsersRow = ({ user, refetch, index }) => {
             <td className='bg-pink-600'>{name}</td>
             <td className='bg-orange-400'>{email}</td>
             <td className='bg-pink-600'>{
-                <button onClick={() => removeAdmin(user._id)} class="btn btn-xs">Remove Admin</button>
+                <button onClick={() => removeAdmin(user._id)} class="btn btn-xs">Remove User</button>
 
             }</td>
 

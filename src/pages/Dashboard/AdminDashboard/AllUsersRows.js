@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 const AllUsersRows = ({ user, refetch, index }) => {
     const { name, email, role } = user;
-    console.log(email, role);
+    // console.log(email, role);
     const makeAdmin = () => {
         fetch(`https://easyscheduler24.herokuapp.com/users/admin/${email}`, {
             method: 'PUT',
@@ -12,14 +12,14 @@ const AllUsersRows = ({ user, refetch, index }) => {
             }
         })
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 if (res.status === 403) {
                     toast.error('Failed to Make an admin');
                 }
                 return res.json()
             })
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.modifiedCount > 0) {
                     refetch()
                     toast.success(`Successfully made an admin`);
