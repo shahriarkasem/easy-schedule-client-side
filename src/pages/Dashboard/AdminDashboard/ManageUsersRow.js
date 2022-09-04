@@ -30,10 +30,10 @@ const ManageUsersRow = ({ user, refetch, index }) => {
     }
     return (
         <tr>
-            <th className='bg-orange-300'>{index + 1}</th>
-            <td className='bg-pink-600'>{name}</td>
-            <td className='bg-orange-400'>{email}</td>
-            <td className='bg-pink-600'>{
+            <th className='bg-gray-400'>{index + 1}</th>
+            <td className='bg-gray-300'>{name}</td>
+            <td className='bg-gray-200'>{email}</td>
+            <td className='bg-gray-300'>{
                 <button onClick={() => removeAdmin(user._id)} class="btn btn-xs">Remove User</button>
 
             }</td>

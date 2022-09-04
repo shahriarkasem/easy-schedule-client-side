@@ -58,7 +58,7 @@ import RequireAdmin from "./pages/login/RequireAuth";
 import AdminDashboard from "./pages/Dashboard/AdminDashboard/AdminDashboard";
 import AllUsers from "./pages/Dashboard/AdminDashboard/AllUsers";
 import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
-import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
+
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/Workflows";
 import CreateWorkflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/CreateWorkflows";
 import UserSchedule from "./pages/Dashboard/AdminDashboard/UserSchedule";
@@ -144,10 +144,6 @@ function App() {
                 <Route
                   path="/adminDashboard/manageUsers"
                   element={<ManageUsers></ManageUsers>}
-                ></Route>
-                <Route
-                  path="/adminDashboard/manageEvents"
-                  element={<ManageEvents></ManageEvents>}
                 ></Route>
               </Route>
               {/* nested*/}

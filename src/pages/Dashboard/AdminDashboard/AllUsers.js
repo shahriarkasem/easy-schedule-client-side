@@ -22,12 +22,12 @@ const AllUsers = () => {
             <div class="overflow-x-auto">
                 <table class="table table-compact w-full">
                     <thead>
-                        <tr className='bg-orange-300 text-center'>
-                            <th className='bg-orange-300'></th>
-                            <th className='bg-orange-300'>User Name</th>
-                            <th className='bg-orange-300'>User Email</th>
-                            <th className='bg-orange-300'></th>
-                            <th className='bg-orange-300'></th>
+                        <tr className='bg-gray-400 text-center'>
+                            <th className='bg-gray-400'></th>
+                            <th className='bg-gray-400'>User Name</th>
+                            <th className='bg-gray-400'>User Email</th>
+                            <th className='bg-gray-400'></th>
+                            <th className='bg-gray-400'></th>
 
                         </tr>
                     </thead>
@@ -43,12 +43,12 @@ const AllUsers = () => {
                         }
                     </tbody>
                     <tfoot>
-                        <tr className="bg-orange-300 text-center">
-                            <th className="bg-orange-300"></th>
-                            <th className="bg-orange-300">User Name</th>
-                            <th className="bg-orange-300">User Email</th>
-                            <th className="bg-orange-300"></th>
-                            <th className="bg-orange-300"></th>
+                        <tr className="bg-gray-500 text-center">
+                            <th className="bg-gray-500"></th>
+                            <th className="bg-gray-500">User Name</th>
+                            <th className="bg-gray-500">User Email</th>
+                            <th className="bg-gray-500"></th>
+                            <th className="bg-gray-500"></th>
                         </tr>
                     </tfoot>
                 </table>

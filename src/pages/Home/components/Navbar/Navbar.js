@@ -10,7 +10,7 @@ const Navbar = () => {
   const { handleDarkMode, toggle, setToggle } = useContext(DarkContext);
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
-  console.log(admin);
+  // console.log(admin);
   const navItem = (
     <>
       <li>

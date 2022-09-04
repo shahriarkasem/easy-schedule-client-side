@@ -29,10 +29,10 @@ const AllUsersRows = ({ user, refetch, index }) => {
 
     return (
         <tr>
-            <th className='bg-orange-300'>{index + 1}</th>
-            <td className='bg-pink-600'>{name}</td>
-            <td className='bg-orange-400'>{email}</td>
-            <td className='bg-pink-600'>{role !== 'admin' &&
+            <th className='bg-gray-400'>{index + 1}</th>
+            <td className='bg-gray-300'>{name}</td>
+            <td className='bg-gray-200'>{email}</td>
+            <td className='bg-gray-300'>{role !== 'admin' &&
                 <button onClick={makeAdmin} class="btn btn-xs">Make Admin</button>}</td>
 
             {/* <td>
