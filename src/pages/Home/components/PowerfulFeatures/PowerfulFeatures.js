@@ -3,7 +3,7 @@ import DarkContext from "../../../DarkMode/DarkContext";
 import Feature from "./Feature";
 
 const PowerfulFeatures = () => {
-  const { toggle} = useContext(DarkContext);
+  const { toggle } = useContext(DarkContext);
 
   const features = [
     {
@@ -44,20 +44,36 @@ const PowerfulFeatures = () => {
     },
   ];
   return (
-    <div className="mt-20 text-center">
-      {/* text-2xl font-medium */}
-      <h1 className=" mt-10 text-4xl font-bold  text-[#ef5541]">
-        Powerful Feature
-      </h1>
-      <p className="py-4">
-      <span className={toggle === true ? "text-black" : "text-white"}>        Simple,easy to use features to help automate scheduling with yours
-        customers</span>
-      </p>
+    <div
+      className={
+        toggle === true
+          ? "text-center bg-gray-100  py-16"
+          : "text-center bg-[#334155] py-16"
+      }
+    >
+      <div className="mb-16">
+        <h1
+          className={
+            toggle === true
+              ? "text-4xl font-semibold "
+              : "text-4xl font-semibold text-white"
+          }
+        >
+          Powerful Feature
+        </h1>
+        <p className={toggle === true ? "py-4 " : "py-4 text-white"}>
+          <span>
+            {" "}
+            Simple,easy to use features to help automate scheduling with yours
+            customers
+          </span>
+        </p>
+      </div>
       <div
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-delay="400"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:px-24 justify-items-center"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:px-10 px-5 justify-items-center"
       >
         {features.map((feature) => (
           <Feature feature={feature} toggle={toggle}></Feature>
