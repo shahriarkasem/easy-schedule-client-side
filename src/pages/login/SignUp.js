@@ -49,8 +49,8 @@ const SignUp = () => {
     const email = data.email;
     // console.log(name, email);
     const allData = { name, email };
-    console.log(allData);
-    fetch("http://localhost:5000/users", {
+    // console.log(allData);
+    fetch("https://easyscheduler24.herokuapp.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -59,12 +59,13 @@ const SignUp = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         alert("user added successfully");
       });
+    // console.log(allData);
     reset();
   };
-  console.log(user);
+
   if (token) {
     navigate(from, { replace: true });
   }

@@ -7,10 +7,10 @@ import DarkContext from "../../../DarkMode/DarkContext";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { handleDarkMode, toggle, setToggle } = useContext(DarkContext);
+  const { handleDarkMode, toggle } = useContext(DarkContext);
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
-  console.log(admin);
+  // console.log(admin);
   const navItem = (
     <>
       <li>
@@ -147,13 +147,15 @@ const Navbar = () => {
         <div class={"navbar-center hidden lg:flex"}>
           <ul class={"menu menu-horizontal p-0"}>{navItem}</ul>
         </div>
-        <div class="navbar-end">
+        <div class="navbar-end" >
+
           {/* dark mode toggle */}
           <p
             className={
               "flex items-center px-2 md:px-4 lg:px-6 hidden md:block" +
               (toggle === true ? "" : "")
             }
+
           >
             {toggle === true ? (
               <p className="flex items-center">

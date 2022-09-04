@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import Loading from "../../Shared/Loading";
-import AllUsersRows from "./AllUsersRows";
 import ManageUsersRow from "./ManageUsersRow";
 
 const ManageUsers = () => {
@@ -29,12 +28,13 @@ const ManageUsers = () => {
       <div class="overflow-x-auto">
         <table class="table table-compact w-full">
           <thead>
-            <tr className="bg-orange-300 text-center">
-              <th className="bg-orange-300"></th>
-              <th className="bg-orange-300">User Name</th>
-              <th className="bg-orange-300">User Email</th>
-              <th className="bg-orange-300"></th>
-              <th className="bg-orange-300"></th>
+            <tr className='bg-gray-400 text-center'>
+              <th className='bg-gray-400'></th>
+              <th className='bg-gray-400'>User Name</th>
+              <th className='bg-gray-400'>User Email</th>
+              <th className='bg-gray-400'></th>
+              <th className='bg-gray-400'></th>
+
             </tr>
           </thead>
           <tbody className="text-center">
@@ -48,12 +48,12 @@ const ManageUsers = () => {
             ))}
           </tbody>
           <tfoot>
-            <tr className="bg-orange-300 text-center">
-              <th className="bg-orange-300"></th>
-              <th className="bg-orange-300">User Name</th>
-              <th className="bg-orange-300">User Email</th>
-              <th className="bg-orange-300"></th>
-              <th className="bg-orange-300"></th>
+            <tr className="bg-gray-400 text-center">
+              <th className="bg-gray-400"></th>
+              <th className="bg-gray-400">User Name</th>
+              <th className="bg-gray-400">User Email</th>
+              <th className="bg-gray-400"></th>
+              <th className="bg-gray-400"></th>
             </tr>
           </tfoot>
         </table>

@@ -11,7 +11,7 @@ import LoadingAnimate from "../../Shared/LoadingAnimate";
 const UserProfiledata = () => {
     const [user, isLoading] = useAuthState(auth);
     const { displayName, email } = user;
-    console.log(user);
+    // console.log(user);
     const [userProfile, setUserProfile] = useState([])
     const navigate = useNavigate();
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -41,7 +41,7 @@ const UserProfiledata = () => {
                         img: img
                     }
                     // send to your database 
-                    fetch(`http://localhost:5000/users/${email}`, {
+                    fetch(`https://easyscheduler24.herokuapp.com/users/${email}`, {
                         method: 'PATCH',
                         headers: {
                             'content-type': 'application/json',
@@ -63,7 +63,7 @@ const UserProfiledata = () => {
                         //     }
                         // })
                         .then(data => {
-                            console.log(data);
+                            // console.log(data);
                             setUserProfile(data)
                             navigate('/dashboard/accountSetting')
                             // console.log(data);

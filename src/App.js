@@ -7,7 +7,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Login from "./pages/login/Login";
 import SignUp from "./pages/login/SignUp";
-import HowItWorks from "./pages/Common/HowItWorks";
 import Individuals from "./pages/Common/Individuals";
 import Teams from "./pages/Common/Teams";
 import Pricing from "./pages/Common/Pricing";
@@ -17,9 +16,7 @@ import WhatsNew from "./pages/Common/Resources/WhatsNew";
 import Features from "./pages/Common/Features";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import DashboardHome from "./pages/Dashboard/DashboardComponents/DashboardHome/DashboardHome";
-import Availability from "./pages/Dashboard/DashboardComponents/Availability";
 import Integrations from "./pages/Dashboard/DashboardComponents/Integrations";
-import Help from "./pages/Dashboard/DashboardComponents/Help";
 import EventTypes from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypes";
 import RoutingForms from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/RoutingForms";
 import AccountSettings from "./pages/Dashboard/DashboardComponents/AccountSettings";
@@ -34,9 +31,6 @@ import OneOnOne from "./pages/Dashboard/DashboardComponents/DashboardHome/Compon
 import Group from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/Group";
 import EventTypesName from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/EventTypesName";
 import ViewBooking from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBooking";
-import DateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/DateRange";
-
-import AdminManagement from "./pages/Dashboard/DashboardComponents/AdminManagement";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SingleDateRange from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/ScheduledEvent/DateRange/SingleDateRange";
@@ -47,17 +41,14 @@ import Privacy from "./pages/Common/Privacy";
 import ConfirmMessage from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/EventTypesComponents/ViewBookingComponents/ConfirmMessage";
 import Coming from "./pages/Shared/Coming";
 import NotFound from "./pages/Shared/NotFound";
-import Loading from "./pages/Shared/Loading";
 import ChatRoom from "./pages/Shared/Chat/ChatRoom";
 import Chat from "./pages/Shared/Chat/Chat";
 import OpenSpinner from "./pages/Shared/OpenSpinner";
-import LoadingAnimate from "./pages/Shared/LoadingAnimate";
-
-import RequireAuth from "./pages/login/RequireAuth";
+import RequireAdmin from "./pages/login/RequireAuth";
 import AdminDashboard from "./pages/Dashboard/AdminDashboard/AdminDashboard";
 import AllUsers from "./pages/Dashboard/AdminDashboard/AllUsers";
 import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
-import ManageEvents from "./pages/Dashboard/AdminDashboard/ManageEvents";
+
 import Workflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/Workflows";
 import CreateWorkflows from "./pages/Dashboard/DashboardComponents/DashboardHome/Components/Workflows/CreateWorkflows";
 import UserSchedule from "./pages/Dashboard/AdminDashboard/UserSchedule";
@@ -128,11 +119,11 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               {/* Admin Dashboard */}
               <Route
-                path="adminDashboard"
+                path="/adminDashboard"
                 element={
-                  <RequireAuth>
+                  <RequireAdmin>
                     <AdminDashboard></AdminDashboard>
-                  </RequireAuth>
+                  </RequireAdmin>
                 }
               >
                 <Route index element={<UserSchedule></UserSchedule>}></Route>
@@ -143,10 +134,6 @@ function App() {
                 <Route
                   path="/adminDashboard/manageUsers"
                   element={<ManageUsers></ManageUsers>}
-                ></Route>
-                <Route
-                  path="/adminDashboard/manageEvents"
-                  element={<ManageEvents></ManageEvents>}
                 ></Route>
               </Route>
               {/* nested*/}

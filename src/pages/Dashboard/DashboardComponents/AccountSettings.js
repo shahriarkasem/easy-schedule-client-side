@@ -1,6 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
@@ -12,7 +10,7 @@ const AccountSettings = () => {
     // console.log(user.email)
     // const [userProfile, setUserProfile] = useState([])
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/users/${user?.email}`)
+    //     fetch(`https://easyscheduler24.herokuapp.com/users/${user?.email}`)
     //         .then(res => {
     //             // console.log('res', res);
     //             if (isLoading) {
@@ -25,7 +23,7 @@ const AccountSettings = () => {
     //             setUserProfile(data);
     //         });
     // }, [user?.email, isLoading])
-    const { data: users, isLoading } = useQuery(['users'], () => fetch(`http://localhost:5000/users/${email}`, {
+    const { data: users, isLoading } = useQuery(['users'], () => fetch(`https://easyscheduler24.herokuapp.com/users/${email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -36,7 +34,7 @@ const AccountSettings = () => {
     if (isLoading) {
         return <LoadingAnimate></LoadingAnimate>
     }
-    console.log(users);
+    // console.log(users);
     return (
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
