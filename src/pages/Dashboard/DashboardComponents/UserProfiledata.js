@@ -4,10 +4,10 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
 
-import { toast } from 'react-toastify';
-import auth from '../../../firebase.init';
-import Navbar from '../../Home/components/Navbar/Navbar';
-import LoadingAnimate from '../../Shared/LoadingAnimate';
+import { toast } from "react-toastify";
+import auth from "../../../firebase.init";
+import Navbar from "../../Home/components/Navbar/Navbar";
+import LoadingAnimate from "../../Shared/LoadingAnimate";
 const UserProfiledata = () => {
     const [user, isLoading] = useAuthState(auth);
     const { displayName, email } = user;

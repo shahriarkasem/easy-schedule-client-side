@@ -2,13 +2,11 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import useAdmin from '../../../hooks/useAdmin';
 import Navbar from '../../Home/components/Navbar/Navbar';
 
 const AdminDashboard = () => {
 
     const [user] = useAuthState(auth);
-    const [admin] = useAdmin(user);
     return (
 
         <div >

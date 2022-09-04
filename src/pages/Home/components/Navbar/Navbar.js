@@ -7,7 +7,7 @@ import DarkContext from "../../../DarkMode/DarkContext";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { handleDarkMode, toggle, setToggle } = useContext(DarkContext);
+  const { handleDarkMode, toggle } = useContext(DarkContext);
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
   // console.log(admin);

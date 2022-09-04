@@ -8,10 +8,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchWorkflows } from "../../../../../../redux/slices/workflowSlice";
 
 const Workflows = () => {
-
-
   const { workflows } = useSelector((state) => state.workflows);
-  console.log(workflows);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
