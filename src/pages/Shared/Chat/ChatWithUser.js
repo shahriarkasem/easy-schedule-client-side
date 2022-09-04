@@ -8,7 +8,7 @@ const ChatWithUser = ({ user }) => {
   const [firstLetter, setFirstLetter] = useState("");
 
   useEffect(() => {
-    const userNameFirstLetter = name.charAt(0);
+    const userNameFirstLetter = name?.charAt(0);
     setFirstLetter(userNameFirstLetter);
   }, [user, name]);
 
