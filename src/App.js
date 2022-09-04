@@ -54,6 +54,7 @@ import OpenSpinner from "./pages/Shared/OpenSpinner";
 import LoadingAnimate from "./pages/Shared/LoadingAnimate";
 
 import RequireAuth from "./pages/login/RequireAuth";
+import RequireAdmin from "./pages/login/RequireAuth";
 import AdminDashboard from "./pages/Dashboard/AdminDashboard/AdminDashboard";
 import AllUsers from "./pages/Dashboard/AdminDashboard/AllUsers";
 import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
@@ -130,9 +131,9 @@ function App() {
               <Route
                 path="adminDashboard"
                 element={
-                  <RequireAuth>
+                  <RequireAdmin>
                     <AdminDashboard></AdminDashboard>
-                  </RequireAuth>
+                  </RequireAdmin>
                 }
               >
                 <Route index element={<UserSchedule></UserSchedule>}></Route>
