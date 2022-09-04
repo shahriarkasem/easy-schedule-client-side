@@ -8,8 +8,13 @@ const ChatWithUser = ({ user }) => {
   const [firstLetter, setFirstLetter] = useState("");
 
   useEffect(() => {
-    const userNameFirstLetter = name.charAt(0);
-    setFirstLetter(userNameFirstLetter);
+    const userNameFirstLetter = name?.charAt(0);
+    if(userNameFirstLetter){
+      setFirstLetter(userNameFirstLetter);
+    }
+    else{
+      setFirstLetter("N/A")
+    }
   }, [user, name]);
 
   const navigate = useNavigate("");
