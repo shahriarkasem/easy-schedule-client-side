@@ -9,7 +9,12 @@ const ChatWithUser = ({ user }) => {
 
   useEffect(() => {
     const userNameFirstLetter = name?.charAt(0);
-    setFirstLetter(userNameFirstLetter);
+    if(userNameFirstLetter){
+      setFirstLetter(userNameFirstLetter);
+    }
+    else{
+      setFirstLetter("N/A")
+    }
   }, [user, name]);
 
   const navigate = useNavigate("");
