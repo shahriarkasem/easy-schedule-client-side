@@ -15,7 +15,7 @@ const RealTimeNotification = ({ res }) => {
   // const [notifications, setNotification] = useState([]);
   const [notiData, setNotiData] = useState([]);
   const [user] = useAuthState(auth);
-  console.log(user);
+  // console.log(user);
 
   useEffect(() => {
     fetch(`http://localhost:5000/event/invitation/${user?.email}`)
