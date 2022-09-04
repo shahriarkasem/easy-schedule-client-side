@@ -6,14 +6,13 @@ import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import { fetchSchedules } from "../../../redux/slices/scheduleSlice";
 
-
 const UserSchedule = () => {
   const [schedule, setSchedule] = useState([]);
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
   // useEffect(() => {
-  //   fetch(`https://easyscheduler24.herokuapp.com/userSchedule`, {
+  //   fetch(`http://localhost:5000/userSchedule`, {
   //     method: "GET",
   //     headers: {
   //       authorization: `Bearer ${localStorage.getItem("accessToken")}`,

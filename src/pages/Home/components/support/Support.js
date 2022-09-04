@@ -45,14 +45,22 @@ const Support = () => {
                 : " bg-slate-600 shadow-2xl rounded-3xl"
             }
           >
-            {/* <div class=" ">
-              <p className="lg:text-[18px] mt-3">
-                <span className={toggle === true ? "text-black" : "text-white"}>
-                  Have questions? Give us a call and we'll walk you through it.
-                </span>
-              </p>
-              <p className="text-[#ef7841] text-center"> +1 855-825-7388</p>
-            </div> */}
+            <div className=" lg:block md:block hidden">
+              <div class=" lg:px-10 md:px-10 px-4 ">
+                <p className="font-semibold mt-3">
+                  <span
+                    className={toggle === true ? "text-black" : "text-white"}
+                  >
+                    Have questions? Give us a call and we'll walk you through
+                    it.
+                  </span>
+                </p>
+                <p className="text-green-500 btn-link text-center">
+                  {" "}
+                  +1 855-825-7388
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -92,7 +100,7 @@ const Support = () => {
             <div
               class={toggle === true ? "card-body" : "card-body bg-slate-600"}
             >
-              <h2 class="text-2xl font-semibold  text-center">
+              <h2 class="text-xl font-semibold  text-center">
                 <span className={toggle === true ? "text-black" : "text-white"}>
                   {" "}
                   Services
@@ -119,7 +127,7 @@ const Support = () => {
             <div
               class={toggle === true ? "card-body" : "card-body bg-slate-600"}
             >
-              <h2 class="text-2xl font-semibold  text-center">
+              <h2 class="text-xl font-semibold text-center">
                 <span className={toggle === true ? "text-black" : "text-white"}>
                   Education
                 </span>
