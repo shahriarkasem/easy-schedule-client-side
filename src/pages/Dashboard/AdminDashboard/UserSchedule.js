@@ -4,7 +4,7 @@ import { fetchSchedules } from "../../../redux/slices/scheduleSlice";
 
 const UserSchedule = () => {
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/userSchedule`, {
+  //   fetch(`https://easyscheduler24.herokuapp.com/userSchedule`, {
   //     method: "GET",
   //     headers: {
   //       authorization: `Bearer ${localStorage.getItem("accessToken")}`,
