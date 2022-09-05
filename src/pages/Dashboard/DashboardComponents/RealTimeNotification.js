@@ -18,7 +18,7 @@ const RealTimeNotification = ({ res }) => {
   // console.log(user);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/event/invitation/${user?.email}`)
+    fetch(`https://easyscheduler24.herokuapp.com/event/invitation/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         // setNotification(data);
@@ -31,7 +31,7 @@ const RealTimeNotification = ({ res }) => {
     isLoading,
     refetch,
   } = useQuery(["notifications"], () =>
-    fetch(`http://localhost:5000/event/invitation/${user?.email}`).then((res) =>
+    fetch(`https://easyscheduler24.herokuapp.com/event/invitation/${user?.email}`).then((res) =>
       res.json()
     )
   );

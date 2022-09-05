@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const AdminRole = ({ user }) => {
   const { name, email, role } = user;
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/users/admin/${email}`, {
+    fetch(`https://easyscheduler24.herokuapp.com/users/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -4,7 +4,7 @@ import axios from "axios";
 export const fetchSchedules = createAsyncThunk(
   "schedules/fetchSchedules",
   async () => {
-    const res = await axios.get("http://localhost:5000/userSchedule");
+    const res = await axios.get("https://easyscheduler24.herokuapp.com/userSchedule");
     return res.data;
   }
 );

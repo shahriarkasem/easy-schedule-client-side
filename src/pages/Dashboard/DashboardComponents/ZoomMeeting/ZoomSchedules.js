@@ -7,7 +7,7 @@ const ZoomSchedules = () => {
   const [schedules, setSchedules] = useState([]);
   /* arif  https://easyscheduler24.herokuapp.com*/
   useEffect(() => {
-    fetch("http://localhost:5000/schedule")
+    fetch("https://easyscheduler24.herokuapp.com/schedule")
       .then((res) => res.json())
       .then((data) => setSchedules(data));
   }, []);
