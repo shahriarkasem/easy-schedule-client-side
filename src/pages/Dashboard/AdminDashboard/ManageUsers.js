@@ -9,7 +9,7 @@ const ManageUsers = () => {
     isLoading,
     refetch,
   } = useQuery(["users"], () =>
-    fetch("https://easyscheduler24.herokuapp.com/users", {
+    fetch("http://localhost:5000/users", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

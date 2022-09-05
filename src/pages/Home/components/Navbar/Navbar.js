@@ -9,7 +9,17 @@ import "./Navbar.css";
 const Navbar = () => {
   const { handleDarkMode, toggle } = useContext(DarkContext);
   const [user] = useAuthState(auth);
-  const [admin] = useAdmin(user);
+  const adminError = () =>{
+    if(user?.email ==='shahriarkasem@gmail.com' || 'admin@hero.com' || 'abrakib942@gmail.com'){
+      console.log(true);
+    }
+    else{
+      console.log(false);
+
+    }
+  }
+  const adminVerify = user?.email ==='shahriarkasem@gmail.com' || 'admin@hero.com' || 'abrakib942@gmail.com';
+  // const [admin] = useAdmin(user);
   // console.log(admin);
   const navItem = (
     <>
@@ -51,7 +61,40 @@ const Navbar = () => {
           </Link>
         </li>
       )}
-      {admin && (
+      {/* {admin && (
+        <li>
+          <Link to="/adminDashboard">
+            <span
+              className={"" + (toggle === true ? "text-black" : "text-white")}
+            >
+              Admin Dashboard
+            </span>
+          </Link>
+        </li>
+      )} */}
+      {user?.email === 'shahriarkasem@gmail.com' && (
+        <li>
+          <Link to="/adminDashboard">
+            <span
+              className={"" + (toggle === true ? "text-black" : "text-white")}
+            >
+              Admin Dashboard
+            </span>
+          </Link>
+        </li>
+      )}
+      {user?.email === 'abrakib942@gmail.com' && (
+        <li>
+          <Link to="/adminDashboard">
+            <span
+              className={"" + (toggle === true ? "text-black" : "text-white")}
+            >
+              Admin Dashboard
+            </span>
+          </Link>
+        </li>
+      )}
+      {user?.email === 'admin@hero.com' && (
         <li>
           <Link to="/adminDashboard">
             <span

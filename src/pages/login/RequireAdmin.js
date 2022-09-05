@@ -10,14 +10,14 @@ import Loading from '../../shared/Loading/Loading';
 
 const RequireAdmin = ({ children }) => {
     const [user, loading] = useAuthState(auth);
-    const [admin, adminLoading] = useAdmin(user);
+    // const [admin, adminLoading] = useAdmin(user);
     const location = useLocation();
 
-    if (loading || adminLoading) {
+    if (loading) {
         return <Loading></Loading>
     }
 
-    if (!user || !admin) {
+    if (!user) {
         signOut(auth);
         localStorage.removeItem('accessToken');
         return <Navigate to="/login" state={{ from: location }} replace />;

@@ -8,8 +8,9 @@ import RealTimeNotification from "./DashboardComponents/RealTimeNotification";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
-  const [admin] = useAdmin(user);
-  // console.log(admin);
+  // const [admin] = useAdmin(user);
+  const adminVerify = user?.email ==='shahriarkasem@gmail.com' || 'admin@hero.com' || 'abrakib942@gmail.com';
+  console.log(user.email);
   const [firstLetter, setFirstLetter] = useState("");
   const handleSignOut = () => {
     signOut(auth);
@@ -57,7 +58,22 @@ const Dashboard = () => {
           <Link className="p-2" to="integrations">
             Integrations
           </Link>
-          {admin && (
+          {/* {admin && (
+            <Link className="p-2" to="/adminDashboard">
+              Admin Dashboard
+            </Link>
+          )} */}
+          {user?.email === 'shahriarkasem@gmail.com' && (
+            <Link className="p-2" to="/adminDashboard">
+              Admin Dashboard
+            </Link>
+          )}
+          {user?.email === 'admin@hero.com' && (
+            <Link className="p-2" to="/adminDashboard">
+              Admin Dashboard
+            </Link>
+          )}
+          {user?.email === 'abrakib942@gmail.com' && (
             <Link className="p-2" to="/adminDashboard">
               Admin Dashboard
             </Link>

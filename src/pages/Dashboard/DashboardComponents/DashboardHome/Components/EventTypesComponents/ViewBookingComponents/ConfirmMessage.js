@@ -6,7 +6,7 @@ import LoadingAnimate from "../../../../../../Shared/LoadingAnimate";
 const ConfirmMessage = () => {
   const { id } = useParams();
   const { data: invitationData, isLoading } = useQuery(["invitationData"], () =>
-    fetch(`https://easyscheduler24.herokuapp.com/event/invitation/single/${id}`).then((res) =>
+    fetch(`http://localhost:5000/event/invitation/single/${id}`).then((res) =>
       res.json()
     )
   );

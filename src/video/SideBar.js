@@ -105,7 +105,7 @@ const SideBar = ({ children }) => {
               <a
                 className="button-orange-border-h40"
                 target="blank"
-                href="https://meet.google.com/bvb-ghxm-gpx"
+                href="https://meet.goto.com/194420205"
               >
                 Create Meeting Room
               </a>

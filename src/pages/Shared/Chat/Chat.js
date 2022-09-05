@@ -18,6 +18,9 @@ const Chat = () => {
 
   return (
     <div className="flex justify-center">
+       <button  onClick={() => window.history.back()} className="btn btn-primary btn-outline mt-10">
+              Previous page
+            </button>
       <div className="min-h-screen flex flex-col justify-center items-center mt-10">
         <h4 className="text-xl font-semibold italic my-2">
           Send message or Call

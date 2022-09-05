@@ -17,6 +17,10 @@ const ChatWithUser = ({ user }) => {
     }
   }, [user, name]);
 
+  const openInNewTab = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   const navigate = useNavigate("");
 
   return (
@@ -40,7 +44,7 @@ const ChatWithUser = ({ user }) => {
           </div>
           <div className="flex justify-end items-center gap-2 w-40">
             <button
-              onClick={() => navigate(`/chat-room/${email}/${name}`)}
+              onClick={() => openInNewTab(`/chat-room/${email}/${name}`)}
               className=" btn button-orange "
             >
               <FontAwesomeIcon icon={faMessage} />

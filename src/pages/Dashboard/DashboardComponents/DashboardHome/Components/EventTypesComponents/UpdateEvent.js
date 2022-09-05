@@ -97,9 +97,9 @@ const UpdateEvent = ({
         if (res.status === 200) {
           toast("Successfully updated event!");
           navigate("/dashboard/d-home/event-types");
-          setEditEvent(null);
-          <label for="edit-event-modal" className="cursor-pointer"></label>;
+          // setEditEvent(null);
           refetch();
+          return <label for="edit-event-modal" className="cursor-pointer"></label>;
         }
       })
       .catch((error) => {
@@ -273,9 +273,18 @@ const UpdateEvent = ({
                       className="bg-blue-500 text-white px-4 py-2 rounded-3xl mt-5 md:mt-5 ml-20 cursor-pointer"
                       type="submit"
                       value="Update"
-                    />
+                    ></input>
+                  
                   </form>
                   <div className="mt-[-32px] ml-3">
+                    {
+                      editEvent === null && <label
+                      for="edit-event-modal"
+                      onClick={() => setEditEvent(null)}
+                      className="cursor-pointer"
+                    >
+                    </label>
+                    }
                     <label
                       for="edit-event-modal"
                       onClick={() => setEditEvent(null)}

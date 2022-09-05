@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 const ManageUsersRow = ({ user, refetch, index }) => {
     const { name, email, setUser } = user;
     const removeAdmin = (id) => {
-        fetch(`https://easyscheduler24.herokuapp.com/users/${id}`, {
+        fetch(`http://localhost:5000/users/${id}`, {
             method: "DELETE",
             headers: {
                 authorization: `${localStorage.getItem("accessToken")}`,

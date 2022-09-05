@@ -41,7 +41,7 @@ const UserProfiledata = () => {
                         img: img
                     }
                     // send to your database 
-                    fetch(`https://easyscheduler24.herokuapp.com/users/${email}`, {
+                    fetch(`http://localhost:5000/users/${email}`, {
                         method: 'PATCH',
                         headers: {
                             'content-type': 'application/json',

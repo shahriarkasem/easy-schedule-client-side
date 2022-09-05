@@ -22,7 +22,7 @@ const ViewBooking = () => {
     data: userEvent,
     refetch,
   } = useQuery(["eventData"], () =>
-    fetch(`https://easyscheduler24.herokuapp.com/event/single/${id}`).then((res) => res.json())
+    fetch(`http://localhost:5000/event/single/${id}`).then((res) => res.json())
   );
 
   const [date, setDate] = useState(new Date());
@@ -194,7 +194,7 @@ const ViewBooking = () => {
       headers: {
         // authorization
       },
-      url: `https://easyscheduler24.herokuapp.com/event/invitation`,
+      url: `http://localhost:5000/event/invitation`,
       data: invitation,
     })
       .then((res) => {

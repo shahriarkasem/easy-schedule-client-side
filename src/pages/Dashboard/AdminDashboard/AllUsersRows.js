@@ -5,7 +5,7 @@ const AllUsersRows = ({ user, refetch, index }) => {
   const { name, email, role } = user;
   // console.log(email, role);
   const makeAdmin = () => {
-    fetch(`https://easyscheduler24.herokuapp.com/users/admin/${email}`, {
+    fetch(`http://localhost:5000/users/admin/${email}`, {
       method: 'PUT',
       headers: {
         authorization: `Bearer ${localStorage.getItem('accessToken')}`
