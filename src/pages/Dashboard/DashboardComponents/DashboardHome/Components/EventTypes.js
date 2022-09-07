@@ -15,7 +15,7 @@ const EventTypes = () => {
   const [editEvent, setEditEvent] = useState(null);
 
   const handleEditEvent = (id) => {
-    fetch(`https://easyscheduler24.herokuapp.com/event/single/${id}`)
+    fetch(`http://localhost:3000/event/single/${id}`)
       .then((res) => res.json())
       .then((data) => setEditEvent(data));
   };

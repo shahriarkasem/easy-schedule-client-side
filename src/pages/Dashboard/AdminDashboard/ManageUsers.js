@@ -9,7 +9,7 @@ const ManageUsers = () => {
     isLoading,
     refetch,
   } = useQuery(["users"], () =>
-    fetch("https://easyscheduler24.herokuapp.com/users", {
+    fetch("http://localhost:3000/users", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -28,13 +28,12 @@ const ManageUsers = () => {
       <div class="overflow-x-auto">
         <table class="table table-compact w-full">
           <thead>
-            <tr className='bg-gray-400 text-center'>
-              <th className='bg-gray-400'></th>
-              <th className='bg-gray-400'>User Name</th>
-              <th className='bg-gray-400'>User Email</th>
-              <th className='bg-gray-400'></th>
-              <th className='bg-gray-400'></th>
-
+            <tr className="bg-gray-400 text-center">
+              <th className="bg-gray-400"></th>
+              <th className="bg-gray-400">User Name</th>
+              <th className="bg-gray-400">User Email</th>
+              <th className="bg-gray-400"></th>
+              <th className="bg-gray-400"></th>
             </tr>
           </thead>
           <tbody className="text-center">

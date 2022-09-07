@@ -47,7 +47,7 @@ const Group = () => {
       headers: {
         // authorization
       },
-      url: `https://easyscheduler24.herokuapp.com/event/create/group`,
+      url: `http://localhost:3000/event/create/group`,
       data: fullData,
     })
       .then((res) => {

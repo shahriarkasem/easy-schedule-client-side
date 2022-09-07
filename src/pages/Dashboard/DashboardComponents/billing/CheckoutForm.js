@@ -22,7 +22,7 @@ const CheckoutForm = ({ amount }) => {
   const [user] = useAuthState(auth);
 
   useEffect(() => {
-    fetch("https://easyscheduler24.herokuapp.com/create-payment-intent", {
+    fetch("http://localhost:3000/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",

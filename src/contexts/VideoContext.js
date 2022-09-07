@@ -4,7 +4,7 @@ import Peer from "simple-peer";
 
 const SocketContext = createContext();
 
-const socket = io("https://easyscheduler24.herokuapp.com/");
+const socket = io("http://localhost:3000/");
 
 const VideoContextProvider = ({ children }) => {
   const [stream, setStream] = useState(null);

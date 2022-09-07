@@ -18,11 +18,11 @@ const ZoomCalender = () => {
       headers: {
         // authorization
       },
-      url: `https://easyscheduler24.herokuapp.com/event/create/group`,
+      url: `http://localhost:3000/event/create/group`,
       data: data,
     }) */
 
-    axios.post("https://easyscheduler24.herokuapp.com/addSchedule", data).then((res) => {
+    axios.post("http://localhost:3000/addSchedule", data).then((res) => {
       console.log(res);
       if (res.data.insertedId) {
         alert("added successfully");
