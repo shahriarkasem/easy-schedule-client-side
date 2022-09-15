@@ -1,22 +1,21 @@
 import { faEnvelope, faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect } from "react";
 import "./Workflows.css";
 import img1 from "../../../../../../media/images/workflow/1.jpg";
 import { useQuery } from "@tanstack/react-query";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchWorkflows } from "../../../../../../redux/slices/workflowSlice";
 
 const Workflows = () => {
-  const {
-    isLoading,
-    error,
-    data: workflowData,
-    refetch,
-  } = useQuery(["workflowData"], () =>
-    fetch(`https://easyscheduler24.herokuapp.com/workflow`).then((res) =>
-      res.json()
-    )
-  );
-  refetch();
+  const { workflows } = useSelector((state) => state.workflows);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchWorkflows());
+  }, [dispatch]);
+
   return (
     <div>
       <div className="grid lg:grid-cols-2 grid-cols-1  justify-items-center content-center items-center gap-6 my-10">
@@ -44,7 +43,7 @@ const Workflows = () => {
         </button>
       </div>
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 my-10">
-        {workflowData?.map((flowData) => (
+        {workflows?.map((flowData) => (
           <a href="/dashboard/d-home/CreateWorkflows">
             <div class="card rounded-none workflowShadow  hover:bg-gray-100 ">
               <div class="card-body">

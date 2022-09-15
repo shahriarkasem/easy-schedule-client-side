@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import google from "../../media/images/google.png";
 import {
   useAuthState,
@@ -10,6 +10,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import OpenSpinner from "../Shared/OpenSpinner";
+import useToken from "../../hooks/useToken";
 
 const SignUp = () => {
   const [updateProfile] = useUpdateProfile(auth);
@@ -25,9 +26,10 @@ const SignUp = () => {
 
   const [createUserWithEmailAndPassword, eUser, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-
+  const [token] = useToken(eUser || gUser);
   const navigate = useNavigate();
-
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   let signInError;
   if (gLoading || loading) {
     return <OpenSpinner />;
@@ -47,7 +49,7 @@ const SignUp = () => {
     const email = data.email;
     // console.log(name, email);
     const allData = { name, email };
-    console.log(allData);
+    // console.log(allData);
     fetch("https://easyscheduler24.herokuapp.com/users", {
       method: "POST",
       headers: {
@@ -57,14 +59,15 @@ const SignUp = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         alert("user added successfully");
       });
+    // console.log(allData);
     reset();
   };
-  console.log(user);
-  if (eUser || gUser) {
-    navigate("/");
+
+  if (token) {
+    navigate(from, { replace: true });
   }
   return (
     <div>

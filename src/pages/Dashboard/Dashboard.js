@@ -8,7 +8,8 @@ import RealTimeNotification from "./DashboardComponents/RealTimeNotification";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
-  const [admin] = useAdmin(user)
+  const [admin] = useAdmin(user);
+  // console.log(admin);
   const [firstLetter, setFirstLetter] = useState("");
   const handleSignOut = () => {
     signOut(auth);
@@ -34,15 +35,6 @@ const Dashboard = () => {
       <li>
         <RealTimeNotification />
       </li>
-      {/* <li>
-        <Link to="/dashboard/availability">Availability</Link>
-      </li> */}
-      {/* <li>
-        <Link to="/dashboard/integration">Integrations</Link>
-      </li> */}
-      {/* <li>
-        <Link to="/dashboard/help">Help</Link>
-      </li> */}
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
@@ -62,27 +54,15 @@ const Dashboard = () => {
           <Link className="p-2" to="accountSetting">
             Account Settings
           </Link>
-          {/* <Link className="p-2" to="admin-management">
-            Admin Management
-          </Link> */}
-
-          {/* <Link className="p-2" to="dashboardHome">
-            Dashboard Home
-          </Link> */}
-          {/* <Link className="p-2" to="Help">
-            Help
-          </Link> */}
-          {/* <Link className="p-2" to="apps">
-            Apps
-          </Link> */}
           <Link className="p-2" to="integrations">
             Integrations
           </Link>
-          {user && (
+          {admin && (
             <Link className="p-2" to="/adminDashboard">
               Admin Dashboard
             </Link>
           )}
+
           {user ? (
             <Link
               to="/"

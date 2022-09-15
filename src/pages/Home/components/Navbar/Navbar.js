@@ -7,10 +7,10 @@ import DarkContext from "../../../DarkMode/DarkContext";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { handleDarkMode, toggle, setToggle } = useContext(DarkContext);
+  const { handleDarkMode, toggle } = useContext(DarkContext);
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
-  console.log(admin)
+  // console.log(admin);
   const navItem = (
     <>
       <li>
@@ -40,8 +40,8 @@ const Navbar = () => {
           </span>
         </Link>
       </li>
-      {
-        user && <li>
+      {user && (
+        <li>
           <Link to="/chat">
             <span
               className={"" + (toggle === true ? "text-black" : "text-white")}
@@ -50,9 +50,9 @@ const Navbar = () => {
             </span>
           </Link>
         </li>
-      }
-      {
-        admin && <li>
+      )}
+      {admin && (
+        <li>
           <Link to="/adminDashboard">
             <span
               className={"" + (toggle === true ? "text-black" : "text-white")}
@@ -61,7 +61,7 @@ const Navbar = () => {
             </span>
           </Link>
         </li>
-      }
+      )}
 
       {/* dark mode toggle */}
       <p
@@ -72,11 +72,7 @@ const Navbar = () => {
       >
         {toggle === true ? (
           <p className="flex items-center">
-            <input
-              onClick={handleDarkMode}
-              type="checkbox"
-              class="toggle"
-            />
+            <input onClick={handleDarkMode} type="checkbox" class="toggle" />
           </p>
         ) : (
           <p className="flex items-center">
@@ -95,7 +91,10 @@ const Navbar = () => {
   return (
     <div className="mx-auto">
       <div
-        class={"navbar " + (toggle === true ? "bg-base-100 lg:px-28" : "bg-slate-800 lg:px-32")}
+        class={
+          "navbar " +
+          (toggle === true ? "bg-base-100 lg:px-28" : "bg-slate-800 lg:px-32")
+        }
       >
         <div class="navbar-start">
           <div class="dropdown">
@@ -148,13 +147,15 @@ const Navbar = () => {
         <div class={"navbar-center hidden lg:flex"}>
           <ul class={"menu menu-horizontal p-0"}>{navItem}</ul>
         </div>
-        <div class="navbar-end">
+        <div class="navbar-end" >
+
           {/* dark mode toggle */}
           <p
             className={
               "flex items-center px-2 md:px-4 lg:px-6 hidden md:block" +
               (toggle === true ? "" : "")
             }
+
           >
             {toggle === true ? (
               <p className="flex items-center">
@@ -188,9 +189,9 @@ const Navbar = () => {
             </Link>
           )}
 
-          <label tabIndex="1" for="dashboard-sidebar" className="btn btn-ghost lg:hidden">
+          {/* <label tabIndex="1" for="dashboard-sidebar" className="btn btn-ghost lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-          </label>
+          </label> */}
         </div>
       </div>
     </div>
