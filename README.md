@@ -1,6 +1,6 @@
-# Spadex Industry
+# Easy Schedule
 
-# Admin credential:
+## Admin credential:
 Admin Emial: "admin@easyschedule.com"
 Admin Password: "EasyScheduleAdmin123"
 
